@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./index.css";
 import "./App.css";
 import "./styles/global.css";
-import { Header } from "./components/Header";
+import { Header } from "./components/header";
 
 function App() {
   return (
