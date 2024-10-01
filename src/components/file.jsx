@@ -29,6 +29,7 @@ const File = ({ type, title, teamNum, teamName }) => {
           <h2 className="text-lg font-bold font-Pretendard">{title}</h2>
           <p className="font-light font-Pretendard">{teamNum}기 {teamName}팀</p>
         </div>
+        {/*  */}
       </div>
     </div>
   );
