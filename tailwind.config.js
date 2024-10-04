@@ -7,6 +7,9 @@ module.exports = {
         primary: "#000000",
       },
     },
+    fontFamily: {
+      Pretendard: ["Pretendard"],
+    },
   },
   plugins: [],
 };
