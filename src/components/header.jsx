@@ -1,5 +1,5 @@
 import React from "react";
-import TaveLogo from "../assets/images/taveLogo.png";
+import TaveLogo from "../assets/images/taveLogo.svg";
 
 export const Header = () => {
   return (
