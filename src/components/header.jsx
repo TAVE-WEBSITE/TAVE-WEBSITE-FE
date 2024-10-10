@@ -4,7 +4,7 @@ import TaveLogo from "../assets/images/taveLogo.svg";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between py-4 px-20 bg-black">
+    <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between py-4 px-20 bg-black">
       <div className="items-start">
         <img src={TaveLogo} className="w-32 h-auto"></img>
       </div>

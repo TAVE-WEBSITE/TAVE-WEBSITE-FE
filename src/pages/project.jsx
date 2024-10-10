@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Tab from "../tab";
 import File from "../components/file";
@@ -50,9 +50,67 @@ export default function Project() {
       teamName: "아기하마",
       category: "심화",
     },
+    {
+      type: "prooject",
+      title: "프로젝트 이름 캬캬 아기하마",
+      teamNum: 14,
+      teamName: "아기하마",
+      category: "연합",
+    },
+    {
+      type: "prooject",
+      title: "프로젝트 이름 캬캬 아기하마",
+      teamNum: 14,
+      teamName: "아기하마",
+      category: "연합",
+    },
+    {
+      type: "prooject",
+      title: "프로젝트 이름 캬캬 아기하마",
+      teamNum: 14,
+      teamName: "아기하마",
+      category: "연합",
+    },
+    {
+      type: "prooject",
+      title: "프로젝트 이름 캬캬 아기하마",
+      teamNum: 14,
+      teamName: "아기하마",
+      category: "심화",
+    },
+    {
+      type: "prooject",
+      title: "프로젝트 이름 캬캬 아기하마",
+      teamNum: 14,
+      teamName: "아기하마",
+      category: "심화",
+    },
+    {
+      type: "prooject",
+      title: "프로젝트 이름 캬캬 아기하마",
+      teamNum: 14,
+      teamName: "아기하마",
+      category: "심화",
+    },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("ALL");
+  // 일정 스크롤 이상 내려가면 Tab 컴포넌트 상단 고정
+  const [isTabFixed, setIsTabFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const tabPosition = 180;
+      if (window.scrollY > tabPosition) {
+        setIsTabFixed(true);
+      } else {
+        setIsTabFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // 카테고리에 따라 필터링
   const handleCategoryChange = category => {
@@ -77,7 +135,17 @@ export default function Project() {
           있습니다!
         </div>
       </div>
-      <Tab category={categories} onCategoryChange={handleCategoryChange} />
+      {/* 상단 고정을 위해 div로 감싸기 */}
+      <div
+  className={`${
+    isTabFixed
+      ? "fixed top-[80px] z-20 bg-gradient-to-b from-black from-40% to-transparent  w-full grid place-items-center"
+      : ""
+  } transition-all duration-300 py-10`}
+>
+  <Tab category={categories} onCategoryChange={handleCategoryChange} />
+</div>
+
       {/* 반응형 : 화면 줄여도 컴포넌트 안겹치게 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 mt-[48px]">
         {filteredFileSet.map((data, index) => (
@@ -88,7 +156,6 @@ export default function Project() {
             teamNum={data.teamNum}
             teamName={data.teamName}
           />
-        
         ))}
       </div>
     </div>
