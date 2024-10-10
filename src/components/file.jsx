@@ -2,7 +2,7 @@ import React from "react";
 import ProjectBackImage from "../assets/images/ProjectBack.png";
 import StudyBackImage from "../assets/images/StudyBack.png";
 
-const File = ({ type, title, teamNum, teamName }) => {
+const File = ({ type, title, teamNum, teamName, category }) => {
   const backgroundImage = type === "study" ? StudyBackImage : ProjectBackImage;
 
   const backgroundColor =
@@ -13,7 +13,7 @@ const File = ({ type, title, teamNum, teamName }) => {
   return (
     <div>
       <div
-        className="relative w-[271px] h-[230px] bg-no-repeat"
+        className="relative w-[271px] h-[230px] bg-no-repeat cursor-pointer"
         style={{
           backgroundImage: `url(${backgroundImage})`,
         }}
@@ -29,7 +29,7 @@ const File = ({ type, title, teamNum, teamName }) => {
           <h2 className="text-lg font-bold font-Pretendard">{title}</h2>
           <p className="font-light font-Pretendard">{teamNum}기 {teamName}팀</p>
         </div>
-        {/*  */}
+     
       </div>
     </div>
   );
