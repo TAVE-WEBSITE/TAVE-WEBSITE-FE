@@ -3,7 +3,7 @@ import "./index.css";
 import "./App.css";
 import "./styles/global.css";
 
-import { Header } from "./components/Header";
+import Header from "./components/header";
 import File from "./components/file";
 
 function App() {
