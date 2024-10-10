@@ -21,7 +21,7 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <a href="#" className="cursor-pointer">
+            <a href="project" className="cursor-pointer">
               PROJECT
             </a>
           </li>

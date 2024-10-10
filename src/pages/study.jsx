@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Tab from "../tab";
 import File from "../components/file";
 
@@ -21,38 +22,60 @@ export default function Study() {
       title: "스터디 이름 캬캬 아기하마",
       teamNum: 14,
       teamName: "아기하마",
+      category:"FE"
     },
     {
       type: "study",
       title: "스터디 이름 아아 아기하마",
       teamNum: 14,
       teamName: "아기하마",
+      category:"BE"
     },
     {
       type: "study",
       title: "스터디 이름 고고 아기하마",
       teamNum: 14,
       teamName: "아기하마",
+      category:"DL"
     },
     {
       type: "study",
       title: "스터디 이름 냐냐 아기하마",
       teamNum: 14,
       teamName: "아기하마",
+      category:"DA"
     },
     {
       type: "study",
       title: "스터디 이름 먀먀 아기하마",
       teamNum: 14,
       teamName: "아기하마",
+      category:"FE"
     },
     {
       type: "study",
       title: "스터디 이름 바바 아기하마",
       teamNum: 14,
       teamName: "아기하마",
+      category:"BE"
     },
   ];
+
+  const [selectedCategory, setSelectedCategory] = useState("ALL");
+
+  // 카테고리에 따라 필터링
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredFileSet = fileSet.filter((file) => {
+    if (selectedCategory === "ALL") return true; 
+    if (selectedCategory === "Web/App") return file.category === "FE";
+    if (selectedCategory === "Backend") return file.category === "BE";
+    if (selectedCategory === "DeepLearning") return file.category === "DL";
+    if (selectedCategory === "DataAnalysis") return file.category === "DA";
+    return false;
+  });
 
   {
     /* 추후에 스터디 종류별로 보여지는 데이터 다르게 작성
@@ -70,9 +93,9 @@ export default function Study() {
           가세요!
         </div>
       </div>
-      <Tab category={categories} />
+      <Tab category={categories} onCategoryChange={handleCategoryChange}/>
       <div className="grid grid-cols-4 flex flex-row gap-x-10 gap-y-6 pt-[48px]">
-        {fileSet.map((data, index) => {
+        {filteredFileSet.map((data, index) => {
           return (
             <File
               type={data.type}
