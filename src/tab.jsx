@@ -2,11 +2,12 @@
 // 디자인팀 문의 후 렌더링 컴포넌트 적용
 import { useState } from 'react';
 
-export default function Tab({ category }) {
+export default function Tab({ category, onCategoryChange }) {
     const [selectedIndex, setSelectedIndex] = useState(null);
 
     const handleClick = (index) => {
         setSelectedIndex(index);
+        onCategoryChange(category[index])
     };
 
     return (
