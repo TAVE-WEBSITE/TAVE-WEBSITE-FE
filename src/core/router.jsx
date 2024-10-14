@@ -5,15 +5,16 @@ import Home from "../pages/home";
 import Study from "../pages/study";
 import Project from "../pages/project";
 
+import Activity from "../pages/activity";
 export default function Router() {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/home" element={<Home />} />
-              <Route path="/study" element={<Study />} />
-              <Route path="/project" element={<Project />} />
-
+        <Route path="/activity" element={<Activity />} />
+        <Route path="/study" element={<Study />} />
+        <Route path="/project" element={<Project />} />
       </Routes>
     </BrowserRouter>
   );

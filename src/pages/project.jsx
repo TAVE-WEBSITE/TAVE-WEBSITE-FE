@@ -171,7 +171,7 @@ export default function Project() {
     window.addEventListener("scroll", handleScroll);
     return () => {
       // 스크롤 이벤트 제거 (성능 저하 방지)
-      window.removeEventListener("scroll", handleScroll); 
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
 

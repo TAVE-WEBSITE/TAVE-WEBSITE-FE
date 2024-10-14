@@ -11,7 +11,7 @@ export default function Header() {
       <nav className="flex items-end text-white">
         <ul className="flex items-center gap-x-10">
           <li>
-            <a href="#" className="cursor-pointer">
+            <a href="activity" className="cursor-pointer">
               ACTIVITY
             </a>
           </li>
