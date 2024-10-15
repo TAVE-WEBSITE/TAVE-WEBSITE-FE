@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Footer from "../components/footer";
 
 import PartCard from "../components/partCard";
 import StepComponent from "../components/stepComponent";
@@ -129,7 +130,7 @@ export default function Activity() {
         <div className="mb-20 text-4xl mt-96">정규 세션 소개</div>
         <StepComponent steps={steps} selectedStep={selectedStep} />
         <div className="mb-20 text-4xl mt-96">AFTER TAVE</div>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6 pb-96">
           <AfterCard icon={After1} description={"횔동증명서\n발급"} />
           <AfterCard
             icon={After2}
@@ -141,7 +142,9 @@ export default function Activity() {
             description={"다양한 분야의 OB들과\n네트워킹"}
           />
         </div>
+        <Footer/>
       </div>
+      
     </div>
   );
 }
