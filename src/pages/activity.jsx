@@ -125,6 +125,7 @@ export default function Activity() {
               "우리는 변화하는 디자인 트렌드에 열정적으로 따라가며,\n다양한 아이디어를 수렴하고,\n사용자 경험을 최우선으로 고려하여,\n아름답고 직관적인 디자인으로 물결을 일으킵니다"
             }
             icon={DEIcon}
+            
           />
         </div>
         <div className="mb-20 text-4xl mt-96">정규 세션 소개</div>
