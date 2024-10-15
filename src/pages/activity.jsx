@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import PartCard from "../components/partCard";
 import StepComponent from "../components/stepComponent";
+import AfterCard from "../components/afterCard";
 
 import WebIcon from "../assets/images/WebIcon.svg";
 import AppIcon from "../assets/images/AppIcon.svg";
@@ -9,6 +10,11 @@ import BEIcon from "../assets/images/BEIcon.svg";
 import DAIcon from "../assets/images/DAIcon.svg";
 import DLIcon from "../assets/images/DLIcon.svg";
 import DEIcon from "../assets/images/DEIcon.svg";
+
+import After1 from "../assets/images/After1.svg";
+import After2 from "../assets/images/After2.svg";
+import After3 from "../assets/images/After3.svg";
+
 export default function Activity() {
   const steps = [
     {
@@ -121,10 +127,20 @@ export default function Activity() {
           />
         </div>
         <div className="mb-20 text-4xl mt-96">정규 세션 소개</div>
-        <StepComponent steps={steps} selectedStep={selectedStep} />{" "}
+        <StepComponent steps={steps} selectedStep={selectedStep} />
         <div className="mb-20 text-4xl mt-96">AFTER TAVE</div>
-        <StepComponent steps={steps} selectedStep={selectedStep} />{" "}
+        <div className="grid grid-cols-3 gap-6">
+          <AfterCard icon={After1} description={"횔동증명서\n발급"} />
+          <AfterCard
+            icon={After2}
+            description={"우수 스터디 및 프로젝트\n시상 및 발급"}
+          />
 
+          <AfterCard
+            icon={After3}
+            description={"다양한 분야의 OB들과\n네트워킹"}
+          />
+        </div>
       </div>
     </div>
   );
