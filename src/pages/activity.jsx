@@ -16,6 +16,9 @@ import After1 from "../assets/images/After1.svg";
 import After2 from "../assets/images/After2.svg";
 import After3 from "../assets/images/After3.svg";
 
+import Wave1 from "../assets/images/BgWave1.svg"
+import Wave2 from "../assets/images/BgWave2.svg"
+
 export default function Activity1() {
   const steps = [
     {
@@ -123,6 +126,9 @@ export default function Activity1() {
 
   return (
     <div>
+      <img src={Wave1} alt="wave" className="absolute w-full top-[1500px] h-[1700px] "></img>
+      <img src={Wave2} alt="wave" className="absolute w-full top-[2600px] h-[1700px]"></img>
+
     <div className="relative flex flex-col justify-center mt-52 w-full  mx-auto lg:w-4/5">
       <div className="flex flex-col items-center justify-center text-center w-full ">
         <div className="mb-20 text-4xl mt-96">파트 소개</div>
@@ -175,13 +181,15 @@ export default function Activity1() {
             }
             icon={DEIcon}
           />
-        </div>
-        <div className="mb-20 text-4xl mt-96 ">정규 세션 소개</div>
+          </div>
+          
+          <div className="mb-20 text-4xl mt-96 ">정규 세션 소개</div>
         <StepComponent
           steps={steps}
           selectedStep={selectedStep}
           stepRefs={stepRefs}
-        />
+          />
+          
         <div className="mb-20 text-4xl mt-96">AFTER TAVE</div>
         <div className="grid grid-cols-1 justify-items-center sm:grid-cols-1 md:grid-cols-3 gap-6 w-full px-6 max-w-[1318px]  mb-52">
           <AfterCard icon={After1} description={"활동증명서\n발급"} />
