@@ -1,12 +1,12 @@
 import Arrow from "../assets/images/BlackArrow.svg";
 import HoverArrow from "../assets/images/WhiteArrow.svg";
 
-export default function PartCard({ KorTitle, EngTitle, description, icon }) {
+export default function PartCard({ KorTitle, EngTitle, description, icon, onClick}) {
   // 디자인 파트만 다른 효과를 주기 위해 체크
   const isDesign = EngTitle === "DESIGN";
 
   return (
-    <div className="relative">
+    <div className="relative" onClick={onClick}>
       <div
         className={`relative bg-blue-600 text-white rounded-2xl max-w-[368px] w-88 h-[200px] overflow-hidden group transition-all duration-300 ${
           !isDesign ? "cursor-pointer" : ""

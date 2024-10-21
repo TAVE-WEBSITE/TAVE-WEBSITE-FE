@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 
 import PartCard from "../components/partCard";
@@ -19,7 +20,8 @@ import After3 from "../assets/images/After3.svg";
 import Wave1 from "../assets/images/BgWave1.svg";
 import Wave2 from "../assets/images/BgWave2.svg";
 
-export default function Activity1() {
+export default function Activity() {
+  const navigate = useNavigate();
   const steps = [
     {
       title: "OT",
@@ -124,6 +126,18 @@ export default function Activity1() {
     };
   }, []);
 
+ 
+  
+  const onPartClick = (name) => {
+    let partName = name
+    if (name === "WEB" || name === "APP") {
+      partName = "Web/App";
+    }
+    console.log("Navigating to /study with partName:", partName); // 로그로 확인
+    navigate("/study", { state: { partName } });
+   
+  };
+
   return (
     <div>
       <img
@@ -146,6 +160,7 @@ export default function Activity1() {
                 "우리는 아름답고 직관적인 웹 경험을 창조해 나가며, 다양한 의견을 수렴하여 성장하는 웹사이트를 만들어갑니다."
               }
               icon={WebIcon}
+              onClick={() => onPartClick("WEB")}
             />
             <PartCard
               KorTitle={"앱 프론트엔드"}
@@ -154,6 +169,7 @@ export default function Activity1() {
                 "사용자와의 소통을 통해 다양한 경험을 모아, 손끝에서 펼쳐지는 매력적인 인터페이스를 설계하며, 언제 어디서나 편리한 경험을 제공하는 데 열정을 다합니다."
               }
               icon={AppIcon}
+              onClick={() => onPartClick("APP")}
             />
             <PartCard
               KorTitle={"백엔드"}
@@ -162,6 +178,7 @@ export default function Activity1() {
                 "데이터를 안전하게 저장하고, 비즈니스 로직을 구현하여 사용자 요청에 신속하고 정확하게 응답하며, 다양한 기술을 접목해 안정적인 서비스를 위해 끊임없이 진화합니다."
               }
               icon={BEIcon}
+              onClick={() => onPartClick("Backend")}
             />
             <PartCard
               KorTitle={"데이터 분석"}
@@ -170,6 +187,7 @@ export default function Activity1() {
                 "방대한 데이터 속에서 패턴과 인사이트를 발견하며, 이를 통해 팀의 의사 결정을 지원하고, 다양한 관점을 통해 더 나은 미래를 설계하는 데 기여합니다."
               }
               icon={DAIcon}
+              onClick={() => onPartClick("DataAnalysis")}
             />
             <PartCard
               KorTitle={"딥러닝"}
@@ -178,6 +196,7 @@ export default function Activity1() {
                 "복잡한 문제를 해결하기 위해 심층 신경망을 설계하며, 인간의 인지 능력을 모방하여 세상의 다양한 문제에 도전하고, 새로운 변화를 일으키는 데 열정을 쏟습니다."
               }
               icon={DLIcon}
+              onClick={() => onPartClick("DeepLearning")}
             />
             <PartCard
               KorTitle={"디자인"}
@@ -186,6 +205,7 @@ export default function Activity1() {
                 "우리는 변화하는 디자인 트렌드에 열정적으로 따라가며, 다양한 아이디어를 수렴하고, 사용자 경험을 최우선으로 고려하여, 아름답고 직관적인 디자인으로 물결을 일으킵니다"
               }
               icon={DEIcon}
+              
             />
           </div>
 
