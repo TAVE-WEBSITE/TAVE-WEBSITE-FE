@@ -80,7 +80,7 @@ export default function History({ year, title, contents }) {
               index % 2 === 0 && ( // 짝수 인덱스일 경우
                 <div
                   key={data.id}
-                  className="rounded-[15px] border border-white p-12 mb-4 "
+                  className="rounded-[15px] border border-gray-700 bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px] p-12 mb-4"
                 >
                   <div className="font-bold text-2xl pb-6">{data.name}</div>
                   <div className="text-base leading-6">{data.content}</div>
@@ -97,7 +97,7 @@ export default function History({ year, title, contents }) {
               index % 2 === 1 && ( // 홀수 인덱스일 경우
                 <div
                   key={data.id}
-                  className="rounded-[15px] border border-white p-12 mb-4"
+                  className="rounded-[15px] border border-gray-700 bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px] p-12 mb-4"
                 >
                   <div className="font-bold text-2xl pb-6">{data.name}</div>
                   <div className="text-base leading-6 ">{data.content}</div>
@@ -127,7 +127,7 @@ export default function History({ year, title, contents }) {
                 index % 2 === 0 && ( // 짝수 인덱스일 경우
                   <div
                     key={data.id}
-                    className="rounded-[15px] border border-white p-12 mb-4 "
+                    className="rounded-[15px] border border-gray-700 bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px] p-12 mb-4"
                   >
                     <div className="font-bold text-2xl pb-6">{data.name}</div>
                     <div className="text-base leading-6">{data.content}</div>
@@ -144,7 +144,7 @@ export default function History({ year, title, contents }) {
                 index % 2 === 1 && ( // 홀수 인덱스일 경우
                   <div
                     key={data.id}
-                    className="rounded-[15px] border border-white p-12 mb-4"
+                    className="rounded-[15px] border border-gray-700 bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px] p-12 mb-4"
                   >
                     <div className="font-bold text-2xl pb-6">{data.name}</div>
                     <div className="text-base leading-6">{data.content}</div>
