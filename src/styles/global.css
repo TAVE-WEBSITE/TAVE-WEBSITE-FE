@@ -7,6 +7,10 @@ body {
   @apply bg-black text-white;
   font-family: "Pretendard";
   font-weight: 700;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 @font-face {
