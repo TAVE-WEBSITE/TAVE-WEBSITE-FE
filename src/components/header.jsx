@@ -1,5 +1,5 @@
-import React from 'react';
-import TaveLogo from '../assets/images/taveLogo.svg';
+import React from "react";
+import TaveLogo from "../assets/images/taveLogo.svg";
 
 export default function Header({isBlack}) {
     return (
