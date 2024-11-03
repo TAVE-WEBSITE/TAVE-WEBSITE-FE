@@ -1,16 +1,16 @@
-import React from 'react';
-import TaveLogo from '../assets/images/taveLogo.svg';
+import React from "react";
+import TaveLogo from "../assets/images/taveLogo.svg";
 
-export default function Header() {
+export default function Header({isBlack}) {
     return (
-        <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between py-4 px-20">
+        <header className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between py-4 px-20 ${isBlack ? 'bg-black' : 'bg-gradient-to-b from-black from-30% to-transparent'}`}>
             <div className="items-start">
                 <img src={TaveLogo} className="w-32 h-auto"></img>
             </div>
             <nav className="flex items-end text-white">
                 <ul className="flex items-center gap-x-10">
                     <li>
-                        <a href="#" className="cursor-pointer">
+                        <a href="activity" className="cursor-pointer">
                             ACTIVITY
                         </a>
                     </li>

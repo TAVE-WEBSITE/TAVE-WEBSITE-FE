@@ -5,7 +5,7 @@ import message from '../assets/icons/message.svg';
 
 export default function Footer() {
     return (
-        <footer className="fixed bottom-0 w-full flex px-36 py-10 z-50 justify-between bg-[#393A40]">
+        <footer className="relative mx-0 bottom-0 w-full flex px-36 py-10 z-50 justify-between bg-[#393A40]">
             <div className="flex flex-col gap-4 text-[#A7A7A7]">
                 <p className="mb-4">TECHNOLOGY WAVE</p>
                 <p>TAVE (4차 산업혁명 연합 동아리)</p>
