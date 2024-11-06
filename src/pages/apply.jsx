@@ -1,5 +1,5 @@
 import Header from '../components/header';
-import wave from '../assets/images/wave.svg';
+import BackWave from '../assets/images/BackWave.svg';
 
 export default function Apply() {
     return (
@@ -31,7 +31,7 @@ export default function Apply() {
             </div>
             <img
                 className="absolute w-full h-[1000px] top-0 inset-0 z-10"
-                src={wave}
+                src={BackWave}
                 alt="wave"
             />
         </>

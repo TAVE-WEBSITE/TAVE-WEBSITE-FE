@@ -1,7 +1,7 @@
-import bold from '../assets/icons/bold.svg';
-import instagram from '../assets/icons/instagram.svg';
-import mail from '../assets/icons/mail.svg';
-import message from '../assets/icons/message.svg';
+import BlogIcon from '../assets/images/BlogIcon.svg';
+import InstaIcon from '../assets/images/InstaIcon.svg';
+import MailIcon from '../assets/images/MailIcon.svg';
+import MessageIcon from '../assets/images/MessageIcon.svg';
 
 export default function Footer() {
     return (
@@ -12,13 +12,13 @@ export default function Footer() {
                 <p>ⓒ TAVE. 2018 - 2024 All Rights Reserved</p>
             </div>
             <div className="flex gap-2.5 items-end">
-                <img src={message} alt="message" />
-                <img src={mail} alt="mail" />
+                <img src={MessageIcon} alt="message" />
+                <img src={MailIcon} alt="mail" />
                 <a href="https://www.instagram.com/tave_wave/" target="_blank">
-                    <img src={instagram} alt="instagram" />
+                    <img src={InstaIcon} alt="instagram" />
                 </a>
                 <a href="https://blog.naver.com/t-ave" target="_blank">
-                    <img src={bold} alt="bold" />
+                    <img src={BlogIcon} alt="bold" />
                 </a>
             </div>
         </footer>
