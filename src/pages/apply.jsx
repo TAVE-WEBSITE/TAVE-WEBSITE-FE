@@ -1,5 +1,4 @@
 import Header from '../components/header';
-import Footer from '../components/footer';
 import wave from '../assets/images/wave.svg';
 
 export default function Apply() {
@@ -30,8 +29,11 @@ export default function Apply() {
                     </button>
                 </div>
             </div>
-            <img className="absolute w-full h-[1000px] top-0 inset-0 z-10" src={wave} alt="wave" />
-            <Footer />
+            <img
+                className="absolute w-full h-[1000px] top-0 inset-0 z-10"
+                src={wave}
+                alt="wave"
+            />
         </>
     );
 }
