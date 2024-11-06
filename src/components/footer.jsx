@@ -17,7 +17,9 @@ export default function Footer() {
                 <a href="https://www.instagram.com/tave_wave/" target="_blank">
                     <img src={instagram} alt="instagram" />
                 </a>
-                <img src={bold} alt="bold" />
+                <a href="https://blog.naver.com/t-ave" target="_blank">
+                    <img src={bold} alt="bold" />
+                </a>
             </div>
         </footer>
     );
