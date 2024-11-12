@@ -2,11 +2,11 @@ import '../styles/global.css';
 import History from '../components/history';
 import Sponsored from '../components/sponsored';
 import Review from '../components/review';
-import TaveLogo from '../assets/images/taveLogo.svg';
-import valueOne from '../assets/icons/valueOne.svg';
-import valueTwo from '../assets/icons/valueTwo.svg';
-import valueThree from '../assets/icons/valueThree.svg';
-
+import LogoTave from '../assets/images/LogoTave.svg';
+import CoreCard from '../components/coreCard';
+import Growth from '../assets/icons/Growth.jsx';
+import Passion from '../assets/icons/Passion.jsx';
+import Diversity from '../assets/icons/Diversity.jsx';
 export default function Home() {
     return (
         <div className="flex flex-col justify-center items-center mx-20 mt-[300px]">
@@ -14,8 +14,8 @@ export default function Home() {
                 <div className="text-2xl font-bold">
                     The new technology wave,
                 </div>
-                <img src={TaveLogo} className="w-[301px]" alt="taveLogo"></img>
-                <div className="text-4xl font-medium mt-10">
+                <img src={LogoTave} className="w-[301px]" alt="taveLogo"></img>
+                <div className="text-4xl font-medium mt-10 text-center">
                     기술의 물결 속에서 함께 성장하는 곳, TAVE
                 </div>
             </div>
@@ -24,44 +24,49 @@ export default function Home() {
                 <br />
                 IT 연합 동아리, TAVE를 소개합니다
             </p>
-            <div className="mt-[618px]">
+            <div className="mt-[618px] w-full">
                 <div className="flex flex-col items-center gap-4">
                     <div className="text-4xl font-bold">Core Value</div>
                     <div className="text-xl font-light">
                         TAVE 15기의 핵심가치를 소개합니다
                     </div>
                 </div>
-                <div className="flex gap-12 mt-[100px]">
-                    <div className="w-[296px] h-[180px] bg-[#393a40]/50 rounded-[15px] relative border border-[#f7f8fa]">
-                        <div className="text-2xl flex justify-center w-full items-center h-full font-bold z-40 absolute">
-                            열정
-                        </div>
-                        <img
-                            src={valueTwo}
-                            alt="icon"
-                            className="absolute z-10 right-0 bottom-0"
-                        />
-                    </div>
-                    <div className="w-[296px] h-[180px] bg-[#393a40]/50 rounded-[15px] relative border border-[#f7f8fa] flex justify-center items-center">
-                        <div className="text-2xl font-bold absolute z-20">
-                            성장
-                        </div>
-                        <img
-                            src={valueThree}
-                            alt="icon"
-                            className="absolute z-10"
-                        />
-                    </div>
-                    <div className="w-[296px] h-[180px] bg-[#393a40]/50 rounded-[15px] relative border border-[#f7f8fa]">
-                        <div className="text-2xl flex justify-center w-full items-center h-full font-bold z-40 absolute">
-                            다양성
-                        </div>
-                        <img
-                            src={valueOne}
-                            alt="icon"
-                            className="absolute z-10 left-0 bottom-0"
-                        />
-                    </div>
+                <div className="flex gap-12 mt-[100px] w-full px-[148px]">
+                    <CoreCard
+                        title="열정"
+                        description={
+                            <p>
+                                열정으로 뭉친 TAVE는 새로운 기술을
+                                <br />
+                                탐험하고 혁신의 경계를 넓혀갑니다.
+                            </p>
+                        }
+                        className="right-0 bottom-0"
+                        SvgIcon={<Passion />}
+                    />
+                    <CoreCard
+                        title="성장"
+                        description={
+                            <p>
+                                함께 배우고 경험하며, 개인과 팀의 성장
+                                <br />
+                                모두를 이끌어가는 공간입니다.
+                            </p>
+                        }
+                        SvgIcon={<Growth />}
+                    />
+                    <CoreCard
+                        title="다양성"
+                        description={
+                            <p>
+                                다양한 분야의 융합을 통해
+                                <br />
+                                새로운 가능성을 탐색합니다.
+                            </p>
+                        }
+                        className="left-0 bottom-0"
+                        SvgIcon={<Diversity />}
+                    />
                 </div>
             </div>
 

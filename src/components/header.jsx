@@ -1,5 +1,5 @@
 import React from 'react';
-import TaveLogo from '../assets/images/taveLogo.svg';
+import LogoTave from '../assets/images/LogoTave.svg';
 
 export default function Header({ isBlack }) {
     return (
@@ -12,7 +12,7 @@ export default function Header({ isBlack }) {
         >
             <a href="/" className="items-start">
                 <img
-                    src={TaveLogo}
+                    src={LogoTave}
                     className="w-32 h-auto"
                     alt="taveLogo"
                 ></img>
