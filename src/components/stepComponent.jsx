@@ -1,13 +1,63 @@
+import { useEffect, useRef } from "react";
+
 import ActiveDot from "../assets/images/ActiveStep.svg";
 import NotActiveDot from "../assets/images/NotActiveStep.svg";
 
-export default function StepComponent({ steps, selectedStep }) {
+export default function StepComponent({
+  steps,
+  selectedStep,
+  setSelectedStep,
+}) {
+  const stepRefs = useRef([]);
+
+  useEffect(() => {
+    console.log(
+      "Initial render: setSelectedStep is a function:",
+      typeof setSelectedStep === "function"
+    );
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-50% 0px -50% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = parseInt(entry.target.getAttribute("data-index"), 10);
+          console.log("Setting selected step to:", index);
+          setSelectedStep(index);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    stepRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      stepRefs.current.forEach(ref => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, [setSelectedStep]);
+
   return (
     <div className="flex items-start">
       {/* 정규 세션 단계 */}
       <div className="flex flex-col gap-5">
         {steps.map((step, index) => (
-          <div key={index} className="flex items-center gap-5 relative">
+          <div
+            key={index}
+            className="flex items-center gap-5 relative"
+            ref={el => (stepRefs.current[index] = el)}
+            data-index={index}>
             {/* 단계별 Dot */}
             <img
               src={selectedStep === index ? ActiveDot : NotActiveDot}
@@ -30,7 +80,6 @@ export default function StepComponent({ steps, selectedStep }) {
               />
             )}
 
-            {/* 정규 세션 타이틀, 내용 소개 + selectedStep일 때 크기 조금 커지게 */}
             <div
               className={`flex justify-between gap-3 items-center w-92 lg:min-w-[550px] h-36 rounded-2xl p-5 transition-transform duration-300 ease-in-out ${
                 selectedStep === index ? "scale-105" : "scale-100"
@@ -38,8 +87,7 @@ export default function StepComponent({ steps, selectedStep }) {
                 selectedStep === index
                   ? "bg-[rgb(39,76,200)] text-white"
                   : "bg-[rgba(36,36,36,0.7)] text-gray-500"
-              } lg:w-[800px]`}
-            >
+              } lg:w-[800px]`}>
               <div className="text-xl lg:text-2xl">{step.title}</div>
               <div className="text-base font-medium lg:text-lg">
                 {step.description}
