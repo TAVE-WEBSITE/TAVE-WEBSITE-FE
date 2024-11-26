@@ -115,7 +115,7 @@ export default function Activity() {
           className="absolute object-cover w-full h-full z-10"
         />
       </div>
-      <div className="absolute z-30 flex flex-col gap-[60px] items-center px-4 w-full h-full top-[640px]">
+      <div className="absolute z-30 flex flex-col gap-[60px] items-center px-4 w-full  top-[640px]">
         <div className="text-[40px] font-bold">모집 대상</div>
         <div className="px-[188px] py-[30px] bg-[#232323] rounded-[20px]">
           <div className="text-center text-xl font-bold">

@@ -11,10 +11,6 @@ export default function StepComponent({
   const stepRefs = useRef([]);
 
   useEffect(() => {
-    console.log(
-      "Initial render: setSelectedStep is a function:",
-      typeof setSelectedStep === "function"
-    );
 
     const observerOptions = {
       root: null,
@@ -26,7 +22,6 @@ export default function StepComponent({
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const index = parseInt(entry.target.getAttribute("data-index"), 10);
-          console.log("Setting selected step to:", index);
           setSelectedStep(index);
         }
       });
