@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Tab from "../components/tab";
 import File from "../components/file";
+import axios from "axios";
 
 export default function Study() {
+  const baseURL = "http://3.35.207.95:8080";
   const location = useLocation();
   // 활동 페이지에서 props 전달
   const { partName } = location.state || {};
@@ -83,6 +85,32 @@ export default function Study() {
     if (selectedCategory === "DataAnalysis") return file.category === "DA";
     return false;
   });
+  /*
+          params:{
+          generation : 14,
+          field:BACKEND
+        }
+  */
+
+  const response = 0;
+
+  async function getStudy(page, generation, field) {
+    try {
+      // URL에 요청 파라미터를 추가
+      const params = new URLSearchParams({
+        page,
+        generation,
+        field,
+      }).toString();
+      const response = await axios.get(`${baseURL}/v1/normal/study?${params}`);
+      console.log(response.data.result);
+      console.log(response.data.result.page); // 응답 데이터 출력
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  getStudy(1, 13, "FRONTEND");
 
   {
     /* 추후에 스터디 종류별로 보여지는 데이터 다르게 작성
