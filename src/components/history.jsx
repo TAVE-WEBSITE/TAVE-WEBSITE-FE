@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const hitories = [
   {
@@ -50,10 +51,24 @@ const hitories = [
   },
 ];
 
+const baseURL = "http://3.35.207.95:8080";
+
 export default function History({ year, title, contents }) {
   const [all, setAll] = useState(0);
-
   const reversedHistories = [...hitories].reverse();
+
+  //response = 0;
+
+  const getHistory = () => {
+    try {
+      const response = axios.get(baseURL + "/v1/normal/history");
+
+      console.log(response.data.result);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  getHistory();
 
   const handleAllClick = () => {
     setAll(!all);
