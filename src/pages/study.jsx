@@ -71,11 +71,11 @@ export default function Study() {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
 
   // 카테고리에 따라 필터링
-  const handleCategoryChange = category => {
+  const handleCategoryChange = (category) => {
     setSelectedCategory(category);
   };
 
-  const filteredFileSet = fileSet.filter(file => {
+  const filteredFileSet = fileSet.filter((file) => {
     if (selectedCategory === "ALL") return true;
     if (selectedCategory === "Web/App") return file.category === "FE";
     if (selectedCategory === "Backend") return file.category === "BE";
@@ -91,23 +91,24 @@ export default function Study() {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="flex flex-col mt-20 py-[88px] justify-center items-center break-keep text-center">
-        <div className="text-4xl font-bold leading-[58px] pb-[16px]">
+      <div className="flex flex-col mt-20 py-24 justify-center items-center break-keep text-center">
+        <div className="text-4xl font-bold leading-14 pb-4">
           TAVE의 스터디를 소개합니다
         </div>
-        <div className="font-medium leading-[20px]">
-          자세한 내용이 궁금하다면? 아래의 링크를 통해 스터디 후기를 보러
-          가세요!
+        <div className="font-medium leading-14">
+          자세한 내용이 궁금하다면? 아래의 링크를 통해 스터디 후기를 볼 수
+          있습니다!
         </div>
       </div>
-      <div className="px-5  break-keep text-center ">
-        <Tab category={categories} onCategoryChange={handleCategoryChange} initialState={initialIndex}/>
+      <div className="w-full max-w-10xl py-5 break-keep sticky top-20 z-20 bg-gradient-to-b from-black from-40% to-transparent flex justify-center">
+        <Tab category={categories} onCategoryChange={handleCategoryChange} />
       </div>
 
-      <div className="grid grid-cols-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 flex flex-row gap-x-10 gap-y-6 pt-[48px] mt-12 justify-items-center">
+      <div className="grid grid-cols-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-6 pt-[48px] mt-12 justify-items-center pb-96">
         {filteredFileSet.map((data, index) => {
           return (
             <File
+              key={index}
               type={data.type}
               title={data.title}
               teamNum={data.teamNum}
