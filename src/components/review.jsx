@@ -1,5 +1,6 @@
 import ReviewIcon from "../assets/images/ReviewIcon.svg";
 import React, { useState, useRef, useEffect } from "react";
+import axios from "axios";
 
 const reviews = [
   {
@@ -64,6 +65,19 @@ export default function Review() {
     }
   };
   // style={{ transform: `translateX(-${page * 120}%)` }}
+  const baseURL = "http://3.35.207.95:8080";
+
+  const getReview = () => {
+    try {
+      const response = axios.get(baseURL + "/v1/normal/review");
+      console.log("리뷰");
+      console.log(response.data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  getReview();
 
   return (
     <div className="flex flex-row gap-x-20 mt-[100px]">
