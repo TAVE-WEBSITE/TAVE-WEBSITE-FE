@@ -1,18 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Tab from "../components/tab";
 import File from "../components/file";
-import axios from "axios";
+import { getStudy } from "../api/studyApi";
 
 export default function Study() {
-  const baseURL = "http://3.35.207.95:8080";
   const location = useLocation();
-  // 활동 페이지에서 props 전달
   const { partName } = location.state || {};
-  // 초기 상태로 해당 파트 설정
-  {
-    /* categories 목록 */
-  }
   const categories = [
     "ALL",
     "Web/App",
@@ -22,100 +16,49 @@ export default function Study() {
   ];
   const initialIndex = categories.indexOf(partName);
 
-  {
-    /* File props 더미 데이터*/
-  }
-  const fileSet = [
-    {
-      type: "study",
-      title: "스터디 이름 캬캬 아기하마",
-      teamNum: 14,
-      teamName: "아기하마",
-      category: "FE",
-    },
-    {
-      type: "study",
-      title: "스터디 이름 아아 아기하마",
-      teamNum: 14,
-      teamName: "아기하마",
-      category: "BE",
-    },
-    {
-      type: "study",
-      title: "스터디 이름 고고 아기하마",
-      teamNum: 14,
-      teamName: "아기하마",
-      category: "DL",
-    },
-    {
-      type: "study",
-      title: "스터디 이름 냐냐 아기하마",
-      teamNum: 14,
-      teamName: "아기하마",
-      category: "DA",
-    },
-    {
-      type: "study",
-      title: "스터디 이름 먀먀 아기하마",
-      teamNum: 14,
-      teamName: "아기하마",
-      category: "FE",
-    },
-    {
-      type: "study",
-      title: "스터디 이름 바바 아기하마",
-      teamNum: 14,
-      teamName: "아기하마",
-      category: "BE",
-    },
-  ];
-
   const [selectedCategory, setSelectedCategory] = useState("ALL");
+  const [pageNum, setPageNum] = useState(1);
+  const [response, setResponse] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  // 카테고리에 따라 필터링
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+    setPageNum(1); // 카테고리가 바뀔 때 페이지 초기화
+    setResponse(null); // 기존 데이터 초기화
   };
 
-  const filteredFileSet = fileSet.filter((file) => {
-    if (selectedCategory === "ALL") return true;
-    if (selectedCategory === "Web/App") return file.category === "FE";
-    if (selectedCategory === "Backend") return file.category === "BE";
-    if (selectedCategory === "DeepLearning") return file.category === "DL";
-    if (selectedCategory === "DataAnalysis") return file.category === "DA";
-    return false;
-  });
-  /*
-          params:{
-          generation : 14,
-          field:BACKEND
-        }
-  */
-
-  const response = 0;
-
-  async function getStudy(page, generation, field) {
-    try {
-      // URL에 요청 파라미터를 추가
-      const params = new URLSearchParams({
-        page,
-        generation,
-        field,
-      }).toString();
-      const response = await axios.get(`${baseURL}/v1/normal/study?${params}`);
-      console.log(response.data.result);
-      console.log(response.data.result.page); // 응답 데이터 출력
-    } catch (e) {
-      console.error(e);
+  useEffect(() => {
+    async function fetchData() {
+      setLoading(true); // 로딩
+      setError(null); // 에러 초기화
+      try {
+        const result = await getStudy(pageNum, selectedCategory);
+        setResponse(result); // API 응답 데이터 저장
+      } catch (e) {
+        setError(e.message);
+      } finally {
+        setLoading(false);
+      }
     }
-  }
 
-  getStudy(1, 13, "FRONTEND");
+    fetchData();
+  }, [pageNum, selectedCategory]);
 
-  {
-    /* 추후에 스터디 종류별로 보여지는 데이터 다르게 작성
-    props바꾸기 or 데이터 받을 때 web, backend 등 카테고리 받기 */
-  }
+  /*
+    if (loading) {
+      return <div>로딩 중...</div>;
+    }
+  
+    if (error) {
+      console.log("에러 발생");
+      return <div>{error}</div>;
+    }
+
+
+    if () {
+      return <div>데이터가 없습니다.</div>;
+    }*/
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -124,27 +67,80 @@ export default function Study() {
           TAVE의 스터디를 소개합니다
         </div>
         <div className="font-medium leading-14">
-          자세한 내용이 궁금하다면? 아래의 링크를 통해 스터디 후기를 볼 수
+          자세한 내용이 궁금하다면 ? 아래의 링크를 통해 스터디 후기를 볼 수
           있습니다!
         </div>
       </div>
       <div className="w-full max-w-10xl py-5 break-keep sticky top-20 z-20 bg-gradient-to-b from-black from-40% to-transparent flex justify-center">
         <Tab category={categories} onCategoryChange={handleCategoryChange} />
       </div>
-
-      <div className="grid grid-cols-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-6 pt-[48px] mt-12 justify-items-center pb-96">
-        {filteredFileSet.map((data, index) => {
-          return (
-            <File
-              key={index}
-              type={data.type}
-              title={data.title}
-              teamNum={data.teamNum}
-              teamName={data.teamName}
-            />
-          );
-        })}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 mt-12 justify-items-center mb-96">
+        {!response?.content?.length || error ? (
+          <div>데이터 없음</div>
+        ) : (
+          <>
+            {response.content.map((data, index) => (
+              <File
+                key={index}
+                type={data.field}
+                title={data.topic}
+                teamNum={data.generation}
+                teamName={data.teamName}
+              />
+            ))}
+          </>
+        )}
       </div>
     </div>
   );
+}
+
+{
+  /*
+  
+
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import Tab from "../components/tab";
+import File from "../components/file";
+import { getStudy } from "../api/studyApi";
+
+export default function Study() {
+  const baseURL = "http://3.35.207.95:8080";
+  const location = useLocation();
+  const { partName } = location.state || {};
+  const categories = [
+    "ALL",
+    "Web/App",
+    "Backend",
+    "DeepLearning",
+    "DataAnalysis",
+  ];
+  const initialIndex = categories.indexOf(partName);
+
+  const [selectedCategory, setSelectedCategory] = useState("ALL");
+  const [pageNum, setPageNum] = useState(1);
+  const [response, setResponse] = useState(null); // API 응답 상태 관리
+  //const [loading, setLoading] = useState(true); // 로딩 상태 관리
+  const [error, setError] = useState(null); // 에러 상태 관리
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const result = await getStudy(pageNum, selectedCategory);
+        setResponse(result); // API 응답 데이터 저장
+      } catch (e) {
+        setError(e.message); // 에러 메시지 설정
+      }
+    }
+
+    fetchData();
+  }, [pageNum, selectedCategory]);
+
+  
+  */
 }

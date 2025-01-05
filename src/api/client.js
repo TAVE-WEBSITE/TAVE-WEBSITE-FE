@@ -1,7 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
+// ${import.meta.env.VITE_BASE_URL}`
 const client = axios.create({
-    baseURL: 'http://3.35.207.95:8080/v1',
+  baseURL: process.env.REACT_APP_BASE_URL,
 });
 
 export default client;
