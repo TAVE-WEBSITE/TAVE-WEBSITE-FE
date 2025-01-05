@@ -1,74 +1,17 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { getPublicHistory } from "../api/homeApi.js";
 
-const hitories = [
-  {
-    id: 0,
-    name: "1-2nd",
-    content:
-      "“ 테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다. 이븐하게 노트북 닦는 법. 가나다라 마바사 아자차카타파하. ”",
-    subcontent: "부연설명",
-  },
-  {
-    id: 1,
-    name: "3th",
-    role: "13기 DA / 카카오",
-    content:
-      "“ 또 다른 경험은 실제로 업무에 큰 도움이 되었습니다. 이 부분은 정말 유익했어요.”",
-    subcontent: "부연설명",
-  },
-  {
-    id: 2,
-    name: "4th",
-    role: "13기 DA / 카카오",
-    content:
-      "“ 테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다.테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다.테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다. 이븐하게 노트북 닦는 법. 가나다라 마바사 아자차카타파하테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다.테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다. ”",
-    subcontent: "부연설명",
-  },
-  {
-    id: 3,
-    name: "5th",
-    role: "13기 DA / 카카오",
-    content:
-      "“ 또 다른 경험은 실제로 업무에 큰 도움이 되었습니다. 이 부분은 정말 유익했어요.”",
-    subcontent: "부연설명",
-  },
-  {
-    id: 4,
-    name: "6th",
-    role: "13기 DA / 카카오",
-    content:
-      "“ 또 다른 경험은 실제로 업무에 큰 도움이 되었습니다. 이 부분은 정말 유익했어요.”",
-    subcontent: "부연설명",
-  },
-  {
-    id: 5,
-    name: "7th",
-    role: "13기 DA / 카카오",
-    content:
-      "“ 테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다.테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다.테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다. 이븐하게 노트북 닦는 법. 가나다라 마바사 아자차카타파하테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다.테이브에서의 활동과 경험들이 실무에서 많은 도움이 되었습니다. ”",
-    subcontent: "부연설명",
-  },
-];
-
-const baseURL = "http://3.35.207.95:8080";
-
-export default function History({ year, title, contents }) {
+export default function History() {
   const [all, setAll] = useState(0);
-  const reversedHistories = [...hitories].reverse();
+  const [histories, setHistories] = useState([]);
 
-  //response = 0;
-
-  const getHistory = () => {
-    try {
-      const response = axios.get(baseURL + "/v1/normal/history");
-
-      console.log(response.data.result);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-  getHistory();
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getPublicHistory();
+      setHistories(response);
+    };
+    fetchData();
+  }, []);
 
   const handleAllClick = () => {
     setAll(!all);
@@ -90,34 +33,38 @@ export default function History({ year, title, contents }) {
     <div className="flex flex-col items-center">
       <div className="flex gap-6 pt-[48px] mx-32">
         <div className="w-1/2">
-          {reversedHistories.map(
+          {histories.map(
             (data, index) =>
               index % 2 === 0 && ( // 짝수 인덱스일 경우
                 <div
                   key={data.id}
                   className="rounded-[15px] border border-gray-700 bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px] p-12 mb-4"
                 >
-                  <div className="font-bold text-2xl pb-6">{data.name}</div>
-                  <div className="text-base leading-6">{data.content}</div>
+                  <div className="font-bold text-2xl pb-6">
+                    {data.generation}
+                  </div>
+                  <div className="text-base leading-6">{data.description}</div>
                   <div className="text-white text-base leading-6 text-opacity-50 font-light">
-                    {data.subcontent}
+                    {data.additionalDescription}
                   </div>
                 </div>
               )
           )}
         </div>
         <div className="w-1/2">
-          {reversedHistories.map(
+          {histories.map(
             (data, index) =>
               index % 2 === 1 && ( // 홀수 인덱스일 경우
                 <div
                   key={data.id}
                   className="rounded-[15px] border border-gray-700 bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px] p-12 mb-4"
                 >
-                  <div className="font-bold text-2xl pb-6">{data.name}</div>
-                  <div className="text-base leading-6 ">{data.content}</div>
+                  <div className="font-bold text-2xl pb-6">
+                    {data.generation}
+                  </div>
+                  <div className="text-base leading-6 ">{data.description}</div>
                   <div className="text-white text-base leading-6 text-opacity-50 font-light">
-                    {data.subcontent}
+                    {data.additionalDescription}
                   </div>
                 </div>
               )
@@ -137,34 +84,42 @@ export default function History({ year, title, contents }) {
       <div className="flex flex-col items-center">
         <div className="flex gap-6 pt-[48px] mx-32">
           <div className="w-1/2">
-            {reversedHistories.slice(0, 4).map(
+            {histories.slice(0, 4).map(
               (data, index) =>
                 index % 2 === 0 && ( // 짝수 인덱스일 경우
                   <div
                     key={data.id}
                     className="rounded-[15px] border border-gray-700 bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px] p-12 mb-4"
                   >
-                    <div className="font-bold text-2xl pb-6">{data.name}</div>
-                    <div className="text-base leading-6">{data.content}</div>
+                    <div className="font-bold text-2xl pb-6">
+                      {data.generation}
+                    </div>
+                    <div className="text-base leading-6">
+                      {data.description}
+                    </div>
                     <div className=" text-white text-base leading-6 text-opacity-50 font-light">
-                      {data.subcontent}
+                      {data.additionalDescription}
                     </div>
                   </div>
                 )
             )}
           </div>
           <div className="w-1/2">
-            {reversedHistories.slice(0, 4).map(
+            {histories.slice(0, 4).map(
               (data, index) =>
                 index % 2 === 1 && ( // 홀수 인덱스일 경우
                   <div
                     key={data.id}
                     className="rounded-[15px] border border-gray-700 bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px] p-12 mb-4"
                   >
-                    <div className="font-bold text-2xl pb-6">{data.name}</div>
-                    <div className="text-base leading-6">{data.content}</div>
+                    <div className="font-bold text-2xl pb-6">
+                      {data.generation}
+                    </div>
+                    <div className="text-base leading-6">
+                      {data.description}
+                    </div>
                     <div className=" text-white text-base leading-6 text-opacity-50 font-light">
-                      {data.subcontent}
+                      {data.additionalDescription}
                     </div>
                   </div>
                 )
