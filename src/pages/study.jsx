@@ -35,6 +35,7 @@ export default function Study() {
       try {
         const result = await getStudy(pageNum, selectedCategory);
         setResponse(result); // API 응답 데이터 저장
+        console.log(result)
       } catch (e) {
         setError(e.message);
       } finally {
