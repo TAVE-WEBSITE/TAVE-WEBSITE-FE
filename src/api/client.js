@@ -1,10 +1,9 @@
 import axios from "axios";
 
-// ${import.meta.env.VITE_BASE_URL}`
+const serverUrl = process.env.REACT_APP_BASE_URL;
+
 const client = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
+  baseURL: serverUrl,
 });
 
 export default client;
-
-//env 설정 필요
