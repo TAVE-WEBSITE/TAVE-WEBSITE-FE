@@ -1,17 +1,129 @@
+.titleBg {
+}
+
 .gradientWrapper {
-    position: absolute;
-    top: 65vh;
-    width: 100vw;
-    height: 320vh;
-    background: linear-gradient(to bottom, #121212, #1445bc, #142a61, #131826, #121212);
-    z-index: -1;
+  position: absolute;
+  /* top: 65vh; */
+  width: 100vw;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+
+    /* #121212,
+    #1445bc,
+    #142a61,
+    #131826,
+    #121212,
+    #121212 */
+    #121212,
+    #1445bc,
+    #142a61,
+    #000000,
+    #121212,
+    #121212
+  );
+  z-index: -1;
 }
 
 .scrollText {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    pointer-events: none; /* 사용자와 상호작용 차단 */
-    will-change: transform, opacity; /* 렌더링 최적화 */
-    transition: transform 0.5s ease, opacity 0.5s ease;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none; /* 사용자와 상호작용 차단 */
+  will-change: transform, opacity; /* 렌더링 최적화 */
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
+
+.hidden {
+  opacity: 0;
+}
+
+.fadeIn {
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 타이틀 배경 웨이브1 */
+.TitleWave1 {
+  position: absolute;
+  top: 10vh;
+  left: 20%;
+  width: 200vw;
+  height: 90vh;
+  background: url("../assets/images/TitleWave1.svg") no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.animateWave1 {
+  animation: wave1Move-1st 3s ease-in-out forwards;
+}
+
+@keyframes wave1Move-1st {
+  from {
+    left: 20%; /* 오른쪽에서 시작 */
+  }
+  to {
+    left: -10%; /* 왼쪽으로 이동 */
+  }
+}
+
+/* 타이틀 배경 웨이브2 */
+.TitleWave2 {
+  position: absolute;
+  top: 40vh;
+  left: 100%;
+  width: 200vw;
+  height: 100vh;
+  background: url("../assets/images/TitleWave2.svg") no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.animateWave2 {
+  animation: wave2Move-1st 3s ease-in-out forwards;
+}
+
+@keyframes wave2Move-1st {
+  from {
+    left: 30%; /* 오른쪽에서 시작 */
+  }
+  to {
+    left: 0%; /* 왼쪽으로 이동 */
+  }
+}
+
+.scrollSection {
+  border: 1px solid red; /* 각 섹션을 구분하기 위한 테두리 */
+}
+.stickyElem {
+  display: none;
+  position: fixed;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  width: 100vw;
+  
+}
+
+.stickyElemActive {
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
