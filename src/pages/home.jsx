@@ -91,7 +91,7 @@ export default function Home() {
     return (
         <div className="relative">
             <div className={styles.gradientWrapper} />
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center w-full px-20">
                 <div className="flex flex-col items-center h-screen justify-center">
                     <div className="text-2xl font-bold">The new technology wave,</div>
                     <img src={LogoTave} className="w-[301px]" alt="taveLogo"></img>
@@ -163,12 +163,12 @@ export default function Home() {
                     <History></History>
                 </div>
 
-                <div className="flex flex-col h-screen justify-center items-center">
-                    <div className="text-4xl font-bold leading-[58px] pb-[16px]">TAVE Review</div>
-                    <div className="font-medium leading-[20px] mb-20  text-center">
+                <div className="flex flex-col gap-4 h-screen justify-center items-center w-full">
+                    <div className="text-4xl font-bold leading-[58px]">TAVE Review</div>
+                    <div className="font-medium leading-[20px] mb-16 text-center w-full">
                         TAVE와 함께한 사람들의 후기를 들어보세요.
-                        <Review></Review>
                     </div>
+                    <Review />
                 </div>
 
                 <div className="flex flex-col h-screen justify-center items-center">
