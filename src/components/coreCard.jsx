@@ -4,7 +4,7 @@ export default function CoreCard({ title, description, SvgIcon, className }) {
     const [isHover, setIsHover] = useState(false);
     return (
         <div
-            className="w-full h-[180px] bg-[#393a40]/50 rounded-[15px] relative border
+            className="w-[300px] h-[180px] bg-[#393a40]/50 rounded-[15px] relative border
              overflow-hidden border-[#f7f8fa] flex justify-center items-center hover:bg-[#195BFF]
              transition-colors duration-300 ease-in-out"
             onMouseEnter={() => setIsHover(true)}
@@ -12,9 +12,7 @@ export default function CoreCard({ title, description, SvgIcon, className }) {
         >
             <div
                 className={`text-center transition-all duration-300${
-                    isHover
-                        ? 'text-base font-medium leading-normal absolute z-20'
-                        : 'text-2xl font-bold'
+                    isHover ? 'text-base font-medium leading-normal absolute z-20' : 'text-2xl font-bold'
                 }`}
             >
                 {isHover ? description : title}
