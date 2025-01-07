@@ -66,7 +66,7 @@ export default function Review() {
   // style={{ transform: `translateX(-${page * 120}%)` }}
 
   return (
-    <div className="flex flex-row gap-x-20 mt-[100px]">
+    <div className="flex flex-row gap-x-20 mt-10">
       <img
         src={ReviewIcon}
         className="cursor-pointer w-18 h-auto"
