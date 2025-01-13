@@ -53,46 +53,53 @@ export default function History() {
   return (
     <div className="flex flex-col items-center w-screen">
       {/* 그룹 칩 */}
-      <div className="flex gap-4 mt-4">
-        {groupGenerations(histories).map((group, index) => {
-          const groupLabel = getGroupLabel(group);
-          return (
-            <button
-              key={index}
-              className={`px-4 py-2 rounded-full text-2xl ${
-                selectedGroupLabel === groupLabel
-                  ? "bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] text-white font-bold"
-                  : "bg-[#393A40] bg-opacity-50 border-gray-700 font-semibold text-[#FFFFFF80]"
-              }`}
-              onClick={() => setSelectedGroupLabel(groupLabel)}
-            >
-              {groupLabel}
-            </button>
-          );
-        })}
-      </div>
+<div className="flex gap-4 mt-4 overflow-x-auto scrollbar-hide">
+  {groupGenerations(histories).map((group, index) => {
+    const groupLabel = getGroupLabel(group);
+    return (
+      <button
+        key={index}
+        className={`px-4 py-2 rounded-full text-2xl whitespace-nowrap text-center ${
+          selectedGroupLabel === groupLabel
+            ? "bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] text-white font-bold"
+            : "bg-[#393A40] bg-opacity-50 border-gray-700 font-semibold text-[#FFFFFF80]"
+        }`}
+        onClick={() => setSelectedGroupLabel(groupLabel)}
+      >
+        {groupLabel}
+      </button>
+    );
+  })}
+</div>
 
-      {/* 선택된 그룹의 데이터 표시 */}
+      {/* 필터링된 그룹 데이터 */}
       <div className="mt-8 w-4/5">
-        {filteredHistory.length > 0 ? (
-          filteredHistory.map((historyItem) => (
-            <div
-              key={historyItem.generation}
-              className=" rounded-[15px] border border-gray-700 bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px] p-10 mb-4"
-            >
-              <div className="font-bold text-2xl pb-6">{historyItem.generation}</div>
-              {historyItem.details.map((detail, index) => (
-                <div key={index} className="flex gap-4 mb-2">
-                  <p className="font-bold text-base">{detail.description}</p>
-                  <p className="font-light text-base text-[#FFFFFF80]">{detail.additionalDescription}</p>
-                </div>
-              ))}
+  {filteredHistory.length > 0 ? (
+    filteredHistory.map((historyItem) => (
+      <div
+        key={historyItem.generation}
+        className="relative rounded-[15px] border border-gray-700 overflow-hidden mb-4"
+      >
+        {/* 배경 블러 처리 */}
+        <div className="absolute inset-0 bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px]"></div>
+
+        {/* 내용 */}
+        <div className="relative p-10 z-10">
+          <div className="font-bold text-2xl pb-6">{historyItem.generation}</div>
+          {historyItem.details.map((detail, index) => (
+            <div key={index} className="flex gap-4 mb-2">
+              <p className="font-bold text-base">{detail.description}</p>
+              <p className="font-light text-base text-[#FFFFFF80]">{detail.additionalDescription}</p>
             </div>
-          ))
-        ) : (
-          <p className="mt-4 text-gray-500">조회할 이력이 없습니다</p>
-        )}
+          ))}
+        </div>
       </div>
+    ))
+  ) : (
+    <p className="mt-4 text-gray-500">조회할 이력이 없습니다</p>
+  )}
+</div>
+
     </div>
   );
 }
