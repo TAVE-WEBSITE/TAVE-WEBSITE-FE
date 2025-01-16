@@ -105,11 +105,11 @@ export default function Home() {
         </div>
 
         <div className="h-screen flex flex-col justify-center items-center">
-          <div className="text-4xl font-bold leading-[58px] pb-[16px] mt-[720px]">
+          <div className="text-4xl font-bold leading-[58px] pb-[16px]">
             TAVE HISTORY
           </div>
-          <div className="font-medium leading-[20px] mb-20">
-            TAVE 프로젝트의 활동 내역 및 수상 내역을 확인해보세요
+          <div className="font-medium leading-[20px] mb-20 text-center text-base font-normal md:text-xl md:font-medium">
+            TAVE 프로젝트의 활동 내역 및<br className="sm:hidden"/> 수상 내역을 확인해보세요
           </div>
           <History></History>
         </div>

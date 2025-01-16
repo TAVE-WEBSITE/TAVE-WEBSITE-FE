@@ -16,7 +16,7 @@ export default function Project() {
         const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/normal/project`);
         const result = response.data.result;
         setProjectData(result);
-        // console.log(result);
+        console.log(result);
       } catch (e) {
         console.error("Error fetching project data:", e);
       }
@@ -52,7 +52,7 @@ export default function Project() {
   const filteredProject = projectData.content?.filter((project) => {
     if (selectedFiled === "ALL") return true;
     if (selectedFiled === "연합 프로젝트") return project.field === "ADVANCED";
-    if (selectedFiled === "심화 프로젝트") return project.field === "심화";
+    if (selectedFiled === "심화 프로젝트") return project.field === "COLLABORATIVE";
     return false;
   }) || [];
 
@@ -95,9 +95,9 @@ export default function Project() {
         filteredProject.map((data, index) => (
           <File
             key={index}
-            field={data.field || "N/A"} 
+            type={data.field || "N/A"} 
             title={data.title || "제목 없음"} 
-            generation={Number(data.generation) || "기수 없음"} 
+            teamNum={Number(data.generation) || "기수 없음"} 
             teamName={data.teamName || "팀 이름 없음"} 
             description={data.description || "설명 없음"} 
             blogUrl={data.blogUrl || "#"} 

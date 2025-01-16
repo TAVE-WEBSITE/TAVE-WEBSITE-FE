@@ -28,3 +28,11 @@ body {
       format("truetype");
   font-display: swap;
 }
+
+/* DM Sans 스타일 설정 */
+.DMSans {
+    font-family: "DM Sans";
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
