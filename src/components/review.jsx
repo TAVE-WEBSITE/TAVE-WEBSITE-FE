@@ -14,11 +14,10 @@ export default function Review() {
     fetchData();
   }, []);
 
-  const canNext = currentIndex + 2 < reviews.length;
+  const canNext = currentIndex + 2 < (reviews?.length || 0);
   const canPrev = currentIndex > 0;
 
-  const paddedReview = [...reviews, ...Array(2).fill(null)];
-
+  const paddedReview = reviews?.length > 0 ? [...reviews, ...Array(2).fill(null)] : [];
   const nextSlide = () => {
     if (canNext) {
       setCurrentIndex((prevIndex) => prevIndex + 2);

@@ -52,7 +52,7 @@ export default function Project() {
   const filteredProject = projectData.content?.filter((project) => {
     if (selectedFiled === "ALL") return true;
     if (selectedFiled === "연합 프로젝트") return project.field === "ADVANCED";
-    if (selectedFiled === "심화 프로젝트") return project.field === "심화";
+    if (selectedFiled === "심화 프로젝트") return project.field === "COLLABORATIVE";
     return false;
   }) || [];
 
