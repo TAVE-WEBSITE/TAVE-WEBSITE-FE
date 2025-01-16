@@ -9,11 +9,13 @@ import Passion from '../assets/icons/Passion.jsx';
 import Diversity from '../assets/icons/Diversity.jsx';
 import styles from '../styles/home.module.css';
 
+//반복되는 부분 모듈화
+
 export default function Home() {
     return (
         <div className="relative overflow-y-auto">
             <div className={styles.gradientWrapper} />
-            <div className="flex flex-col justify-center items-center w-full px-20 ">
+            <div className="flex flex-col justify-center items-center w-full md:px-20 px-5">
                 <div className="flex flex-col items-center h-screen justify-center h-screen">
                     <div className="text-2xl font-bold">The new technology wave,</div>
                     <img src={LogoTave} className="w-[301px]" alt="taveLogo"></img>
@@ -79,20 +81,22 @@ export default function Home() {
                     <History></History>
                 </div>
 
-                <div className="h-screen flex flex-col gap-4 justify-center items-center w-full">
-                    <div className="text-4xl font-bold leading-[58px]">TAVE Review</div>
-                    <div className="font-medium leading-[20px] mb-16 text-center w-full">
-                        TAVE와 함께한 사람들의 후기를 들어보세요.
+                <div className="h-screen flex flex-col justify-center items-center w-full">
+                    <div className="text-3xl font-bold mb-4">TAVE REVIEW</div>
+                    <div className="text-lg font-normal text-center">
+                        <span className="block md:inline">TAVE에 참여한 사람들의</span>
+                        <span className="block md:inline"> 후기를 들어보세요.</span>
                     </div>
                     <Review />
                 </div>
 
-                <div className="h-screen flex flex-col justify-center items-center">
-                    <div className="text-4xl font-bold leading-[58px] pb-[16px]">Sponsored by</div>
-                    <div className="font-medium leading-[20px] mb-[440px] text-center">
-                        <div>TAVE와 함께하는 공식 파트너 단체입니다.</div>
-                        <Sponsored />
+                <div className="h-screen flex flex-col justify-center items-center w-full">
+                    <div className="text-3xl font-bold mb-4">SPONSORED BY</div>
+                    <div className="text-lg font-normal text-center">
+                        <span className="block md:inline">TAVE와 함께하는</span>
+                        <span className="block md:inline"> 공식 파트너 단체입니다.</span>
                     </div>
+                    <Sponsored />
                 </div>
             </div>
         </div>
