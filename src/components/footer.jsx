@@ -1,24 +1,41 @@
-import BlogIcon from '../assets/images/BlogIcon.svg';
-import InstaIcon from '../assets/images/InstaIcon.svg';
-import MailIcon from '../assets/images/MailIcon.svg';
-import MessageIcon from '../assets/images/MessageIcon.svg';
+import { ReactComponent as BlogIcon } from '../assets/images/BlogIcon.svg';
+import { ReactComponent as InstaIcon } from '../assets/images/InstaIcon.svg';
+import { ReactComponent as MailIcon } from '../assets/images/MailIcon.svg';
+import { ReactComponent as MessageIcon } from '../assets/images/MessageIcon.svg';
+import dayjs from 'dayjs';
+
+//메세지 메일 링크 달기
 
 export default function Footer() {
+    const currentYear = dayjs().year();
+
     return (
-        <footer className="relative mx-0 bottom-0 w-full flex px-36 py-10 z-50 justify-between bg-[#393A40]">
-            <div className="flex flex-col gap-4 text-[#A7A7A7]">
-                <p className="mb-4">TECHNOLOGY WAVE</p>
-                <p>TAVE (4차 산업혁명 연합 동아리)</p>
-                <p>ⓒ TAVE. 2018 - 2024 All Rights Reserved</p>
+        <footer
+            className="w-full flex z-50 justify-between bg-[#393A40]
+         md:px-36 md:py-10 px-6 py-7"
+        >
+            <div
+                className="flex flex-col text-[#A7A7A7]
+                text-[13px] font-normal"
+            >
+                <p className="md:mb-8 mb-4 font-bold">TECHNOLOGY WAVE</p>
+                <p className="md:mb-4 mb-1">
+                    TAVE (4차 산업혁명 <span className="whitespace-nowrap">연합 동아리)</span>
+                </p>
+                <p>ⓒ TAVE. 2018 - {currentYear} All&nbsp;Rights&nbsp;Reserved</p>
             </div>
-            <div className="flex gap-2.5 items-end">
-                <img src={MessageIcon} alt="message" />
-                <img src={MailIcon} alt="mail" />
+            <div className="flex gap-2.5 md:items-end items-start">
+                <a href="" target="_blank">
+                    <MessageIcon />
+                </a>
+                <a href="" target="_blank">
+                    <MailIcon />
+                </a>
                 <a href="https://www.instagram.com/tave_wave/" target="_blank">
-                    <img src={InstaIcon} alt="instagram" />
+                    <InstaIcon />
                 </a>
                 <a href="https://blog.naver.com/t-ave" target="_blank">
-                    <img src={BlogIcon} alt="bold" />
+                    <BlogIcon />
                 </a>
             </div>
         </footer>
