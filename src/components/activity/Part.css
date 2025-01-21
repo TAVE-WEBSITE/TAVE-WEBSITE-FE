@@ -1,0 +1,29 @@
+.slick-dots {
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 수직 정렬 */
+  gap: 5px; /* 일정한 간격 유지 */
+}
+
+.slick-dots li {
+  display: flex;
+  justify-content: center; /* dot 중앙 정렬 */
+  align-items: center;
+}
+
+.slick-dots li div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* 동그란 모양 */
+  opacity: 0.2;
+  background: #d9d9d9; /* 기본 dot 색상 */
+  transition: all 0.3s ease; /* 애니메이션 효과 */
+}
+
+.slick-dots li.slick-active div {
+  width: 22px; /* 가로로 긴 dot */
+  height: 10px;
+  border-radius: 100px; /* 타원 모양 */
+  opacity: 0.5;
+  background: #d9d9d9;
+}
