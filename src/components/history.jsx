@@ -68,7 +68,7 @@ export default function History() {
           return (
             <button
               key={index}
-              className={`px-4 py-2 rounded-full text-2xl whitespace-nowrap text-center ${
+              className={`px-4 py-2 rounded-full text-md whitespace-nowrap text-center ${
                 selectedGroupLabel === groupLabel
                   ? "bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] text-white font-bold"
                   : "bg-[#393A40] bg-opacity-50 border-gray-700 font-semibold text-[#FFFFFF80]"

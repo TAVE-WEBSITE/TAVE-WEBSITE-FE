@@ -31,8 +31,9 @@ body {
 
 /* DM Sans 스타일 설정 */
 .DMSans {
-    font-family: "DM Sans";
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-  }
+  font-family: "DM Sans";
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
