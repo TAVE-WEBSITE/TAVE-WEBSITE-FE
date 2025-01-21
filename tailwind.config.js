@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#000000",
+        backGray: "rgba(255,255,255,0.05)",
       },
       fontFamily: {
         Pretendard: ["Pretendard"],
