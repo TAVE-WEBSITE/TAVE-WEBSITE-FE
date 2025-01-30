@@ -90,7 +90,7 @@ export default function Project() {
         {/* 프로젝트 내용 부분 */}
         <div className="content pb-96">
           <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 mt-12 justify-items-center">
+            <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 mt-12 justify-items-center">
             {filteredProject && filteredProject.length > 0 ? (
         filteredProject.map((data, index) => (
           <File
