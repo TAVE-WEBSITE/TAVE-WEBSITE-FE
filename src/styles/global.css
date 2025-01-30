@@ -20,10 +20,8 @@ body {
     font-style: normal;
 }
 
-/* DM Sans 스타일 설정 */
-.DMSans {
-    font-family: 'DM Sans';
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
+.outer {
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }

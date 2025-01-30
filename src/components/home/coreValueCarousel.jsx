@@ -6,6 +6,7 @@ import Growth from "../../assets/icons/Growth";
 import Passion from "../../assets/icons/Passion";
 import Diversity from "../../assets/icons/Diversity";
 import styles from "../../styles/home.module.css";
+import "../activity/Part.css";
 
 // CoreCard 컴포넌트
 function CoreCard({ title, description, SvgIcon, className, center }) {
@@ -24,7 +25,9 @@ function CoreCard({ title, description, SvgIcon, className, center }) {
     <div className="w-full flex justify-center items-center">
       <div
         className={`w-5/6 sm:w-[270px] h-[161px] rounded-[15px] relative border border-[#f7f8fa] border-[0.5px] flex justify-center items-center overflow-hidden
-             duration-300 ease-in-out ${center ? "bg-[#195BFF]" : "bg-[#393a40]/50"}`}
+             duration-300 ease-in-out ${
+               center ? "bg-[#195BFF]" : "bg-[#393a40]/50"
+             }`}
       >
         {/* Description 부분 */}
         <div
@@ -63,13 +66,13 @@ export default function CoreValueCarousel() {
     beforeChange: (current, next) => {
       setCurrentSlide(next); // 슬라이드 변경 시 currentSlide 업데이트
     },
-    appendDots: (dots) => (
-      <div
-      >
-        <ul>{dots}</ul>
-      </div>
+
+    customPaging: (i) => (
+      <div className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[#D9D9D9] transition-all duration-300"></div>
     ),
-    dotsClass: styles.customDots,
+    appendDots: (dots) => (
+      <div className="flex justify-center mt-4">{dots}</div>
+    ),
   };
 
   const CoreCardList = [
