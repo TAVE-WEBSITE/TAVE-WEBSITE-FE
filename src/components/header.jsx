@@ -77,37 +77,42 @@ export default function Header({ isBlack }) {
         </button>
       </div>
 
-      {/* 모바일 메뉴 */}
-      {isMenuOpen && (
-        <>
-          {/* 오버레이 */}
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-40"
-            onClick={handleMenuToggle}
-          ></div>
+     {/* 모바일 메뉴 */}
+<>
+  {/* 오버레이 */}
+  {isMenuOpen && (
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 z-30"
+      onClick={handleMenuToggle}
+    ></div>
+  )}
 
-          {/* 메뉴 */}
-          <ul className="fixed top-16 flex flex-col w-full bg-[#121212] text-white flex flex-col pl-5 pb-5 z-50">
-            {["ACTIVITY", "STUDY", "PROJECT"].map((item, index) => (
-              <li key={index} className="text-base py-3 font-extralight">
-                <a
-                  href={item.toLowerCase()}
-                  className="cursor-pointer relative z-10"
-                >
-                  {item}
-                </a>
-              </li>
-            ))}
-            <li className="py-3">
-              <div className="flex items-center justify-center bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] rounded-lg text-center w-20 h-9">
-                <a href="apply" className="cursor-pointer text-base font-bold">
-                  지원하기
-                </a>
-              </div>
-            </li>
-          </ul>
-        </>
-      )}
+  {/* 메뉴 */}
+  <ul
+    className={`fixed top-16 w-full bg-[#121212] text-white pl-5 pb-5 z-40 transition-all duration-500 ease-in-out transform ${
+      isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 "
+    }`}
+  >
+    {["ACTIVITY", "STUDY", "PROJECT"].map((item, index) => (
+      <li key={index} className="text-base py-3 font-extralight">
+        <a
+          href={item.toLowerCase()}
+          className="cursor-pointer relative z-10"
+        >
+          {item}
+        </a>
+      </li>
+    ))}
+    <li className="py-3">
+      <div className="flex items-center justify-center bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] rounded-lg text-center w-20 h-9">
+        <a href="apply" className="cursor-pointer text-base font-bold">
+          지원하기
+        </a>
+      </div>
+    </li>
+  </ul>
+</>
+
     </header>
   );
 }
