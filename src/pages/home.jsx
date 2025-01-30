@@ -10,15 +10,109 @@ import Diversity from "../assets/icons/Diversity.jsx";
 import styles from "../styles/home.module.css";
 import CoreValueCarousel from "../components/home/coreValueCarousel.jsx";
 import ArrowDown from "../assets/icons/ArrowDown.svg";
+import { useEffect, useState } from "react";
+import { useRef } from "react";
+import Footer from "../components/footer.jsx";
 
 //반복되는 부분 모듈화
+const DIVIDER_HEIGHT = 5; // 페이지 구분선 높이
+const SCROLL_DELAY = 800; // 스크롤 이벤트 간격 (ms)
+const SCROLL_DURATION = 1000; // 스크롤 애니메이션 지속 시간 (ms)
+const SCROLL_THRESHOLD = 50; // **작은 움직임 무시, 50px 이상 움직이면 동작**
 
-export default function Home() {
+export default function HomeTest() {
+  const outerDivRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const smoothScrollTo = (targetY) => {
+      const startY = outerDivRef.current.scrollTop;
+      const startTime = performance.now();
+
+      const animateScroll = (currentTime) => {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / SCROLL_DURATION, 1); // 0~1 사이 비율 계산
+
+        // 부드러운 스크롤을 위한 easing 함수
+        const easeInOutCubic =
+          progress < 0.5
+            ? 4 * progress * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        outerDivRef.current.scrollTop =
+          startY + (targetY - startY) * easeInOutCubic;
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          setIsScrolling(false);
+        }
+      };
+
+      requestAnimationFrame(animateScroll);
+    };
+
+    const handleScroll = (deltaY) => {
+      if (isScrolling || Math.abs(deltaY) < SCROLL_THRESHOLD) return; // **작은 움직임 무시**
+
+      const pageHeight = window.innerHeight;
+      let nextPage = currentPage;
+
+      if (deltaY > 0) {
+        // 아래로 스크롤
+        nextPage = Math.min(currentPage + 1, 5);
+      } else {
+        // 위로 스크롤
+        nextPage = Math.max(currentPage - 1, 0);
+      }
+
+      setIsScrolling(true);
+      setCurrentPage(nextPage);
+      smoothScrollTo(nextPage * (pageHeight + DIVIDER_HEIGHT));
+
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, SCROLL_DELAY);
+    };
+
+    const wheelHandler = (e) => {
+      e.preventDefault();
+      handleScroll(e.deltaY);
+    };
+
+    let touchStartY = 0;
+
+    const touchStartHandler = (e) => {
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const touchEndHandler = (e) => {
+      const touchEndY = e.changedTouches[0].clientY;
+      const touchDiff = touchStartY - touchEndY;
+      if (Math.abs(touchDiff) >= SCROLL_THRESHOLD) {
+        handleScroll(touchDiff);
+      }
+    };
+
+    const outerDiv = outerDivRef.current;
+    outerDiv.addEventListener("wheel", wheelHandler, { passive: false });
+    outerDiv.addEventListener("touchstart", touchStartHandler);
+    outerDiv.addEventListener("touchend", touchEndHandler);
+
+    return () => {
+      outerDiv.removeEventListener("wheel", wheelHandler);
+      outerDiv.removeEventListener("touchstart", touchStartHandler);
+      outerDiv.removeEventListener("touchend", touchEndHandler);
+    };
+  }, [currentPage, isScrolling]);
+
   return (
     //overflow-y-auto
-    <div className="relative mx-auto break-keep">
+    <div className="outer relative mx-auto break-keep" ref={outerDivRef}>
       <div className={styles.gradientWrapper} />
       <div className="flex flex-col justify-center items-center w-full md:px-20 px-5">
+        {/* 첫번째 화면 */}
         <div className="flex flex-col items-center h-screen justify-center">
           <div className="md:text-2xl text-base font-light mt-20">
             The new technology wave,
@@ -39,16 +133,22 @@ export default function Home() {
               background:
                 "linear-gradient(102deg, #6D3CFF -2.19%, #1A5BFF 100%), linear-gradient(262deg, #64B4FF 16.37%, #1A5BFF 103.22%, #003BD0 196.21%, #1629B8 283.61%)",
               fontFamily: "Pretendard",
-            }}>
+            }}
+          >
             지금 바로 지원하기
           </button>
         </div>
 
-        <div className="h-screen w-full flex flex-col items-center justify-center ">
-          <p className="hidden md:inline text-center md:title-1 text-xl font-semibold leading-6 tracking-[-0.9px]">
+        {/* 웹에서는 이 문구가 따로 */}
+        <div className="hidden md:flex h-screen w-full flex-col items-center justify-center">
+          <div className="text-center md:title-1 text-xl font-semibold leading-6 tracking-[-0.9px]">
             다양한 분야와의 융합을 통해 미래를 선도하는
             <br /> IT 연합 동아리, TAVE를 소개합니다
-          </p>
+          </div>
+        </div>
+
+        {/*두번째 화면 */}
+        <div className="h-screen w-full flex flex-col items-center justify-center ">
           <p className="md:hidden text-center text-lg font-semibold leading-8 tracking-[-0.9px] ">
             다양한 분야와의 융합을 통해
             <br />
@@ -57,7 +157,7 @@ export default function Home() {
             TAVE를 소개합니다
           </p>
           <img src={ArrowDown} className="md:hidden mb-8 mt-12" />
-          <div className="flex flex-col items-center gap-4 md:mt-72">
+          <div className="flex flex-col items-center gap-4">
             <div className="text-4xl font-bold title-1">Core Value</div>
             <div className="text-xl font-light body-light font-Pretendard">
               TAVE의 핵심가치를 소개합니다
@@ -100,11 +200,12 @@ export default function Home() {
               SvgIcon={<Diversity />}
             />
           </div>
+
           <div className="md:hidden w-full h-72 mt-16">
             <CoreValueCarousel />
           </div>
         </div>
-
+        {/*세번째 화면 */}
         <div className="h-screen flex flex-col justify-center items-center">
           <div className="text-4xl font-bold leading-[58px] pb-[16px]">
             TAVE HISTORY
@@ -115,7 +216,8 @@ export default function Home() {
           </div>
           <History></History>
         </div>
-        <div className="h-screen flex flex-col justify-center items-center w-full">
+        {/*네번째 화면 */}
+        <div className="h-screen flex flex-col justify-center items-center w-full mt-8">
           <div className="text-3xl font-bold mb-4">TAVE REVIEW</div>
           <div className="text-lg font-normal text-center">
             <span className="block md:inline">TAVE에 참여한 사람들의</span>
@@ -123,7 +225,7 @@ export default function Home() {
           </div>
           <Review />
         </div>
-
+        {/*다섯번째 화면 */}
         <div className="h-screen flex flex-col justify-center items-center w-full">
           <div className="text-3xl font-bold mb-4">SPONSORED BY</div>
           <div className="text-lg font-normal text-center">
