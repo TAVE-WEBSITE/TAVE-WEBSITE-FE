@@ -87,18 +87,18 @@ export default function Activity() {
     }, [handleScroll]);
 
     return (
-        <div>
+        <div className="w-full">
             <div className="relative h-[800px] ">
                 <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent z-20" />
                 <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent z-20" />
                 <img src={ActivityBack} alt="ActivityBack" className="absolute object-cover w-full h-full z-10" />
             </div>
 
-            <div className="absolute z-30 flex flex-col gap-[60px] items-center md:px-4 px-2 w-full top-[640px]">
+            <div className="absolute z-30 flex flex-col gap-[60px] items-center md:px-[140px] px-6 w-full top-[640px]">
                 <div className="text-[40px] font-bold">모집 대상</div>
-                <div className="lg:px-[140px] md:px-[60px] md:py-[30px] py-5 bg-[#232323] rounded-[20px]">
-                    <div className="text-center md:text-lg text-base font-bold md:px-20 px-4">
-                        다양성을 존중하며 협력하는 IT에 관심있는 <br className="md:hidden" />
+                <div className="lg:px-[140px] w-full md:py-[30px] py-5 bg-[#232323] rounded-[20px]">
+                    <div className="text-center md:text-lg text-sm font-bold ">
+                        다양성을 존중하며 협력하는 IT에 관심있는 <br />
                         대학생 누구나 지원 가능합니다.
                     </div>
                 </div>
