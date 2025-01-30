@@ -14,6 +14,14 @@ export default function Study() {
     "DeepLearning",
     "DataAnalysis",
   ];
+
+  const categoryMap = {
+    "ALL": "",
+    "Web/App": "FRONTEND",
+    "Backend": "BACKEND",
+    "DeepLearning": "DEEP_LEARNING",
+    "DataAnalysis": "DATA_ANALYSIS",
+  };
   const initialIndex = categories.indexOf(partName);
 
   const [selectedCategory, setSelectedCategory] = useState("ALL");
@@ -30,36 +38,34 @@ export default function Study() {
 
   useEffect(() => {
     async function fetchData() {
-      setLoading(true); // 로딩
-      setError(null); // 에러 초기화
+      setLoading(true);
+      setError(null);
       try {
-        const result = await getStudy(pageNum, selectedCategory);
-        setResponse(result); // API 응답 데이터 저장
-        console.log(result)
+        const apiCategory = categoryMap[selectedCategory]; // 매핑된 카테고리 값 사용
+        const result = await getStudy(pageNum, apiCategory);
+        setResponse(result);
+        console.log(apiCategory);
+        console.log(result);
       } catch (e) {
         setError(e.message);
       } finally {
         setLoading(false);
       }
     }
-
     fetchData();
   }, [pageNum, selectedCategory]);
 
-  /*
-    if (loading) {
-      return <div>로딩 중...</div>;
-    }
+  const filteredStudy = (response?.content || []).filter((data) => {
+    if (selectedCategory === "ALL") return true;
+    if (selectedCategory === "Web/App") return data.field === "FRONTEND";
+    if (selectedCategory === "Backend") return data.field === "BACKEND";
+    if (selectedCategory === "DeepLearning") return data.field === "DEEP_LEARNING";
+    if (selectedCategory === "DataAnalysis") return data.field === "DATA_ANALYSIS";
+    
+    return false;
+  });
   
-    if (error) {
-      console.log("에러 발생");
-      return <div>{error}</div>;
-    }
 
-
-    if () {
-      return <div>데이터가 없습니다.</div>;
-    }*/
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -75,15 +81,20 @@ export default function Study() {
       <div className="w-full max-w-10xl py-5 break-keep sticky top-20 z-20 bg-gradient-to-b from-black from-40% to-transparent flex justify-center">
         <Tab category={categories} onCategoryChange={handleCategoryChange} />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 mt-12 justify-items-center mb-96">
-        {!response?.content?.length || error ? (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 mt-12 justify-items-center mb-96">
+        {loading ? (
+          <div>로딩 중...</div>
+        ) : error ? (
+          <div>에러 발생: {error}</div>
+        ) : !filteredStudy.length ? (
           <div>데이터 없음</div>
         ) : (
           <>
-            {response.content.map((data, index) => (
+            {filteredStudy.map((data, index) => (
               <File
                 key={index}
-                type={data.field}
+                type="study"
+                field={data.field}
                 title={data.topic}
                 teamNum={data.generation}
                 teamName={data.teamName}
@@ -94,54 +105,4 @@ export default function Study() {
       </div>
     </div>
   );
-}
-
-{
-  /*
-  
-
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import Tab from "../components/tab";
-import File from "../components/file";
-import { getStudy } from "../api/studyApi";
-
-export default function Study() {
-  const baseURL = "http://3.35.207.95:8080";
-  const location = useLocation();
-  const { partName } = location.state || {};
-  const categories = [
-    "ALL",
-    "Web/App",
-    "Backend",
-    "DeepLearning",
-    "DataAnalysis",
-  ];
-  const initialIndex = categories.indexOf(partName);
-
-  const [selectedCategory, setSelectedCategory] = useState("ALL");
-  const [pageNum, setPageNum] = useState(1);
-  const [response, setResponse] = useState(null); // API 응답 상태 관리
-  //const [loading, setLoading] = useState(true); // 로딩 상태 관리
-  const [error, setError] = useState(null); // 에러 상태 관리
-
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  };
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const result = await getStudy(pageNum, selectedCategory);
-        setResponse(result); // API 응답 데이터 저장
-      } catch (e) {
-        setError(e.message); // 에러 메시지 설정
-      }
-    }
-
-    fetchData();
-  }, [pageNum, selectedCategory]);
-
-  
-  */
 }
