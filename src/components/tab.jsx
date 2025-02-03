@@ -8,6 +8,9 @@ export default function Tab({ category, onCategoryChange, initialState = 0 }) {
   const handleClick = index => {
     setSelectedIndex(index);
     onCategoryChange(category[index]);
+
+    // 화면 최상단으로 스크롤 이동
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -16,7 +19,7 @@ export default function Tab({ category, onCategoryChange, initialState = 0 }) {
   }, [initialState]);
 
   return (
-    <div className="flex flex-row gap-20">
+    <div className="flex flex-row gap-12 h-12 overflow-x-auto no-scrollbar">
       {category.map((name, index) => (
         <div
           key={index}

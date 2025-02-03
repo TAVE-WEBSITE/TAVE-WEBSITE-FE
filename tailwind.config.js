@@ -43,6 +43,13 @@ module.exports = {
           lineHeight: "36px",
           letterSpacing: "-1.08px",
         },
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        },
+        ".no-scrollbar::-webkit-scrollbar": {
+          display: "none",
+        },
       });
     },
   ],
