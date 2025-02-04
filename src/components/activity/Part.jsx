@@ -94,7 +94,7 @@ export default function Part() {
     }, [currentSlide]);
     return (
         <div className="flex-col justify-center items-center lg:max-w-6xl">
-            <div className="mb-11 md:mb-20 text-[26px] md:text-4xl font-bold mt-96">파트 소개</div>
+            <div className="mb-[40px] md:mb-15  md:text-[40px] font-bold text-[26px] mt-[430px]">파트 소개</div>
 
             {/* sm 이상 화면에서 PartCard만 보이도록 설정 */}
             <div className="hidden md:grid justify-center md:grid-cols-3 gap-6 w-full px-6 max-lg:scale-90">

@@ -89,23 +89,26 @@ export default function Activity() {
 
     return (
         <>
-            <div className="relative h-[800px] ">
+            <div className="relative md:h-[800px] sm:h-[500px] h-[340px] w-full">
                 <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent z-20" />
                 <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent z-20" />
                 <img src={ActivityBack} alt="ActivityBack" className="absolute object-cover w-full h-full z-10" />
             </div>
 
-            <div className="absolute z-30 flex flex-col gap-[60px] items-center md:px-[140px] px-6 w-full top-[640px]">
-                <div className="text-[40px] font-bold">모집 대상</div>
-                <div className="lg:px-[140px] w-full md:py-[30px] py-5 bg-[#232323] rounded-[20px]">
-                    <div className="text-center md:text-lg text-sm font-bold ">
+            <div
+                className="absolute z-30 flex flex-col md:gap-15 gap-10 items-center 2xl:px-[320px] lg:px-[140px] md:px-[100px] px-6 w-full
+            md:top-[640px] sm:top-[400px] top-[360px]"
+            >
+                <div className="md:text-[40px] text-[26px] font-bold">모집 대상</div>
+                <div className="lg:px-[120px] w-full md:py-[30px] py-5 bg-[#232323] rounded-[20px]">
+                    <div className="text-center md:text-xl sm:text-base text-sm  font-medium leading-normal">
                         다양성을 존중하며 협력하는 IT에 관심있는 <br />
                         대학생 누구나 지원 가능합니다.
                     </div>
                 </div>
             </div>
 
-            <div className="relative flex flex-col justify-center w-full px-4 mx-auto mt-12">
+            <div className="relative flex flex-col justify-center w-full px-4 mx-auto">
                 <div className="flex flex-col items-center justify-center text-center w-full ">
                     <div className="absolute w-full h-full">
                         <img src={ActivityWave} alt="ActivityWave" className="object-cover w-full h-full" />
@@ -113,13 +116,13 @@ export default function Activity() {
                     <div className="w-full md:w-auto">
                         <Part />
                     </div>
-                    <div className="mb-20 md:text-[40px] font-bold text-[26px] mt-96 ">정규 세션 소개</div>
+                    <div className="md:mb-15 mb-[45px] md:text-[40px] font-bold text-[26px] mt-96 ">정규 세션 소개</div>
                     <StepComponent steps={steps} selectedStep={selectedStep} setSelectedStep={setSelectedStep} />
                 </div>
             </div>
 
-            <div className="h-screen w-full justify-center align-center flex flex-col md:gap-15 gap-[40px]">
-                <div className="text-[26px] font-bold w-full text-center">AFTER TAVE</div>
+            <div className="w-full justify-center align-center flex flex-col md:gap-15 md:gap-[60px] gap-[45px] my-96">
+                <div className="md:text-[40px] font-bold text-[26px] w-full text-center">AFTER TAVE</div>
                 <div className="grid justify-items-center sm:grid-cols-1 md:grid-cols-3 md:gap-6 w-full px-6 gap-5">
                     <AfterCard icon={After1} description={'활동증명서\n발급'} />
                     <AfterCard icon={After2} description={'우수 스터디 및 프로젝트\n시상 및 발급'} />
