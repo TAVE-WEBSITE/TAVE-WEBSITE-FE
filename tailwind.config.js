@@ -43,12 +43,35 @@ module.exports = {
           lineHeight: "36px",
           letterSpacing: "-1.08px",
         },
-        ".no-scrollbar": {
+        ".body-highlight-2 ": {
+          fontFamily: "Pretendard, sans-serif",
+          fontSize: "13px",
+          fontWeight: "700",
+          lineHeight: "20px",
+          letterSpacing: "-0.39px",
+        },
+
+        ".body-highlight-3": {
+          fontFamily: "Pretendard, sans-serif",
+          fontSize: "16px",
+          fontWeight: "700",
+          lineHeight: "24px",
+          letterSpacing: "-0.56px",
+        },
+        ".body-light-3": {
+          fontFamily: "Pretendard, sans-serif",
+          fontSize: "16px",
+          fontWeight: "300",
+          lineHeight: "24px",
+          letterSpacing: "-0.56px",
+    
+    ".no-scrollbar": {
           "-ms-overflow-style": "none",
           "scrollbar-width": "none",
         },
         ".no-scrollbar::-webkit-scrollbar": {
           display: "none",
+
         },
       });
     },
