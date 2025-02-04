@@ -19,12 +19,12 @@ export default function Review() {
   useEffect(() => {
     const fetchReviews = async () => {
       const response = await getPublicReview();
-      setReviews(response);
+      setReviews(response || []);
     };
     fetchReviews();
   }, []);
 
-  const canNext = currentIndex + 2 < reviews.length;
+  const canNext = currentIndex + 2 < (reviews?.length || 0);
   const canPrev = currentIndex > 0;
 
   const nextSlide = () => {
