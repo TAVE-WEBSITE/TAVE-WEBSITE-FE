@@ -52,7 +52,7 @@ export default function Review() {
   const swiperReviews = groupingReviews(reviews);
 
   return (
-    <div className="w-full md:py-20 ">
+    <div className="w-full md:pb-20 ">
       <div className="block md:hidden px-3">
         <Swiper
           spaceBetween={64}
