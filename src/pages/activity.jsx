@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import PartCard from '../components/activity/partCard';
+import Footer from '../components/footer';
 import StepComponent from '../components/stepComponent';
 import AfterCard from '../components/afterCard';
 
@@ -123,6 +123,7 @@ export default function Activity() {
                     <AfterCard icon={After3} description={'다양한 분야의 OB들과\n네트워킹'} />
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
