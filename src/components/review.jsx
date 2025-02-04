@@ -52,7 +52,7 @@ export default function Review() {
   const swiperReviews = groupingReviews(reviews);
 
   return (
-    <div className="w-full md:mt-[80px] mt-[50px]">
+    <div className="w-full md:py-20 ">
       <div className="block md:hidden px-3">
         <Swiper
           spaceBetween={64}
@@ -63,11 +63,11 @@ export default function Review() {
             <SwiperSlide key={index}>
               <div className="flex flex-col gap-6 mb-8">
                 <div className="flex flex-col items-start">
-                  <div className="p-4 rounded-[10px] w-[60%] bg-white/5">
+                  <div className="p-4 rounded-[10px] w-[85%] md:w-[60%] bg-white/5">
                     <p className="text-xs mb-3 font-bold">
                       {review.review1.nickname}
                       <span className="text-[#adb1ba] ml-1">
-                        {review.review1.generation} {review.review1.field}
+                        {review.review1.generation}기 {review.review1.field}
                         {review.review1.companyName
                           ? `/${review.review1.companyName}`
                           : ""}
@@ -81,11 +81,11 @@ export default function Review() {
                 </div>
                 {review.review2 && (
                   <div className="flex flex-col items-end">
-                    <div className="p-4 rounded-[10px] w-[60%] bg-white/5">
+                    <div className="p-4 rounded-[10px]  w-[85%] md:w-[60%] bg-white/5">
                       <p className="text-xs mb-3 font-bold">
                         {review.review2.nickname}
                         <span className="text-[#adb1ba] ml-1">
-                          {review.review2.generation} {review.review2.field}
+                          {review.review2.generation}기 {review.review2.field}
                           {review.review2.companyName
                             ? `/${review.review2.companyName}`
                             : ""}
@@ -112,7 +112,10 @@ export default function Review() {
         >
           <ArrowIcon />
         </button>
-        <div className="flex flex-col gap-12 w-full">
+        <div
+          className="flex flex-col w-full "
+          style={{ gap: "clamp(1rem, 10vh, 40px)" }}
+        >
           {reviews.slice(currentIndex, currentIndex + 2).map(
             (review, index) =>
               review && (
@@ -123,11 +126,11 @@ export default function Review() {
                     }`}
                     key={index}
                   >
-                    <div className="p-8 rounded-[10px] lg:w-[70%] md:w-[80%] bg-white/5">
+                    <div className="p-8 rounded-[10px] xl:w-[70%] lg:w-[80%] md:w-[85%] bg-white/5">
                       <p className="text-2xl mb-6 font-bold">
                         {review.nickname}
                         <span className="text-[#adb1ba] ml-2">
-                          {review.generation} {review.field}
+                          {review.generation}기 {review.field}
                           {review.companyName ? `/${review.companyName}` : ""}
                         </span>
                       </p>

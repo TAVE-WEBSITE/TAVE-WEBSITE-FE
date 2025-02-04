@@ -1,14 +1,16 @@
 .gradientWrapper {
   position: absolute;
   width: 100vw;
-  height: 500vh;
+  height: 600vh;
   background: linear-gradient(
     to bottom,
     #121212 0%,
     #121212 10%,
-    #1445bc 23%,
-    #1445bc 25%,
-    #142a61 30%,
+    #142a61 22%,
+    #103a8c 23%,
+    #1445bc 24%,
+    #1445bc 25.5%,
+    #142a61 28%,
     #131826 35%,
     #121212 100%
   );
@@ -16,7 +18,7 @@
 }
 
 .customDots {
-    margin-top: 1rem;
+  margin-top: 1rem;
   width: 100%;
   vertical-align: middle;
   align-items: center;
@@ -31,7 +33,6 @@
   justify-content: center;
 }
 .customDots li {
-
 }
 .customDots li button {
   border: none;
@@ -45,11 +46,11 @@
   background-color: #d9d9d9;
   opacity: 20%;
 }
-.customDots ul li.slick-active button  {
-    background-color: #d9d9d9;
-    opacity: 50%;
-    width: 0.8rem;
-    border-radius:2.5px;
+.customDots ul li.slick-active button {
+  background-color: #d9d9d9;
+  opacity: 50%;
+  width: 0.8rem;
+  border-radius: 2.5px;
 }
 .slick-dots li.slick-active button:before {
   opacity: 1 !important;
