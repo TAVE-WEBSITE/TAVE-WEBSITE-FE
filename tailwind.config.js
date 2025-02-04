@@ -64,14 +64,13 @@ module.exports = {
           fontWeight: "300",
           lineHeight: "24px",
           letterSpacing: "-0.56px",
-    
-    ".no-scrollbar": {
+        },
+        ".no-scrollbar": {
           "-ms-overflow-style": "none",
           "scrollbar-width": "none",
         },
         ".no-scrollbar::-webkit-scrollbar": {
           display: "none",
-
         },
       });
     },
