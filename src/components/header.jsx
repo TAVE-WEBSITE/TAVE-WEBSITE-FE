@@ -30,7 +30,7 @@ export default function Header({ isBlack }) {
                         ))}
                         <li>
                             <div className="bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center">
-                                <a href="apply" className="cursor-pointer">
+                                <a href="apply" className="cursor-pointer relative z-50">
                                     지원하기
                                 </a>
                             </div>
