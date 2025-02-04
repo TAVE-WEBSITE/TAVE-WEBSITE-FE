@@ -4,51 +4,50 @@
 
 /* 모든 페이지에 적용할 전역 스타일 */
 body {
-  @apply bg-black text-white;
-  font-family: "Pretendard";
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
+    @apply bg-black text-white;
+    font-family: 'Pretendard';
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Pretendard';
+    src: url('/src/assets/fonts/PretendardVariable.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .outer {
-  height: 100vh;
-  overflow-y: hidden;
-  overflow-x: hidden;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 .scrollbar-hidden {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 .container {
-  overflow: auto;
+    overflow: auto;
 }
 
 /* 크롬, 사파리용 스크롤바 스타일 */
 .container::-webkit-scrollbar {
-  width: 4px; /* 스크롤바 너비 */
+    width: 4px; /* 스크롤바 너비 */
 }
 
 .container::-webkit-scrollbar-thumb {
-  background-color: grey; /* 스크롤바 색상 */
-  border-radius: 10px; /* 둥근 모서리 */
+    background-color: grey; /* 스크롤바 색상 */
+    border-radius: 10px; /* 둥근 모서리 */
 }
 
 .container::-webkit-scrollbar-track {
-  background-color: black; /* 스크롤바 배경 색상 */
-  border-radius: 10px;
+    background-color: black; /* 스크롤바 배경 색상 */
+    border-radius: 10px;
 }
