@@ -11,6 +11,7 @@ import After2 from '../assets/images/After2.svg';
 import After3 from '../assets/images/After3.svg';
 
 import ActivityBack from '../assets/images/ActivityBack.svg';
+import ActivityWave from '../assets/images/ActivityWave.svg';
 import Part from '../components/activity/Part';
 
 export default function Activity() {
@@ -87,7 +88,7 @@ export default function Activity() {
     }, [handleScroll]);
 
     return (
-        <div className="w-full">
+        <>
             <div className="relative h-[800px] ">
                 <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent z-20" />
                 <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent z-20" />
@@ -104,13 +105,15 @@ export default function Activity() {
                 </div>
             </div>
 
-            <div className="relative flex flex-col justify-center w-full px-4 mx-auto lg:w-4/5 mt-12">
+            <div className="relative flex flex-col justify-center w-full px-4 mx-auto mt-12">
                 <div className="flex flex-col items-center justify-center text-center w-full ">
-                    <div className="w-full">
+                    <div className="absolute w-full h-full">
+                        <img src={ActivityWave} alt="ActivityWave" className="object-cover w-full h-full" />
+                    </div>
+                    <div className="w-full md:w-auto">
                         <Part />
                     </div>
-
-                    <div className="mb-20 text-4xl mt-96 ">정규 세션 소개</div>
+                    <div className="mb-20 md:text-[40px] font-bold text-[26px] mt-96 ">정규 세션 소개</div>
                     <StepComponent steps={steps} selectedStep={selectedStep} setSelectedStep={setSelectedStep} />
                 </div>
             </div>
@@ -124,6 +127,6 @@ export default function Activity() {
                 </div>
             </div>
             <Footer />
-        </div>
+        </>
     );
 }
