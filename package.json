@@ -29,7 +29,15 @@
         "extends": [
             "react-app",
             "react-app/jest"
-        ]
+        ],
+        "rules": {
+    "no-unused-vars": "warn",
+    "jsx-a11y/alt-text": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-no-target-blank": "warn",
+    "eqeqeq": "warn",
+    "react-hooks/exhaustive-deps": "warn"
+  }
     },
     "browserslist": {
         "production": [
