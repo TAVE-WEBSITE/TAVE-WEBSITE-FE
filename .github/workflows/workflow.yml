@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  publish-storybook:
+  publish-tave-wave:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
