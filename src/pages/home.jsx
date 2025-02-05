@@ -30,6 +30,13 @@ export default function HomeTest() {
   const [currentPage, setCurrentPage] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
 
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth <= 758);
+  let totalPage = innerWidth ? 4 : 5;
+  window.addEventListener("resize", () => {
+    setInnerWidth(window.innerWidth <= 758);
+    //console.log("너비", innerWidth);
+  });
+
   useEffect(() => {
     const smoothScrollTo = (targetY) => {
       const startY = outerDivRef.current.scrollTop;
@@ -66,7 +73,7 @@ export default function HomeTest() {
 
       if (deltaY > 0) {
         // 아래로 스크롤
-        nextPage = Math.min(currentPage + 1, 5);
+        nextPage = Math.min(currentPage + 1, totalPage);
       } else {
         // 위로 스크롤
         nextPage = Math.max(currentPage - 1, 0);
