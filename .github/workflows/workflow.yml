@@ -2,14 +2,19 @@ name: Client
    
 on:
   push:
-    branches: [develop]
+    branches: 
+      - main
    
 jobs:
   build-and-deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
-
+      - uses: actions/checkout@main
+        with:
+          ref: main
+      - name: .env setting
+        run: |
+          echo "REACT_APP_BASE_URL=$REACT_APP_BASE_URL" > .env
       - name: git clone
         uses: actions/checkout@v2
    
@@ -18,8 +23,10 @@ jobs:
    
       - name: npm build
         run: npm run build
+        env:
+          CI: false
    
-      - uses: awact/s3-action@master
+      - uses: awact/s3-sync-action@v1
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
