@@ -87,7 +87,7 @@ export default function StepComponent({
               <div className="text-sm md:text-2xl font-bold break-keep">
                 {step.title}
               </div>
-              <div className="text-sm font-medium md:text-xl text-start">
+              <div className="text-sm font-medium md:text-xl text-start break-keep">
                 {step.description}
               </div>
             </div>
