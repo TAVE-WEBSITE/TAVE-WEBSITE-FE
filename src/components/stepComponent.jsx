@@ -76,7 +76,7 @@ export default function StepComponent({
             )}
 
             <div
-              className={`flex w-full justify-between gap-3 items-center w-92 lg:min-w-[550px] sm:py-12 py-4 rounded-2xl p-5 transition-transform duration-300 ease-in-out ${
+              className={`flex w-full justify-between gap-3 w-92 lg:min-w-[550px] sm:py-12 py-4 rounded-2xl p-5 transition-transform duration-300 ease-in-out ${
                 selectedStep === index ? "scale-105" : "scale-100"
               } transition-all duration-300 ease-in-out ${
                 selectedStep === index
@@ -84,8 +84,10 @@ export default function StepComponent({
                   : "bg-[rgba(36,36,36,0.7)] text-gray-500"
               } lg:w-[800px]`}
             >
-              <div className="text-sm sm:text-2xl break-keep">{step.title}</div>
-              <div className="text-sm font-medium sm:text-lg">
+              <div className="text-sm md:text-2xl font-bold  break-keep">
+                {step.title}
+              </div>
+              <div className="text-sm font-medium md:text-xl text-start">
                 {step.description}
               </div>
             </div>

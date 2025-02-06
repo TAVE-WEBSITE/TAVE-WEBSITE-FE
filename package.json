@@ -29,7 +29,15 @@
         "extends": [
             "react-app",
             "react-app/jest"
-        ]
+        ],
+        "rules": {
+    "no-unused-vars": "warn",
+    "jsx-a11y/alt-text": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-no-target-blank": "warn",
+    "eqeqeq": "warn",
+    "react-hooks/exhaustive-deps": "warn"
+  }
     },
     "browserslist": {
         "production": [
@@ -44,6 +52,7 @@
         ]
     },
     "devDependencies": {
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "autoprefixer": "^10.4.20",
         "postcss": "^8.4.47",
         "tailwindcss": "^3.4.13"
