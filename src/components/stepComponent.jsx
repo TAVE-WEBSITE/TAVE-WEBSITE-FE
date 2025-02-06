@@ -84,7 +84,7 @@ export default function StepComponent({
                   : "bg-[rgba(36,36,36,0.7)] text-gray-500"
               } lg:w-[800px]`}
             >
-              <div className="text-sm md:text-2xl font-bold  break-keep">
+              <div className="text-sm md:text-2xl font-bold break-keep">
                 {step.title}
               </div>
               <div className="text-sm font-medium md:text-xl text-start">
