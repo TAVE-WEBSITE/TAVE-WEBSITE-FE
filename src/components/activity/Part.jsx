@@ -19,7 +19,7 @@ export default function Part() {
     const [currentSlide, setCurrentSlide] = useState(0); // 현재 슬라이드
     const onPartClick = (name) => {
         let partName = name;
-        console.log('Navigating to /study with partName:', partName);
+        //console.log('Navigating to /study with partName:', partName);
         navigate('/study', { state: { partName } });
     };
 
@@ -90,7 +90,7 @@ export default function Part() {
     ];
 
     useEffect(() => {
-        console.log(currentSlide);
+        //console.log(currentSlide);
     }, [currentSlide]);
     return (
         <div className="flex-col justify-center items-center lg:max-w-6xl">

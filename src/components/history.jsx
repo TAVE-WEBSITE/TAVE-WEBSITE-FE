@@ -40,7 +40,7 @@ export default function History() {
       (_, i) => reversed.slice(i * 2, i * 2 + 2)
     );
     const groups2 = getGroup(data.slice().reverse());
-    console.log("결과", groups2);
+    //console.log("결과", groups2);
 
     // 나머지가 1일 때 앞 그룹에 병합
     if (groups.length > 1 && groups[groups.length - 1].length === 1) {
@@ -112,7 +112,6 @@ export default function History() {
       <div className="w-screen px-6 flex items-center justify-center">
         <div className="flex gap-4 justify-start overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide scrollbar-hidden">
           {groupGenerations(histories).map((group, index) => {
-            console.log("그룹데이터", group);
             const groupLabel = group;
             return (
               <button
