@@ -77,10 +77,9 @@ export default function Study() {
                     아래의 폴더를 클릭하시면 후기 링크로 연결됩니다.
                 </div>
             </div>
-            <div className="w-full max-w-10xl py-5 break-keep sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent flex justify-start md:justify-center">
+            <div className="w-full max-w-10xl py-11 break-keep sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent flex justify-start md:justify-center">
                 <Tab category={categories} onCategoryChange={handleCategoryChange} initialState={initialState} />
             </div>
-
             <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 mt-12 justify-items-center mb-40 z-10">
                 {loading ? (
                     <div>로딩 중...</div>
