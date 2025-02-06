@@ -20,6 +20,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Create .env file
+        run: |
+          echo "REACT_APP_BASE_URL=${{ secrets.REACT_APP_BASE_URL }}" > .env
+
+      - name: Print .env file (Debug)
+        run: cat .env 
+
       - name: Build
         run: npm run build
         env:
