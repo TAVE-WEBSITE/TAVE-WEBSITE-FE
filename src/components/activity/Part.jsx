@@ -51,14 +51,14 @@ export default function Part() {
             EngTitle: 'WEB',
             description: `우리는 아름답고 직관적인 웹 경험을 창조해 나가며, 다양한 의견을 수렴하여 성장하는 웹사이트를 만들어갑니다.`,
             icon: WebIcon,
-            onClick: () => onPartClick('Frontend'),
+            onClick: () => onPartClick('Web/App'),
         },
         {
             KorTitle: '앱 프론트엔드',
             EngTitle: 'APP',
             description: `사용자와의 소통을 통해 다양한 경험을 모아, 손끝에서 펼쳐지는 매력적인 인터페이스를 설계하며, 언제 어디서나 편리한 경험을 제공하는 데 열정을 다합니다.`,
             icon: AppIcon,
-            onClick: () => onPartClick('Frontend'),
+            onClick: () => onPartClick('Web/App'),
         },
         {
             KorTitle: '백엔드',
