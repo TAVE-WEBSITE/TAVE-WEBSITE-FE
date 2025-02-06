@@ -102,11 +102,15 @@ export default function History() {
     })
     .sort((a, b) => parseInt(b.generation) - parseInt(a.generation)); // 내림차순 정렬
 
+  /*
+     <div className="w-screen px-6 flex items-center justify-center">
+        <div className="flex gap-4 justify-start overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide scrollbar-hidden">
+    */
   return (
     <div className="flex flex-col items-center justify-center w-screen">
       {/* 그룹 칩 */}
-      <div className="w-screen px-6 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide scrollbar-hidden flex items-center justify-start">
-        <div className="flex gap-4 justify-start">
+      <div className="w-screen px-6 flex items-center justify-center">
+        <div className="flex gap-4 justify-start overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide scrollbar-hidden">
           {groupGenerations(histories).map((group, index) => {
             console.log("그룹데이터", group);
             const groupLabel = group;
