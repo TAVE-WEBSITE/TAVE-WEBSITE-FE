@@ -60,7 +60,7 @@ export default function Study() {
                     아래의 폴더를 클릭하시면 후기 링크로 연결됩니다.
                 </div>
             </div>
-            <div className="w-full max-w-10xl py-5 break-keep sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent flex justify-start md:justify-center px-4">
+            <div className="w-full max-w-10xl py-5 break-keep sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent flex justify-start md:justify-center">
                 <Tab category={categories} onCategoryChange={handleCategoryChange} initialState={0} />
             </div>
 
