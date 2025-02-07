@@ -165,7 +165,7 @@ export default function HomeTest() {
                 </div>
 
                 {/*두번째 화면 */}
-                <div className="h-screen w-full flex flex-col items-center justify-center max-md:mt-14  md:px-20 px-5">
+                <div className="h-screen w-full flex flex-col items-center justify-center max-md:pt-14  md:px-20 px-5">
                     <p className="md:hidden text-center text-lg font-semibold leading-8 tracking-[-0.9px] ">
                         다양한 분야와의 융합을 통해
                         <br />
