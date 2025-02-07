@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LogoTave from '../assets/images/LogoTave.svg';
+import HoverIcon from '../assets/images/HeaderHover.svg'
 
 export default function Header({ isBlack }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,13 +22,23 @@ export default function Header({ isBlack }) {
                 </a>
                 <nav className="flex items-end text-white">
                     <ul className="flex items-center gap-x-10">
-                        {['ACTIVITY', 'STUDY', 'PROJECT'].map((item, index) => (
-                            <li key={index} className="relative group">
-                                <a href={item.toLowerCase()} className="cursor-pointer relative z-50">
-                                    {item}
-                                </a>
-                            </li>
-                        ))}
+                    {['ACTIVITY', 'STUDY', 'PROJECT'].map((item, index) => (
+  <li key={index} className="relative group">
+    <a href={item.toLowerCase()} className="cursor-pointer relative z-50">
+      {item}
+    </a>
+    <img
+      className="
+        absolute opacity-0 transform transition-all duration-300 
+        group-hover:opacity-100 group-hover:translate-y-0 z-10 bottom-0.5 right-[-0.8rem]
+      "
+      src={HoverIcon}
+      alt={`${item} hover icon`}
+    />
+  </li>
+))}
+
+
                         <li>
                             <div className="bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center">
                                 <a href="apply" className="cursor-pointer relative z-50">
