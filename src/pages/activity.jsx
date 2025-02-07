@@ -10,7 +10,7 @@ import After1 from '../assets/images/After1.svg';
 import After2 from '../assets/images/After2.svg';
 import After3 from '../assets/images/After3.svg';
 
-import ActivityBack from '../assets/images/ActivityBack.svg';
+import ActivityBack from '../assets/images/ActivityBack.jpg';
 import ActivityWave from '../assets/images/ActivityWave.svg';
 import Part from '../components/activity/Part';
 
@@ -89,7 +89,7 @@ export default function Activity() {
 
     return (
         <>
-            <div className="relative md:h-[800px] sm:h-[500px] h-[340px] w-full">
+            <div className="relative md:h-[600px] sm:h-[500px] h-[340px] w-full">
                 <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent z-20" />
                 <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent z-20" />
                 <img src={ActivityBack} alt="ActivityBack" className="absolute object-cover w-full h-full z-10" />
@@ -97,7 +97,7 @@ export default function Activity() {
 
             <div
                 className="absolute z-30 flex flex-col md:gap-15 gap-10 items-center 2xl:px-[320px] lg:px-[140px] md:px-[100px] px-6 w-full
-            md:top-[640px] sm:top-[400px] top-[360px]"
+            md:top-[540px] sm:top-[400px] top-[360px]"
             >
                 <div className="md:text-[40px] text-[26px] font-bold">모집 대상</div>
                 <div className="lg:px-[120px] w-full md:py-[30px] py-5 bg-[#232323] rounded-[20px]">
