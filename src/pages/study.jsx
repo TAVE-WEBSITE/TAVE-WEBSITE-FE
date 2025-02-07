@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Tab from '../components/tab';
 import File from '../components/file';
 import { getStudy } from '../api/studyApi';
 import Wave from '../assets/images/studyWave.svg';
 import Footer from '../components/footer';
-import { useLocation } from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 
 export default function Study() {
     const categories = ['Web/App', 'Backend', 'DeepLearning', 'DataAnalysis'];
@@ -20,6 +20,7 @@ export default function Study() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [initialState, setInitialState] = useState(0);
+    const [isTabFixed, setIsTabFixed] = useState(false);
     const location = useLocation();
 
     const handleCategoryChange = (category) => {
@@ -63,6 +64,22 @@ export default function Study() {
         return data.field === categoryMap[selectedCategory];
     });
 
+     const handleScroll = useCallback(() => {
+            // console.log(window.scrollY);
+            const shouldBeFixed = window.scrollY >= 340;
+            if (shouldBeFixed !== isTabFixed) {
+                setIsTabFixed(shouldBeFixed);
+            }
+        }, [isTabFixed]);
+    
+        useEffect(() => {
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }, [handleScroll]);
+
+
     return (
         <div className="flex flex-col justify-center items-center">
             <img src={Wave} className="absolute z-0 md:hidden h-full top-0" />
@@ -77,7 +94,12 @@ export default function Study() {
                     아래의 폴더를 클릭하시면 후기 링크로 연결됩니다.
                 </div>
             </div>
-            <div className="w-full max-w-10xl py-11 break-keep sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent flex justify-start md:justify-center">
+            <div className={`tabs-container w-full max-w-10xl py-11 break-keep sticky top-12 z-20 flex justify-start md:justify-center
+                ${
+                    isTabFixed
+                        ? 'sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent w-full max-w-6xl'
+                        : ''
+                }`}>
                 <Tab category={categories} onCategoryChange={handleCategoryChange} initialState={initialState} />
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 mt-12 justify-items-center mb-40 z-10">
@@ -89,7 +111,7 @@ export default function Study() {
                     <div>데이터 없음</div>
                 ) : (
                     <>
-                        {filteredStudy.map((data, index) => (
+                        {[...filteredStudy].reverse().map((data, index) => (
                             <File
                                 key={index}
                                 type="study"
