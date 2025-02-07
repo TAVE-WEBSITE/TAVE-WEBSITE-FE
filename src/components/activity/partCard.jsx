@@ -20,9 +20,9 @@ export default function PartCard({
       }`}
       onClick={onClick}
     >
-      <div className="flex-col w-[98%] sm:w-11/12 md:w-full">
+      <div className="flex-col  sm:w-11/12 md:w-full">
         <div
-          className={`relative bg-blue-600 text-white rounded-2xl w-full h-[160px] md:h-[170px] lg:h-[17vw] xl:h-[200px] overflow-hidden group transition-all duration-300 ${
+          className={`relative bg-blue-600 text-white rounded-2xl w-full h-40 overflow-hidden group transition-all duration-300 ${
             !isDesign ? "cursor-pointer" : ""
           }`}
         >
@@ -32,7 +32,7 @@ export default function PartCard({
             <img
               src={icon}
               alt="icon"
-              className={`absolute top-0 left-[-35px] sm:left-0 md:left-[-15px] lg:left-0 transform transition-transform duration-300  h-[160px]  md:h-[170px] lg:h-[17vw] xl:h-[200px] ${
+              className={`absolute top-0 left-[-1rem] transform transition-transform duration-300  h-40 w-52 ${
                 !isDesign ? "md:group-hover:scale-110" : ""
               }  `}
             />
@@ -53,7 +53,7 @@ export default function PartCard({
               } ${center ? "max-md:opacity-100" : "max-md:opacity-0"}`}
             />
           </div>
-          <div className="absolute top-11 sm:top-15 md:top-[5.5vw] lg:top-16  left-1 sm:left-7 md:left-10 lg:left-7  xl:left-10 body-highlight-1 max-md:scale-75 ">
+          <div className="absolute top-11 sm:top-15 md:top-[5.5vw] lg:top-16 left-6 body-highlight-1 max-md:scale-75 ">
             <div className="text-lg md:text-xl max-lg:text-2xl text-black z-10 text-left font-bold">
               {KorTitle}
             </div>
@@ -68,7 +68,7 @@ export default function PartCard({
             </div>
           )}
         </div>
-        <div className="font-Pretendard text-xs sm:text-sm md:text-base font-medium mt-2 w-full whitespace-pre-line text-left mb-8  max-md:py-[15px] max-md:px-[24px] rounded-2xl max-md:bg-white max-md:bg-opacity-10">
+        <div className="font-Pretendard text-xs sm:text-sm md:text-base font-medium mt-2 w-full text-left mb-8  max-md:py-[15px] max-md:px-[24px] rounded-2xl max-md:bg-white max-md:bg-opacity-10">
           {description}
         </div>
       </div>
