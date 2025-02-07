@@ -110,7 +110,7 @@ export default function Header({ isBlack }) {
                         </li>
                     ))}
                     <li className="py-3">
-                        <div className="flex items-center justify-center bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] rounded-lg text-center w-20 h-9">
+                        <div className="flex items-center justify-center bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] rounded-lg hover:from-[#5989FF] hover:to-[#5989FF] text-center w-20 h-9">
                             <a href="apply" className="cursor-pointer text-base font-bold">
                                 지원하기
                             </a>
