@@ -142,12 +142,8 @@ export default function HomeTest() {
                         성장하는 곳, TAVE
                     </div>
                     <button
-                        className="md:hidden mt-20 py-3.5 px-4 text-white text-center font-semibold text-[18px] "
-                        style={{
-                            borderRadius: '12px',
-                            background:
-                                'linear-gradient(102deg, #6D3CFF -2.19%, #1A5BFF 100%), linear-gradient(262deg, #64B4FF 16.37%, #1A5BFF 103.22%, #003BD0 196.21%, #1629B8 283.61%)',
-                        }}
+                        className="md:hidden mt-20 py-3.5 px-4 text-white text-center font-semibold text-[18px] bg-gradient-to-r from-[#6c3bff] to-[#1a5bff] rounded-xl hover:from-[#5989FF] hover:to-[#5989FF]"
+                       
                     >
                         지금 바로 지원하기
                     </button>
