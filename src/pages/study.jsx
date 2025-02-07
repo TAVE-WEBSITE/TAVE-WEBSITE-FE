@@ -4,6 +4,7 @@ import File from '../components/file';
 import { getStudy } from '../api/studyApi';
 import Wave from '../assets/images/studyWave.svg';
 import Footer from '../components/footer';
+import { useLocation } from 'react-router-dom';
 
 export default function Study() {
     const categories = ['Web/App', 'Backend', 'DeepLearning', 'DataAnalysis'];
@@ -18,6 +19,8 @@ export default function Study() {
     const [response, setResponse] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [initialState, setInitialState] = useState(0);
+    const location = useLocation();
 
     const handleCategoryChange = (category) => {
         setSelectedCategory(category);
@@ -42,6 +45,20 @@ export default function Study() {
         fetchData();
     }, [selectedCategory]);
 
+    //파트 소개에서 이동할 때 해당 스터디 바로 보이게 하기
+    useEffect( () => {
+        if(location.state !== null){
+            //console.log("들어온 거 확인" + location.state.partName.toUpperCase());
+            
+        setSelectedCategory(location.state.partName);
+        const keysArray = Object.keys(categoryMap);
+        const index = keysArray.indexOf(location.state.partName);
+        //console.log(filteredStudy);
+
+        setInitialState(index);
+        }
+    },[])
+
     const filteredStudy = response.filter((data) => {
         return data.field === categoryMap[selectedCategory];
     });
@@ -60,10 +77,9 @@ export default function Study() {
                     아래의 폴더를 클릭하시면 후기 링크로 연결됩니다.
                 </div>
             </div>
-            <div className="w-full max-w-10xl py-5 break-keep sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent flex justify-start md:justify-center px-4">
-                <Tab category={categories} onCategoryChange={handleCategoryChange} initialState={0} />
+            <div className="w-full max-w-10xl py-11 break-keep sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent flex justify-start md:justify-center">
+                <Tab category={categories} onCategoryChange={handleCategoryChange} initialState={initialState} />
             </div>
-
             <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 mt-12 justify-items-center mb-40 z-10">
                 {loading ? (
                     <div>로딩 중...</div>
