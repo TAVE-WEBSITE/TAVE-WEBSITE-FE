@@ -125,7 +125,7 @@ export default function Activity() {
                 <div className="md:text-[40px] font-bold text-[26px] w-full text-center">AFTER TAVE</div>
                 <div className="grid justify-items-center sm:grid-cols-1 md:grid-cols-3 md:gap-6 w-full px-6 gap-5">
                     <AfterCard icon={After1} description={'활동증명서\n발급'} />
-                    <AfterCard icon={After2} description={'우수 스터디 및 프로젝트\n시상 및 발급'} />
+                    <AfterCard icon={After2} description={'우수 스터디 및 프로젝트\n시상'} />
                     <AfterCard icon={After3} description={'다양한 분야의 OB들과\n네트워킹'} />
                 </div>
             </div>

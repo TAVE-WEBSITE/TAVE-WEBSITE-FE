@@ -109,7 +109,7 @@ export default function Project() {
                     <div>
                         <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 mt-12 justify-items-center mb-12">
                             {filteredProject && filteredProject.length > 0 ? (
-                                filteredProject
+                                [...filteredProject].reverse()
                                     .slice(0, visibleCounts[selectedFiled])
                                     .map((data, index) => (
                                         <File
