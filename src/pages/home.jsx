@@ -21,7 +21,6 @@ import wave4 from '../assets/images/home/wave4.svg';
 import wave5 from '../assets/images/home/wave5.svg';
 
 //반복되는 부분 모듈화
-const DIVIDER_HEIGHT = 5; // 페이지 구분선 높이
 const SCROLL_DELAY = 800; // 스크롤 이벤트 간격 (ms)
 const SCROLL_DURATION = 1000; // 스크롤 애니메이션 지속 시간 (ms)
 const SCROLL_THRESHOLD = 50; // **작은 움직임 무시, 50px 이상 움직이면 동작**
@@ -120,8 +119,7 @@ export default function HomeTest() {
     return (
         //overflow-y-auto
         <div className="outer relative mx-auto break-keep" ref={outerDivRef}>
-
-
+            <div className={styles.gradientWrapper} />
             {/* 첫번째 화면 */}
             <div
                 className="flex flex-col items-center h-dvh justify-center w-screen md:px-20 px-5"
