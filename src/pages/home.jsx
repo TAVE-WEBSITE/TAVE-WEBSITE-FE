@@ -120,132 +120,131 @@ export default function HomeTest() {
     return (
         //overflow-y-auto
         <div className="outer relative mx-auto break-keep" ref={outerDivRef}>
-            <div className={styles.gradientWrapper} />
-            <div className="flex flex-col justify-center items-center w-full">
-                {/* 첫번째 화면 */}
-                <div
-                    className="flex flex-col items-center h-dvh justify-center w-screen md:px-20 px-5 overflow-hidden"
-                    style={{
-                        backgroundImage: `url(${wave1})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'top',
-                    }}
-                >
-                    <div className="md:text-2xl text-base font-light mt-20">The new technology wave</div>
-                    <img src={LogoTave} className="w-[301px]" alt="taveLogo"></img>
-                    <div className="hidden md:inline font-medium mt-10 text-center md:title-2">
-                        기술의 물결 속에서 함께 성장하는 곳, TAVE
-                    </div>
-                    <div className="md:hidden font-medium mt-10 text-center text-2xl">
-                        기술의 물결 속에서 함께
-                        <br />
-                        성장하는 곳, TAVE
-                    </div>
-                    <button className="md:hidden mt-20 py-3.5 px-4 text-white text-center font-semibold text-[18px] bg-gradient-to-r from-[#6c3bff] to-[#1a5bff] rounded-xl hover:from-[#5989FF] hover:to-[#5989FF]">
-                        지금 바로 지원하기
-                    </button>
+
+
+            {/* 첫번째 화면 */}
+            <div
+                className="flex flex-col items-center h-dvh justify-center w-screen md:px-20 px-5"
+                style={{
+                    backgroundImage: `url(${wave1})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'top',
+                }}
+            >
+                <div className="md:text-2xl text-base font-light mt-20">The new technology wave</div>
+                <img src={LogoTave} className="w-[301px]" alt="taveLogo"></img>
+                <div className="hidden md:inline font-medium mt-10 text-center md:title-2">
+                    기술의 물결 속에서 함께 성장하는 곳, TAVE
+                </div>
+                <div className="md:hidden font-medium mt-10 text-center text-2xl">
+                    기술의 물결 속에서 함께
+                    <br />
+                    성장하는 곳, TAVE
+                </div>
+                <button className="md:hidden mt-20 py-3.5 px-4 text-white text-center font-semibold text-[18px] bg-gradient-to-r from-[#6c3bff] to-[#1a5bff] rounded-xl hover:from-[#5989FF] hover:to-[#5989FF]">
+                    지금 바로 지원하기
+                </button>
+            </div>
+
+            {/* 웹에서는 이 문구가 따로 */}
+            <div
+                className="hidden md:flex h-dvh w-full flex-col items-center justify-center w-screen md:px-20 px-5"
+                style={{
+                    backgroundImage: `url(${wave2})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            >
+                <div className="text-center md:title-1 text-xl font-semibold leading-6 tracking-[-0.9px]">
+                    다양한 분야와의 융합을 통해 미래를 선도하는
+                    <br /> IT 연합 동아리, TAVE를 소개합니다
+                </div>
+            </div>
+
+            {/*두번째 화면 */}
+            <div className="h-dvh w-full flex flex-col items-center justify-center max-md:pt-14  md:px-20 px-5">
+                <p className="md:hidden text-center text-lg font-semibold leading-8 tracking-[-0.9px] ">
+                    다양한 분야와의 융합을 통해
+                    <br />
+                    미래를 선도하는 IT 연합 동아리,
+                    <br />
+                    TAVE를 소개합니다
+                </p>
+                <img src={ArrowDown} className="md:hidden md:mt-0 mt-8" />
+                <div className="flex flex-col items-center md:gap-4">
+                    <div className="md:text-4xl font-bold title-1 max-md:text-[26px]">Core Value</div>
+                    <div className="md:text-xl font-light max-md:text-[16px]">TAVE의 핵심가치를 소개합니다</div>
+                </div>
+                <div className="hidden md:scale-75 lg:scale-95  md:flex gap-4 mt-12 px-4 md:gap-12 md:mt-[50px] md:px-[148px]">
+                    <CoreCard
+                        title="열정"
+                        description={
+                            <p>
+                                열정으로 뭉친 TAVE는 새로운 기술을
+                                <br />
+                                탐험하고 혁신의 경계를 넓혀갑니다.
+                            </p>
+                        }
+                        className="right-0 bottom-0"
+                        SvgIcon={<Passion />}
+                    />
+                    <CoreCard
+                        title="성장"
+                        description={
+                            <p>
+                                함께 배우고 경험하며, 개인과 팀의 성장
+                                <br />
+                                모두를 이끌어가는 공간입니다.
+                            </p>
+                        }
+                        SvgIcon={<Growth />}
+                    />
+                    <CoreCard
+                        title="다양성"
+                        description={
+                            <p>
+                                다양한 분야의 융합을 통해
+                                <br />
+                                새로운 가능성을 탐색합니다.
+                            </p>
+                        }
+                        className="left-0 bottom-0"
+                        SvgIcon={<Diversity />}
+                    />
+                </div>
+                <div className="md:hidden w-full mt-12">
+                    <CoreValueCarousel />
+                </div>
+            </div>
+            {/*세번째 화면 */}
+            <div className="h-dvh w-full flex flex-col justify-center items-center  md:px-20 px-5">
+                <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">TAVE HISTORY</div>
+                <div className="md:text-xl font-light max-md:text-[16px] leading-[20px] md:mb-[50px] mb-12 text-center">
+                    TAVE 프로젝트의 활동 내역 및<br className="sm:hidden" /> 수상 내역을 확인해보세요
+                </div>
+                <History />
+            </div>
+            {/*네번째 화면 */}
+            <div className="h-dvh flex flex-col justify-center items-center w-full  md:px-20 px-5">
+                <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">TAVE REVIEW</div>
+                <div className="md:text-xl font-light max-md:text-[16px] leading-[20px] text-center md:mb-[50px] mb-12">
+                    <span className="block md:inline">TAVE에 참여한 사람들의</span>
+                    <span className="block md:inline"> 후기를 들어보세요.</span>
                 </div>
 
-                {/* 웹에서는 이 문구가 따로 */}
-                <div
-                    className="hidden md:flex h-dvh w-full flex-col items-center justify-center w-screen md:px-20 px-5"
-                    style={{
-                        backgroundImage: `url(${wave2})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                >
-                    <div className="text-center md:title-1 text-xl font-semibold leading-6 tracking-[-0.9px]">
-                        다양한 분야와의 융합을 통해 미래를 선도하는
-                        <br /> IT 연합 동아리, TAVE를 소개합니다
-                    </div>
-                </div>
-
-                {/*두번째 화면 */}
-                <div className="h-dvh w-full flex flex-col items-center justify-center max-md:pt-14  md:px-20 px-5">
-                    <p className="md:hidden text-center text-lg font-semibold leading-8 tracking-[-0.9px] ">
-                        다양한 분야와의 융합을 통해
-                        <br />
-                        미래를 선도하는 IT 연합 동아리,
-                        <br />
-                        TAVE를 소개합니다
-                    </p>
-                    <img src={ArrowDown} className="md:hidden md:mt-0 mt-8" />
-                    <div className="flex flex-col items-center md:gap-4">
-                        <div className="md:text-4xl font-bold title-1 max-md:text-[26px]">Core Value</div>
-                        <div className="md:text-xl font-light max-md:text-[16px]">TAVE의 핵심가치를 소개합니다</div>
-                    </div>
-                    <div className="hidden md:scale-75 lg:scale-95  md:flex gap-4 mt-12 px-4 md:gap-12 md:mt-[50px] md:px-[148px]">
-                        <CoreCard
-                            title="열정"
-                            description={
-                                <p>
-                                    열정으로 뭉친 TAVE는 새로운 기술을
-                                    <br />
-                                    탐험하고 혁신의 경계를 넓혀갑니다.
-                                </p>
-                            }
-                            className="right-0 bottom-0"
-                            SvgIcon={<Passion />}
-                        />
-                        <CoreCard
-                            title="성장"
-                            description={
-                                <p>
-                                    함께 배우고 경험하며, 개인과 팀의 성장
-                                    <br />
-                                    모두를 이끌어가는 공간입니다.
-                                </p>
-                            }
-                            SvgIcon={<Growth />}
-                        />
-                        <CoreCard
-                            title="다양성"
-                            description={
-                                <p>
-                                    다양한 분야의 융합을 통해
-                                    <br />
-                                    새로운 가능성을 탐색합니다.
-                                </p>
-                            }
-                            className="left-0 bottom-0"
-                            SvgIcon={<Diversity />}
-                        />
-                    </div>
-                    <div className="md:hidden w-full mt-12">
-                        <CoreValueCarousel />
-                    </div>
-                </div>
-                {/*세번째 화면 */}
-                <div className="h-dvh w-full flex flex-col justify-center items-center  md:px-20 px-5">
-                    <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">TAVE HISTORY</div>
+                <Review />
+            </div>
+            {/*다섯번째 화면 */}
+            <div className="realtive h-dvh flex flex-col w-full">
+                <div className="flex flex-col items-center justify-center w-full h-full flex-grow md:px-20 px-5">
+                    <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">SPONSORED BY</div>
                     <div className="md:text-xl font-light max-md:text-[16px] leading-[20px] md:mb-[50px] mb-12 text-center">
-                        TAVE 프로젝트의 활동 내역 및<br className="sm:hidden" /> 수상 내역을 확인해보세요
+                        <span className="block md:inline">TAVE와 함께하는</span>
+                        <span className="block md:inline"> 공식 파트너 단체입니다.</span>
                     </div>
-                    <History />
+                    <Sponsored />
                 </div>
-                {/*네번째 화면 */}
-                <div className="h-dvh flex flex-col justify-center items-center w-full  md:px-20 px-5">
-                    <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">TAVE REVIEW</div>
-                    <div className="md:text-xl font-light max-md:text-[16px] leading-[20px] text-center md:mb-[50px] mb-12">
-                        <span className="block md:inline">TAVE에 참여한 사람들의</span>
-                        <span className="block md:inline"> 후기를 들어보세요.</span>
-                    </div>
-
-                    <Review />
-                </div>
-                {/*다섯번째 화면 */}
-                <div className="realtive h-dvh flex flex-col w-full">
-                    <div className="flex flex-col items-center justify-center w-full h-full flex-grow md:px-20 px-5">
-                        <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">SPONSORED BY</div>
-                        <div className="md:text-xl font-light max-md:text-[16px] leading-[20px] md:mb-[50px] mb-12 text-center">
-                            <span className="block md:inline">TAVE와 함께하는</span>
-                            <span className="block md:inline"> 공식 파트너 단체입니다.</span>
-                        </div>
-                        <Sponsored />
-                    </div>
-                    <Footer />
-                </div>
+                <Footer />
             </div>
         </div>
     );
