@@ -124,7 +124,7 @@ export default function HomeTest() {
             <div className="flex flex-col justify-center items-center w-full">
                 {/* 첫번째 화면 */}
                 <div
-                    className="flex flex-col items-center h-dvh justify-center w-screen md:px-20 px-5"
+                    className="flex flex-col items-center h-svh justify-center w-screen md:px-20 px-5"
                     style={{
                         backgroundImage: `url(${wave1})`,
                         backgroundSize: 'cover',
@@ -141,17 +141,14 @@ export default function HomeTest() {
                         <br />
                         성장하는 곳, TAVE
                     </div>
-                    <button
-                        className="md:hidden mt-20 py-3.5 px-4 text-white text-center font-semibold text-[18px] bg-gradient-to-r from-[#6c3bff] to-[#1a5bff] rounded-xl hover:from-[#5989FF] hover:to-[#5989FF]"
-                       
-                    >
+                    <button className="md:hidden mt-20 py-3.5 px-4 text-white text-center font-semibold text-[18px] bg-gradient-to-r from-[#6c3bff] to-[#1a5bff] rounded-xl hover:from-[#5989FF] hover:to-[#5989FF]">
                         지금 바로 지원하기
                     </button>
                 </div>
 
                 {/* 웹에서는 이 문구가 따로 */}
                 <div
-                    className="hidden md:flex h-dvh w-full flex-col items-center justify-center w-screen md:px-20 px-5"
+                    className="hidden md:flex h-svh w-full flex-col items-center justify-center w-screen md:px-20 px-5"
                     style={{
                         backgroundImage: `url(${wave2})`,
                         backgroundSize: 'cover',
@@ -165,7 +162,7 @@ export default function HomeTest() {
                 </div>
 
                 {/*두번째 화면 */}
-                <div className="h-dvh w-full flex flex-col items-center justify-center max-md:pt-14  md:px-20 px-5">
+                <div className="h-svh w-full flex flex-col items-center justify-center max-md:pt-14  md:px-20 px-5">
                     <p className="md:hidden text-center text-lg font-semibold leading-8 tracking-[-0.9px] ">
                         다양한 분야와의 융합을 통해
                         <br />
@@ -220,7 +217,7 @@ export default function HomeTest() {
                     </div>
                 </div>
                 {/*세번째 화면 */}
-                <div className="h-dvh w-full flex flex-col justify-center items-center  md:px-20 px-5">
+                <div className="h-svh w-full flex flex-col justify-center items-center  md:px-20 px-5">
                     <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">TAVE HISTORY</div>
                     <div className="md:text-xl font-light max-md:text-[16px] leading-[20px] md:mb-[50px] mb-12 text-center">
                         TAVE 프로젝트의 활동 내역 및<br className="sm:hidden" /> 수상 내역을 확인해보세요
@@ -228,7 +225,7 @@ export default function HomeTest() {
                     <History />
                 </div>
                 {/*네번째 화면 */}
-                <div className="h-dvh flex flex-col justify-center items-center w-full  md:px-20 px-5">
+                <div className="h-svh flex flex-col justify-center items-center w-full  md:px-20 px-5">
                     <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">TAVE REVIEW</div>
                     <div className="md:text-xl font-light max-md:text-[16px] leading-[20px] text-center md:mb-[50px] mb-12">
                         <span className="block md:inline">TAVE에 참여한 사람들의</span>
@@ -238,7 +235,7 @@ export default function HomeTest() {
                     <Review />
                 </div>
                 {/*다섯번째 화면 */}
-                <div className="realtive h-dvh flex flex-col w-full">
+                <div className="realtive h-svh flex flex-col w-full">
                     <div className="flex flex-col items-center justify-center w-full h-full flex-grow md:px-20 px-5">
                         <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">SPONSORED BY</div>
                         <div className="md:text-xl font-light max-md:text-[16px] leading-[20px] md:mb-[50px] mb-12 text-center">
