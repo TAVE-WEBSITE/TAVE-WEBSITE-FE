@@ -90,7 +90,7 @@ export default function Project() {
                 </div>
             </div>
 
-            <div className="product w-full max-w-6xl">
+            <div className="product max-w-6xl">
                 <div
                     className={`tabs-container relative px-5 break-keep text-center ${
                         isTabFixed
