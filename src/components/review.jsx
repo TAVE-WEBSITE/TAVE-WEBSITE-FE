@@ -52,7 +52,7 @@ export default function Review() {
     const swiperReviews = groupingReviews(reviews);
 
     return (
-        <div className="w-full">
+        <div className="w-full xs:max-w-[90vw] sm:max-w-[90vw]">
             <div className="block md:hidden px-3">
                 <Swiper spaceBetween={64} pagination={{ clickable: true }} modules={[Pagination]}>
                     {swiperReviews.map((review, index) => (

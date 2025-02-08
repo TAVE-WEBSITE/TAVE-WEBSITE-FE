@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         Pretendard: ["Pretendard"],
       },
+      screens: {
+        xs: "320px", 
+      },
     },
   },
   plugins: [

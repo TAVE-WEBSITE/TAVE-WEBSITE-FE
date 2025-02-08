@@ -39,7 +39,7 @@ export default function Header({ isBlack }) {
                         ))}
                         <li>
                             <button className="hover:from-[#5989FF] hover:to-[#5989FF] bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center">
-                                <a href="apply" className="cursor-pointer relative z-50">
+                                <a href="https://forms.gle/xBwZ9nnk4nnezVeX8" className="cursor-pointer relative z-50">
                                     지원하기
                                 </a>
                             </button>
@@ -111,7 +111,7 @@ export default function Header({ isBlack }) {
                     ))}
                     <li className="py-3">
                         <div className="flex items-center justify-center bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] rounded-lg hover:from-[#5989FF] hover:to-[#5989FF] text-center w-20 h-9">
-                            <a href="apply" className="cursor-pointer text-base font-bold">
+                            <a href="https://forms.gle/xBwZ9nnk4nnezVeX8" className="cursor-pointer text-base font-bold">
                                 지원하기
                             </a>
                         </div>
