@@ -40,7 +40,7 @@ export default function Project() {
 
   const handleScroll = useCallback(() => {
     // console.log(window.scrollY);
-    const shouldBeFixed = window.scrollY >= 340;
+    const shouldBeFixed = window.scrollY >= 290;
     if (shouldBeFixed !== isTabFixed) {
       setIsTabFixed(shouldBeFixed);
     }
@@ -77,7 +77,7 @@ export default function Project() {
 
   return (
     <div className="grid place-items-center">
-      <img src={Wave} className="absolute z-0 md:hidden h-full top-0 w-full" />
+      <img src={Wave} className="absolute z-0 md:hidden w-[100vw] h-[150vh] top-2" />
       <div className="mt-6 md:mt-20 pt-24 pb-12 grid place-items-center w-4/5 break-keep text-center">
         <div className="text-[26px] md:text-4xl font-bold leading-14 pb-4 ">
           TAVE의 프로젝트를 소개합니다
