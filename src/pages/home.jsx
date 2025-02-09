@@ -259,11 +259,7 @@ export default function HomeTest() {
                 <History />
             </div>
             {/*네번째 화면 */}
-            <div className="h-svh w-full flex flex-col justify-center items-center md:px-20 px-5 bg-cover bg-center bg-no-repeat " 
-                 style={{
-                backgroundImage: `url(${wave4})`,
-                backgroundPositionY: bgPosition4,
-                }}>                
+            <div className="h-dvh flex flex-col justify-center items-center w-full  md:px-20 px-5">
                 <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">TAVE REVIEW</div>
                 <div className="md:text-xl font-light max-md:text-[16px] leading-[20px] text-center md:mb-[50px] mb-12">
                     <span className="block md:inline">TAVE에 참여한 사람들의</span>
@@ -273,14 +269,15 @@ export default function HomeTest() {
                 <Review />
             </div>
             {/*다섯번째 화면 */}
-            <div className="h-svh w-full flex flex-col justify-center items-center md:px-20 px-5" style={{
-                         backgroundImage: `url(${wave5})`,
-                         backgroundSize: '100vw 100vh',
-                         backgroundPosition: 'center',
-                         backgroundRepeat: 'no-repeat',
-                         backgroundPositionY: '-5rem'
-                     }}>                
-                     <div className="flex flex-col items-center justify-center w-full h-full flex-grow md:px-20 px-5">
+            <div className="realtive h-dvh flex flex-col w-full"
+            style={{
+                backgroundImage: `url(${wave5})`,
+                backgroundSize: '100vw 100vh',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundPositionY: '-5rem'
+            }}>
+                <div className="flex flex-col items-center justify-center w-full h-full flex-grow md:px-20 px-5">
                     <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">SPONSORED BY</div>
                     <div className="md:text-xl font-light max-md:text-[16px] leading-[20px] md:mb-[50px] mb-12 text-center">
                         <span className="block md:inline">TAVE와 함께하는</span>
