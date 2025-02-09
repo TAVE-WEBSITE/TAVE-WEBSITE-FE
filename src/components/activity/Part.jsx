@@ -31,7 +31,7 @@ export default function Part() {
         centerPadding: '50px', // 양옆 카드의 여백
         slidesToScroll: 1,
         centerMode: true,
-        arrows: true,
+        arrows: false,
         adaptiveHeight: true,
         prevArrow: <ArrowLeft />,
         nextArrow: <ArrowRight />,
