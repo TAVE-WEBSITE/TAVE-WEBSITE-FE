@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export default function Tab({ category, onCategoryChange, initialState = 0 }) {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const handleClick = index => {
+  const handleClick = (index) => {
     setSelectedIndex(index);
     onCategoryChange(category[index]);
 
@@ -14,19 +14,22 @@ export default function Tab({ category, onCategoryChange, initialState = 0 }) {
   };
 
   useEffect(() => {
-      setSelectedIndex(initialState); // 초기 상태를 설정
-      onCategoryChange(category[initialState]); 
+    setSelectedIndex(initialState); // 초기 상태를 설정
+    onCategoryChange(category[initialState]);
   }, [initialState]);
 
   return (
-    <div className="flex flex-row gap-12 h-12 overflow-x-auto no-scrollbar">
+    <div className="flex flex-row gap-6 md:gap-12 h-12 overflow-x-auto no-scrollbar max-md:pr-6">
       {category.map((name, index) => (
         <div
           key={index}
-          className={`text-2xl font-bold leading-9 cursor-pointer ${
-            selectedIndex === index ? "text-[#195bff]" : "text-[#D1D3D8] hover:text-[#fff]"
+          className={`text-lg md:text-2xl font-bold leading-9 cursor-pointer ${
+            selectedIndex === index
+              ? "text-[#195bff]"
+              : "text-[#D1D3D8] hover:text-[#fff]"
           }`}
-          onClick={() => handleClick(index)}>
+          onClick={() => handleClick(index)}
+        >
           {name}
         </div>
       ))}
