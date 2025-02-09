@@ -32,6 +32,17 @@ const File = ({ type, title, field, teamNum, teamName, description, blogUrl, top
     }
   };
 
+ // 글자 수 제한 함수
+const truncateText = (text, maxLength = 19) => {
+  if (!text) return "";
+
+  // 영어 포함 여부 확인 (영어가 있으면 더 긴 maxLength 적용)
+  const hasEnglish = /[a-zA-Z]/.test(text);
+  const adjustedLength = hasEnglish ? maxLength + 6 : maxLength;
+
+  return text.length > adjustedLength ? `${text.slice(0, adjustedLength)}...` : text;
+};
+
   return (
     <div>
       <div
@@ -39,9 +50,9 @@ const File = ({ type, title, field, teamNum, teamName, description, blogUrl, top
         style={backgroundStyle}
         onClick={handleClick}
       >
-        <div className="absolute bottom-0 left-0 px-4 py-8 text-white">
-          <h2 className="text-sm md:text-lg font-bold font-Pretendard break-keep">
-            {type === "study" ? topic : description}
+        <div className="absolute bottom-0 left-0 px-4 py-5 text-white">
+          <h2 className="text-sm md:text-lg font-bold font-Pretendard break-keep overflow-hidden text-elipsis">
+          {truncateText(type === "study" ? topic : description)}
           </h2>
           <p className="text-xs font-normal font-Pretendard">
             {teamNum}기 {type === "study" ? teamName : title}팀
