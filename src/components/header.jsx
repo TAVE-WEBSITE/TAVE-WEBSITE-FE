@@ -54,7 +54,7 @@ export default function Header({ isBlack }) {
                         ? 'bg-[#121212]'
                         : isBlack
                         ? 'bg-black'
-                        : 'bg-gradient-to-b from-black from-30% to-transparent'
+                        : 'bg-gradient-to-b from-[#121212] from-30% to-transparent'
                 }`}
             >
                 <a href="/" className="items-start">
