@@ -4,10 +4,11 @@ import StudyFile2 from "../assets/images/StudyFile2.svg";
 import StudyFile3 from "../assets/images/StudyFile3.svg";
 import ProjectFile1 from "../assets/images/ProjectFile1.svg";
 import ProjectFile2 from "../assets/images/ProjectFile2.svg";
+import ProjectFile22 from "../assets/images/ProjectFile2.png";
 import ProjectFile3 from "../assets/images/ProjectFile3.svg";
 
 const studyVariants = [StudyFile1, StudyFile2, StudyFile3];
-const projectVariants = [ProjectFile1, ProjectFile2, ProjectFile3];
+const projectVariants = [ProjectFile1, ProjectFile22, ProjectFile3];
 
 const File = ({ type, title, field, teamNum, teamName, description, blogUrl, topic }) => {
   const backgroundImage = useMemo(() => {
