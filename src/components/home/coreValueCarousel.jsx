@@ -62,7 +62,7 @@ export default function CoreValueCarousel() {
     arrows: false, // 화살표 비활성화
     centerMode: true, // 중앙 정렬
     adaptiveHeight: true, // 높이 자동 조정
-    centerPadding: "20px",
+    centerPadding: "38px",
     beforeChange: (current, next) => {
       setCurrentSlide(next); // 슬라이드 변경 시 currentSlide 업데이트
     },
