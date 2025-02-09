@@ -1,14 +1,13 @@
 import React, { useMemo } from "react";
-import StudyFile1 from "../assets/images/StudyFile1.svg";
-import StudyFile2 from "../assets/images/StudyFile2.svg";
-import StudyFile3 from "../assets/images/StudyFile3.svg";
-import ProjectFile1 from "../assets/images/ProjectFile1.svg";
-import ProjectFile2 from "../assets/images/ProjectFile2.svg";
-import ProjectFile22 from "../assets/images/ProjectFile2.png";
-import ProjectFile3 from "../assets/images/ProjectFile3.svg";
+import StudyFile1 from "../assets/images/StudyFile1.png";
+import StudyFile2 from "../assets/images/StudyFile2.png";
+import StudyFile3 from "../assets/images/StudyFile3.png";
+import ProjectFile1 from "../assets/images/ProjectFile1.png";
+import ProjectFile2 from "../assets/images/ProjectFile2.png";
+import ProjectFile3 from "../assets/images/ProjectFile3.png";
 
 const studyVariants = [StudyFile1, StudyFile2, StudyFile3];
-const projectVariants = [ProjectFile1, ProjectFile22, ProjectFile3];
+const projectVariants = [ProjectFile1, ProjectFile2, ProjectFile3];
 
 const File = ({ type, title, field, teamNum, teamName, description, blogUrl, topic }) => {
   const backgroundImage = useMemo(() => {
@@ -36,7 +35,7 @@ const File = ({ type, title, field, teamNum, teamName, description, blogUrl, top
   return (
     <div>
       <div
-        className="relative w-48 h-[10.5rem] md:w-64 md:h-56 bg-no-repeat cursor-pointer"
+        className="relative w-44 h-[9.5rem] md:w-64 md:h-56 bg-no-repeat cursor-pointer"
         style={backgroundStyle}
         onClick={handleClick}
       >
