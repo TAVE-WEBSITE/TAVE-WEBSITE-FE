@@ -100,7 +100,7 @@ export default function Study() {
         className={`tabs-container w-full max-w-10xl pt-10 md:py-10 break-keep sticky top-12 z-20 flex justify-center items-center max-md:pl-6
           ${
             isTabFixed
-              ? "sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent w-full max-w-6xl"
+              ? "sticky top-12 z-20 bg-gradient-to-b from-[#121212] from-40% to-transparent w-full max-w-6xl"
               : ""
           }`}
       >

@@ -12,7 +12,7 @@ export default function Header({ isBlack }) {
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 ${
-                isBlack ? 'bg-black' : 'bg-gradient-to-b from-black from-30% to-transparent'
+                isBlack ? 'bg-[#121212]' : 'bg-gradient-to-b from-[#121212] from-30% to-transparent'
             } ${isMenuOpen ? 'bg-[#121212]' : ''}`}
         >
             {/* PC 헤더 */}
@@ -53,7 +53,7 @@ export default function Header({ isBlack }) {
                     isMenuOpen
                         ? 'bg-[#121212]'
                         : isBlack
-                        ? 'bg-black'
+                        ? 'bg-[#121212]'
                         : 'bg-gradient-to-b from-[#121212] from-30% to-transparent'
                 }`}
             >
