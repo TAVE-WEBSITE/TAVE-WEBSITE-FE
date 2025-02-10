@@ -32,7 +32,7 @@ export default function PartCard({
             <img
               src={icon}
               alt="icon"
-              className={`absolute top-0 left-[-1rem] transform transition-transform duration-300  h-36 sm:h-40 md:h-44 w-44 sm:w-60 md:w-56 ${
+              className={`absolute top-0 left-[-0.5rem] transform transition-transform duration-300  h-36 sm:h-40 md:h-44 w-44 sm:w-60 md:w-56 ${
                 !isDesign ? "md:group-hover:scale-110" : ""
               }  `}
             />
