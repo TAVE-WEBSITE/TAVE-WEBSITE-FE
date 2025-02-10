@@ -106,7 +106,7 @@ export default function Project() {
               isTabFixed ? "flex justify-center" : "grid place-items-center"
             }`}
           >
-            <div className="pt-10 md:py-10">
+            <div className="pt-10 max-md:pl-6 md:py-10">
               <Tab
                 category={categories}
                 onCategoryChange={handleFiledChange}
