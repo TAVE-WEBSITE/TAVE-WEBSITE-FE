@@ -32,8 +32,10 @@ export default function PartCard({
             <img
               src={icon}
               alt="icon"
-              className={`absolute top-0 left-[-0.5rem] transform transition-transform duration-300  h-36 sm:h-40 md:h-44 w-44 sm:w-60 md:w-56 ${
-                !isDesign ? "md:group-hover:scale-110" : ""
+              className={`absolute top-0  transform transition-transform duration-300  h-36 sm:h-42 md:h-44 w-48 sm:w-60 md:w-56 ${
+                !isDesign
+                  ? "md:group-hover:scale-110 left-[-1.8rem]"
+                  : "left-[-2.5rem]"
               }  `}
             />
             {/* hover 전 화살표 아이콘 */}
