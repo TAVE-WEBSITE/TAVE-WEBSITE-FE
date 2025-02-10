@@ -49,7 +49,7 @@ export default function Part() {
         {
             KorTitle: '웹 프론트엔드',
             EngTitle: 'WEB',
-            description: `우리는 아름답고 직관적인 웹 경험을 창조해 나가며, 다양한 의견을 수렴하여 성장하는 웹사이트를 만들어갑니다.`,
+            description: `사용자들이 쉽고 즐겁게 이용할 수 있는 웹 경험을 제공하며, 다양한 의견을 반영해 지속적으로 발전하는 웹사이트를 구축하는 것입니다.`,
             icon: WebIcon,
             onClick: () => onPartClick('Web/App'),
         },
@@ -63,7 +63,7 @@ export default function Part() {
         {
             KorTitle: '백엔드',
             EngTitle: 'BACKEND',
-            description: `데이터를 안전하게 저장하고, 비즈니스 로직을 구현하여 사용자 요청에 신속하고 정확하게 응답하며, 다양한 기술을 접목해 안정적인 서비스를 위해 끊임없이 진화합니다.`,
+            description: `데이터를 안전하게 저장하고 비즈니스 로직을 구현하여 사용자 요청에 신속하게 응답하며, 다양한 기술을 접목해 안정적인 서비스를 지속적으로 발전시킵니다.`,
             icon: BEIcon,
             onClick: () => onPartClick('Backend'),
         },
@@ -84,7 +84,7 @@ export default function Part() {
         {
             KorTitle: '디자인',
             EngTitle: 'DESIGN',
-            description: `우리는 변화하는 디자인 트렌드를 이끌어가고,\n다양한 아이디어를 수렴하고,\n사용자 경험을 최우선으로 고려하여,\n아름답고 직관적인 물결을 일으킵니다.`,
+            description: `변화하는 디자인 트렌드를 이끌어가고,\n다양한 아이디어를 수렴하고,\n사용자 경험을 최우선으로 고려하여,\n아름답고 직관적인 물결을 일으킵니다.`,
             icon: DEIcon,
         },
     ];
