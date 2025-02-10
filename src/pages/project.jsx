@@ -97,7 +97,7 @@ export default function Project() {
         <div
           className={`tabs-container relative px-5 break-keep text-center ${
             isTabFixed
-              ? "sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent w-full max-w-6xl"
+              ? "sticky top-12 z-20 bg-gradient-to-b from-[#121212] from-40% to-transparent w-full max-w-6xl"
               : ""
           }`}
         >
