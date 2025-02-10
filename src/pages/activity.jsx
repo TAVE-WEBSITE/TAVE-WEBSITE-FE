@@ -46,7 +46,7 @@ export default function Activity() {
             description: 'IT 업계 현직자 OB분들을 초청하여, 인사이트를 얻을 수 있는 세션',
         },
         {
-            title: '테이브의 밤',
+            title: 'TAVE의 밤',
             description: '매 회 다른 컨셉을 두고, 전 기수가 모이는 네트워킹 센터',
         },
         {
