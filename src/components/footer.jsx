@@ -12,16 +12,15 @@ export default function Footer() {
   return (
     <footer
       className="w-full flex z-50 justify-between bg-[#393A40]
-         md:px-36 md:py-10 px-6 py-7"
+         md:px-36 md:py-10 px-6 py-6"
     >
       <div
         className="flex flex-col text-[#A7A7A7]
-                text-[13px] font-normal"
+                text-[12px] font-normal"
       >
         <p className="md:mb-8 mb-4 font-bold">TECHNOLOGY WAVE</p>
         <p className="md:mb-4 mb-1">
-          TAVE (4차 산업혁명{" "}
-          <span className="whitespace-nowrap">연합 동아리)</span>
+          TAVE (<span className="whitespace-nowrap">IT 연합 동아리)</span>
         </p>
         <p>ⓒ TAVE. 2018 - {currentYear} All&nbsp;Rights&nbsp;Reserved</p>
       </div>
