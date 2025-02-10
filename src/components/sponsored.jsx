@@ -10,10 +10,10 @@ export default function Sponsored() {
   return (
     <>
       <div className="grid grid-cols-2 md:grid-cols-4 justify-items-center gap-4 md:gap-6">
-        <CodeitLogo className="w-32 h-32 lg:w-48 lg:h-48" />
-        <AlpacoLogo className="w-32 h-32 lg:w-48 lg:h-48" />
-        <BBCareerLogo className="w-32 h-32 lg:w-48 lg:h-48" />
-        <LetsCareerLogo className="w-32 h-32 lg:w-48 lg:h-48" />
+        <CodeitLogo className="w-32 h-32 lg:w-[11.5rem] lg:h-[11.5rem]" />
+        <AlpacoLogo className="w-32 h-32 lg:w-[11.5rem] lg:h-[11.5rem]" />
+        <BBCareerLogo className="w-32 h-32 lg:w-[11.5rem] lg:h-[11.5rem]" />
+        <LetsCareerLogo className="w-32 h-32 lg:w-[11.5rem] lg:h-[11.5rem]" />
       </div>
     </>
   );
