@@ -26,7 +26,7 @@ export default function Tab({ category, onCategoryChange, initialState = 0 }) {
           className={`text-lg md:text-2xl font-bold leading-9 cursor-pointer ${
             selectedIndex === index
               ? "text-[#195bff]"
-              : "text-[#D1D3D8] hover:text-[#fff]"
+              : "text-[#D1D3D8] hover:text-white"
           }`}
           onClick={() => handleClick(index)}
         >
