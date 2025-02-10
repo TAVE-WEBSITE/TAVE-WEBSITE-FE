@@ -90,8 +90,8 @@ export default function Activity() {
     return (
         <>
             <div className="relative md:h-[600px] sm:h-[500px] h-[340px] w-full">
-                <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent z-20" />
-                <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent z-20" />
+                <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-[#121212] to-transparent z-20" />
+                <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-[#121212] to-transparent z-20" />
                 <img src={ActivityBack} alt="ActivityBack" className="absolute object-cover w-full h-full z-10" />
             </div>
 
