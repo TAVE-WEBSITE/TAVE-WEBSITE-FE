@@ -7,12 +7,12 @@ import Footer from "../components/footer";
 import { useLocation } from "react-router-dom";
 
 export default function Study() {
-  const categories = ["Web/App", "Backend", "DeepLearning", "DataAnalysis"];
+  const categories = ["Web/App", "Backend", "DataAnalysis", "DeepLearning"];
   const categoryMap = {
     "Web/App": "FRONTEND",
     Backend: "BACKEND",
-    DeepLearning: "DEEPLEARNING",
     DataAnalysis: "DATAANALYSIS",
+    DeepLearning: "DEEPLEARNING",
   };
 
   const [selectedCategory, setSelectedCategory] = useState("Web/App");
