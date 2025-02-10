@@ -55,8 +55,16 @@ export default function PartCard({
               } ${center ? "max-md:opacity-100" : "max-md:opacity-0"}`}
             />
           </div>
-          <div className="absolute top-1/2 left-[-0.2rem] sm:left-6 body-highlight-1 max-md:scale-75 transform -translate-y-1/2">
-            <div className="text-lg md:text-xl max-lg:text-2xl text-black z-10 text-left font-bold">
+          <div
+  className={`absolute top-1/2 ${
+    EngTitle === "DESIGN" || EngTitle === "BACKEND"
+      ? "left-[0.5rem]"
+      : EngTitle === "DEEP LEARNING"
+      ? "left-[-0.7rem]"
+      : "left-[-0.2rem]"
+  } sm:left-6 body-highlight-1 max-md:scale-75 transform -translate-y-1/2`}
+>
+       <div className="text-lg md:text-xl max-lg:text-2xl text-black z-10 text-left font-bold">
               {KorTitle}
             </div>
             <div className="text-lg md:text-xl max-lg:text-2xl text-black z-10 mt-2 text-left font-bold">
