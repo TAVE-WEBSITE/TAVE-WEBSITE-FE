@@ -106,7 +106,7 @@ export default function History() {
     return (
         <div className="flex flex-col items-center justify-center w-full xs:max-w-[90vw] sm:max-w-[90vw]">
             {/* 그룹 칩 */}
-            <div className="w-full px-6 flex items-center justify-center">
+            <div className="w-full  flex items-center justify-center">
                 <div className="flex gap-4 justify-start overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide scrollbar-hidden">
                     {groupGenerations(histories).map((group, index) => {
                         const groupLabel = group;
