@@ -76,8 +76,8 @@ export default function StepComponent({
             )}
 
             <div
-              className={`flex w-full justify-between gap-3 w-92 lg:min-w-[550px] sm:py-12 py-4 rounded-2xl p-5 transition-transform duration-300 ease-in-out ${
-                selectedStep === index ? "scale-105" : "scale-100"
+              className={`flex w-full justify-between gap-3 w-92 lg:min-w-[550px] sm:py-12 py-3 rounded-2xl p-5 transition-transform duration-300 ease-in-out ${
+                selectedStep === index ? "scale-105" : "scale-90"
               } transition-all duration-300 ease-in-out ${
                 selectedStep === index
                   ? "bg-[rgb(39,76,200)] text-white"
