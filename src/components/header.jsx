@@ -15,6 +15,19 @@ export default function Header({ isBlack }) {
     navigate("/apply");
   };
 
+  /**
+   * 지원 기간 O 모바일 버전
+ * <a href="https://forms.gle/xBwZ9nnk4nnezVeX8" className="cursor-pointer text-base font-bold">
+    지원하기
+  </a>
+  지원 기간 O 데스크탑 버전
+  <button onClick={() => (window.location.href = 'https://forms.gle/xBwZ9nnk4nnezVeX8')} 
+    className="hover:from-[#5989FF] hover:to-[#5989FF] bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center z-50">
+      지원하기
+  </button>
+
+ */
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 ${
@@ -54,17 +67,6 @@ export default function Header({ isBlack }) {
             >
               지원하기
             </div>
-
-            {/*
-              지원기간 X
-             <button
-                            onClick={() => (window.location.href = 'https://forms.gle/xBwZ9nnk4nnezVeX8')}
-                            className="hover:from-[#5989FF] hover:to-[#5989FF] bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center z-50"
-                        >
-                            지원하기
-                        </button>
-              
-              */}
           </ul>
         </nav>
       </div>
@@ -140,12 +142,13 @@ export default function Header({ isBlack }) {
           ))}
           <li className="py-3">
             <div className="flex items-center justify-center bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] rounded-lg hover:from-[#5989FF] hover:to-[#5989FF] text-center w-20 h-9">
-              <a
-                href="https://forms.gle/xBwZ9nnk4nnezVeX8"
+              <div
                 className="cursor-pointer text-base font-bold"
+                onClick={applyHandler}
               >
+                {" "}
                 지원하기
-              </a>
+              </div>
             </div>
           </li>
         </ul>
