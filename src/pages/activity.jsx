@@ -46,7 +46,7 @@ export default function Activity() {
             description: 'IT 업계 현직자 OB분들을 초청하여, 인사이트를 얻을 수 있는 세션',
         },
         {
-            title: '테이브의 밤',
+            title: 'TAVE의 밤',
             description: '매 회 다른 컨셉을 두고, 전 기수가 모이는 네트워킹 센터',
         },
         {
@@ -90,8 +90,8 @@ export default function Activity() {
     return (
         <>
             <div className="relative md:h-[600px] sm:h-[500px] h-[340px] w-full">
-                <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent z-20" />
-                <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent z-20" />
+                <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-[#121212] to-transparent z-20" />
+                <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-[#121212] to-transparent z-20" />
                 <img src={ActivityBack} alt="ActivityBack" className="absolute object-cover w-full h-full z-10" />
             </div>
 

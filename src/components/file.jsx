@@ -50,11 +50,11 @@ const truncateText = (text, maxLength = 19) => {
         style={backgroundStyle}
         onClick={handleClick}
       >
-        <div className="absolute bottom-0 left-0 px-4 py-5 text-white">
+        <div className="absolute bottom-6 left-0 px-4 text-white">
           <h2 className="text-sm md:text-lg font-bold font-Pretendard break-keep overflow-hidden text-elipsis">
           {truncateText(type === "study" ? topic : description)}
           </h2>
-          <p className="text-xs font-normal font-Pretendard">
+          <p className="text-xs font-normal font-Pretendard mt-1">
             {teamNum}기 {type === "study" ? teamName : title}팀
           </p>
         </div>

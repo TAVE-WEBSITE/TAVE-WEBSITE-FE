@@ -122,25 +122,16 @@ export default function HomeTest() {
     };
   }, [currentPage, isScrolling]);
 
-  const [backgroundImage, setBackgroundImage] = useState(`url(${wave2})`);
-  const [bgPosition2, setBgPosition2] = useState("");
-  const [bgPosition3, setBgPosition3] = useState("");
-  const [bgPosition4, setBgPosition4] = useState("");
+  const [backgroundImage, setBackgroundImage] = useState("");
   useEffect(() => {
     //
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         // md 사이즈부터 적용
         setBackgroundImage("none");
-        setBgPosition2("-24rem");
-        setBgPosition3("-40rem");
-        setBgPosition4("-70rem");
       } else {
         // ms보다 작은 사이즈에서 적용(모바일)
-        setBackgroundImage(`url(${wave2})`);
-        setBgPosition2("-15rem");
-        setBgPosition3("-16rem");
-        setBgPosition4("-14rem");
+        setBackgroundImage(`url(${wave1})`);
       }
     };
 
@@ -158,7 +149,7 @@ export default function HomeTest() {
       <div
         className="flex flex-col items-center h-dvh justify-center w-screen md:px-20 px-5"
         style={{
-          backgroundImage: `url(${wave1})`,
+          backgroundImage: backgroundImage,
           backgroundSize: "cover",
           backgroundPosition: "top",
         }}
@@ -177,9 +168,8 @@ export default function HomeTest() {
         </div>
         <button
           className="md:hidden mt-20 py-3.5 px-4 text-white text-center font-semibold text-[18px] bg-gradient-to-r from-[#6c3bff] to-[#1a5bff] rounded-xl hover:from-[#5989FF] hover:to-[#5989FF]"
-          onClick={
-            () => navigate("/apply")
-            /*() => {window.location.href = 'https://forms.gle/xBwZ9nnk4nnezVeX8'} */
+          onClick={() =>
+            (window.location.href = "https://forms.gle/xBwZ9nnk4nnezVeX8")
           }
         >
           지금 바로 지원하기
@@ -187,29 +177,17 @@ export default function HomeTest() {
       </div>
 
       {/* 웹에서는 이 문구가 따로 */}
-      <div
-        className="hidden md:flex h-svh w-full flex-col items-center justify-center w-screen md:px-20 px-5 bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: `url(${wave2})`,
-          backgroundPosition: "center",
-          backgroundPositionY: bgPosition2,
-        }}
-      >
-        <div className="text-center md:title-1 text-xl font-semibold leading-6 tracking-[-0.9px]">
+      <div className="hidden md:flex h-svh w-full flex-col items-center justify-center w-screen md:px-20 px-5 ">
+        <div className="text-center md:title-1 text-xl font-semibold leading-6 tracking-[-0.9px] z-10 relative">
           다양한 분야와의 융합을 통해 미래를 선도하는
           <br /> IT 연합 동아리, TAVE를 소개합니다
         </div>
+
+        <div className="absolute top-full w-full h-full bg-cover bg-no-repeat" />
       </div>
 
       {/*두번째 화면 */}
-      <div
-        className="h-svh w-full flex flex-col items-center justify-center max-md:pt-14  md:px-20 px-5 bg-no-repeat md:bg-none"
-        style={{
-          backgroundImage: backgroundImage,
-          backgroundPositionY: bgPosition2,
-          backgroundSize: "120vw 100vh",
-        }}
-      >
+      <div className="h-svh w-full flex flex-col items-center justify-center max-md:pt-14  md:px-20 px-5 bg-no-repeat md:bg-none">
         <p className="md:hidden text-center text-lg font-semibold leading-8 tracking-[-0.9px] ">
           다양한 분야와의 융합을 통해
           <br />
@@ -268,14 +246,7 @@ export default function HomeTest() {
         </div>
       </div>
       {/*세번째 화면 */}
-      <div
-        className="h-svh w-full flex flex-col justify-center items-center md:px-20 px-5 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${wave3})`,
-          backgroundPositionY: bgPosition3,
-        }}
-      >
-        {" "}
+      <div className="h-svh w-full flex flex-col justify-center items-center md:px-20 px-5 bg-cover bg-center bg-no-repeat">
         <div className="md:text-4xl font-bold title-1 max-md:text-[26px] md:mb-4">
           TAVE HISTORY
         </div>

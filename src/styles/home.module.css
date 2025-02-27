@@ -2,7 +2,13 @@
     position: absolute;
     width: 100vw;
     height: 600dvh;
-    background: linear-gradient(
+    background: 
+    url('../assets/images/home/wave1.svg') no-repeat 50% 0%,
+      url('../assets/images/home/wave2.svg') no-repeat 50% 13%,
+      url('../assets/images/home/wave3.svg') no-repeat 50% 60%,
+      url('../assets/images/home/wave4.svg') no-repeat 50% 90%,
+
+      linear-gradient(
         to bottom,
         #121212 0%,
         #121212 10%,
@@ -13,9 +19,34 @@
         #142a61 28%,
         #131826 35%,
         #121212 100%
-    );
+      );
+    background-size: contain;
     z-index: -1;
-}
+  }
+  
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+    .gradientWrapper {
+      background: 
+        url('../assets/images/home/wave2.svg') no-repeat 50% 17%,
+        url('../assets/images/home/wave3.svg') no-repeat 50% 34%,
+        url('../assets/images/home/wave4.svg') no-repeat 50% 54%,
+        linear-gradient(
+          to bottom,
+          #121212 0%,
+          #121212 10%,
+          #142a61 22%,
+          #103a8c 23%,
+          #1445bc 24%,
+          #1445bc 25.5%,
+          #142a61 28%,
+          #131826 35%,
+          #121212 100%
+        );
+      background-size: contain;
+    }
+  }
 
 .customDots {
     margin-top: 1rem;
