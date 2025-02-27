@@ -105,14 +105,14 @@ export default function Review() {
                                         key={index}
                                     >
                                         <div className="p-8 rounded-[10px] xl:w-[70%] lg:w-[80%] md:w-[85%] bg-white/5">
-                                            <p className="text-2xl mb-6 font-bold">
+                                            <p className="text-xl mb-6 font-bold">
                                                 {review.nickname}
                                                 <span className="text-[#adb1ba] ml-2">
                                                     {review.generation}기 {review.field}
                                                     {review.companyName ? `/${review.companyName}` : ''}
                                                 </span>
                                             </p>
-                                            <div className="text-xl font-medium">{review.content}</div>
+                                            <div className="text-lg font-medium">{review.content}</div>
                                         </div>
                                     </div>
                                     {index % 2 === 0 ? (

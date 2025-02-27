@@ -9,11 +9,11 @@ import { ReactComponent as LetsCareerLogo } from "../assets/images/home/LetsCare
 export default function Sponsored() {
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-4 justify-items-center gap-4 md:gap-6">
-        <CodeitLogo className="w-32 h-32 lg:w-[11.5rem] lg:h-[11.5rem]" />
-        <AlpacoLogo className="w-32 h-32 lg:w-[11.5rem] lg:h-[11.5rem]" />
-        <BBCareerLogo className="w-32 h-32 lg:w-[11.5rem] lg:h-[11.5rem]" />
-        <LetsCareerLogo className="w-32 h-32 lg:w-[11.5rem] lg:h-[11.5rem]" />
+      <div className="grid grid-cols-2 md:grid-cols-4 justify-items-center gap-5 md:gap-6">
+        <CodeitLogo className="w-[7rem] h-[7rem] lg:w-[11.5rem] lg:h-[11.5rem]" />
+        <AlpacoLogo className="w-[7rem] h-[7rem] lg:w-[11.5rem] lg:h-[11.5rem]" />
+        <BBCareerLogo className="w-[7rem] h-[7rem] lg:w-[11.5rem] lg:h-[11.5rem]" />
+        <LetsCareerLogo className="w-[7rem] h-[7rem] lg:w-[11.5rem] lg:h-[11.5rem]" />
       </div>
     </>
   );

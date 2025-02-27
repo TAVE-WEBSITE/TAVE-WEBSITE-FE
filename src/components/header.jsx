@@ -69,46 +69,46 @@ export default function Header({ isBlack }) {
         </nav>
       </div>
 
-      {/* 모바일 헤더 */}
-      <div
-        className={`fixed top-0 w-full flex md:hidden items-center justify-between py-4 px-4 z-50 ${
-          isMenuOpen
-            ? "bg-[#121212]"
-            : isBlack
-            ? "bg-[#121212]"
-            : "bg-gradient-to-b from-[#121212] from-30% to-transparent"
-        }`}
-      >
-        <a href="/" className="items-start">
-          <img src={LogoTave} className="w-20 h-auto" alt="taveLogo" />
-        </a>
-        <button
-          onClick={handleMenuToggle}
-          className="w-8 h-8 flex flex-col justify-center items-center md:hidden focus:outline-none"
-        >
-          <div
-            className={`hamburger space-y-1.5 transition-all duration-300 ease-in-out ${
-              isMenuOpen ? "open" : ""
-            }`}
-          >
-            <span
-              className={`block w-5 h-0.5 bg-white rounded transform transition-all duration-300 ease-in-out ${
-                isMenuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            ></span>
-            <span
-              className={`block w-5 h-0.5 bg-white rounded transition-opacity duration-300 ease-in-out ${
-                isMenuOpen ? "opacity-0" : ""
-              }`}
-            ></span>
-            <span
-              className={`block w-5 h-0.5 bg-white rounded transform transition-all duration-300 ease-in-out ${
-                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            ></span>
-          </div>
-        </button>
-      </div>
+            {/* 모바일 헤더 */}
+            <div
+                className={`fixed top-0 w-full flex md:hidden items-center justify-between py-4 px-4 z-50 ${
+                    isMenuOpen
+                        ? 'bg-[#121212]'
+                        : isBlack
+                        ? 'bg-[#121212]'
+                        : 'bg-gradient-to-b from-[#121212] from-30% to-transparent'
+                }`}
+            >
+                <a href="/" className="items-start">
+                    <img src={LogoTave} className="w-20 h-auto" alt="taveLogo" />
+                </a>
+                <button
+                    onClick={handleMenuToggle}
+                    className="w-8 h-8 flex flex-col justify-center items-center md:hidden focus:outline-none"
+                >
+                    <div
+                        className={`hamburger space-y-1.5 transition-all duration-300 ease-in-out ${
+                            isMenuOpen ? 'open' : ''
+                        }`}
+                    >
+                        <span
+                            className={`block w-5 h-0.5 bg-white rounded transform transition-all duration-300 ease-in-out ${
+                                isMenuOpen ? 'rotate-45 translate-y-2' : ''
+                            }`}
+                        ></span>
+                        <span
+                            className={`block w-5 h-0.5 bg-white rounded transition-opacity duration-300 ease-in-out ${
+                                isMenuOpen ? 'opacity-0' : ''
+                            }`}
+                        ></span>
+                        <span
+                            className={`block w-5 h-0.5 bg-white rounded transform transition-all duration-300 ease-in-out ${
+                                isMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                            }`}
+                        ></span>
+                    </div>
+                </button>
+            </div>
 
       {/* 모바일 메뉴 */}
       <>

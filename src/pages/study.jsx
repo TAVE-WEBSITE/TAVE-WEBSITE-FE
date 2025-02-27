@@ -66,7 +66,7 @@ export default function Study() {
 
   const handleScroll = useCallback(() => {
     // console.log(window.scrollY);
-    const shouldBeFixed = window.scrollY >= 340;
+    const shouldBeFixed = window.scrollY >= 300;
     if (shouldBeFixed !== isTabFixed) {
       setIsTabFixed(shouldBeFixed);
     }
@@ -81,7 +81,7 @@ export default function Study() {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <img src={Wave} className="absolute z-0 md:hidden h-full top-0" />
+      <img src={Wave} className="absolute z-0 md:hidden w-[100vw] h-[150vh] top-2" />
       <div className="flex flex-col mt-6 md:mt-20 pt-24 pb-12 justify-center items-center break-keep text-center z-10">
         <div className="text-[26px] md:text-4xl font-bold leading-14 pb-4">
           TAVE의 스터디를 소개합니다
@@ -100,7 +100,7 @@ export default function Study() {
         className={`tabs-container w-full max-w-10xl pt-10 md:py-10 break-keep sticky top-12 z-20 flex justify-center items-center max-md:pl-6
           ${
             isTabFixed
-              ? "sticky top-12 z-20 bg-gradient-to-b from-black from-40% to-transparent w-full max-w-6xl"
+              ? "sticky top-12 z-20 bg-gradient-to-b from-[#121212] from-40% to-transparent w-full max-w-6xl"
               : ""
           }`}
       >
