@@ -14,12 +14,13 @@ export default function Header({ isBlack }) {
   const applyHandler = () => {
     navigate("/apply");
   };
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 ${
         isBlack
-          ? "bg-black"
-          : "bg-gradient-to-b from-black from-30% to-transparent"
+          ? "bg-[#121212]"
+          : "bg-gradient-to-b from-[#121212] from-30% to-transparent"
       } ${isMenuOpen ? "bg-[#121212]" : ""}`}
     >
       {/* PC 헤더 */}
@@ -47,12 +48,23 @@ export default function Header({ isBlack }) {
                 />
               </li>
             ))}
-            <button
+            <div
               onClick={applyHandler}
               className="hover:from-[#5989FF] hover:to-[#5989FF] bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center z-50"
             >
               지원하기
-            </button>
+            </div>
+
+            {/*
+              지원기간 X
+             <button
+                            onClick={() => (window.location.href = 'https://forms.gle/xBwZ9nnk4nnezVeX8')}
+                            className="hover:from-[#5989FF] hover:to-[#5989FF] bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center z-50"
+                        >
+                            지원하기
+                        </button>
+              
+              */}
           </ul>
         </nav>
       </div>
@@ -63,8 +75,8 @@ export default function Header({ isBlack }) {
           isMenuOpen
             ? "bg-[#121212]"
             : isBlack
-            ? "bg-black"
-            : "bg-gradient-to-b from-black from-30% to-transparent"
+            ? "bg-[#121212]"
+            : "bg-gradient-to-b from-[#121212] from-30% to-transparent"
         }`}
       >
         <a href="/" className="items-start">
@@ -128,23 +140,12 @@ export default function Header({ isBlack }) {
           ))}
           <li className="py-3">
             <div className="flex items-center justify-center bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] rounded-lg hover:from-[#5989FF] hover:to-[#5989FF] text-center w-20 h-9">
-              <div
-                onClick={applyHandler}
-                className="cursor-pointer text-base font-bold"
-              >
-                지원하기
-              </div>
-
-              {/*
-              지원기간 X
               <a
                 href="https://forms.gle/xBwZ9nnk4nnezVeX8"
                 className="cursor-pointer text-base font-bold"
               >
                 지원하기
               </a>
-              
-              */}
             </div>
           </li>
         </ul>
