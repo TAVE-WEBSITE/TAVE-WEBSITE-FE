@@ -168,8 +168,9 @@ export default function HomeTest() {
         </div>
         <button
           className="md:hidden mt-20 py-3.5 px-4 text-white text-center font-semibold text-[18px] bg-gradient-to-r from-[#6c3bff] to-[#1a5bff] rounded-xl hover:from-[#5989FF] hover:to-[#5989FF]"
-          onClick={() =>
-            (window.location.href = "https://forms.gle/xBwZ9nnk4nnezVeX8")
+          onClick={
+            () => navigate("/apply")
+            /*(window.location.href = "https://forms.gle/xBwZ9nnk4nnezVeX8")*/
           }
         >
           지금 바로 지원하기
