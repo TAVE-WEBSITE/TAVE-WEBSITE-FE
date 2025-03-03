@@ -132,7 +132,7 @@ export default function HomeTest() {
 
     const [backgroundImage, setBackgroundImage] = useState("");
     useEffect(() => {
-        //
+        // 배경 물결 위치를 home.module.css에서 관리
         const handleResize = () => {
           if (window.innerWidth >= 768) {
             // md 사이즈부터 적용
