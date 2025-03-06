@@ -15,6 +15,19 @@ export default function Header({ isBlack }) {
     navigate("/apply");
   };
 
+  /**
+   * 지원 기간 O 모바일 버전
+ * <a href="https://forms.gle/xBwZ9nnk4nnezVeX8" className="cursor-pointer text-base font-bold">
+    지원하기
+  </a>
+  지원 기간 O 데스크탑 버전
+  <button onClick={() => (window.location.href = 'https://forms.gle/xBwZ9nnk4nnezVeX8')} 
+    className="hover:from-[#5989FF] hover:to-[#5989FF] bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center z-50">
+      지원하기
+  </button>
+
+ */
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 ${
@@ -54,61 +67,50 @@ export default function Header({ isBlack }) {
             >
               지원하기
             </div>
-
-            {/*
-              지원기간 X
-             <button
-                            onClick={() => (window.location.href = 'https://forms.gle/xBwZ9nnk4nnezVeX8')}
-                            className="hover:from-[#5989FF] hover:to-[#5989FF] bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center z-50"
-                        >
-                            지원하기
-                        </button>
-              
-              */}
           </ul>
         </nav>
       </div>
 
-            {/* 모바일 헤더 */}
-            <div
-                className={`fixed top-0 w-full flex md:hidden items-center justify-between py-4 px-4 z-50 ${
-                    isMenuOpen
-                        ? 'bg-[#121212]'
-                        : isBlack
-                        ? 'bg-[#121212]'
-                        : 'bg-gradient-to-b from-[#121212] from-30% to-transparent'
-                }`}
-            >
-                <a href="/" className="items-start">
-                    <img src={LogoTave} className="w-20 h-auto" alt="taveLogo" />
-                </a>
-                <button
-                    onClick={handleMenuToggle}
-                    className="w-8 h-8 flex flex-col justify-center items-center md:hidden focus:outline-none"
-                >
-                    <div
-                        className={`hamburger space-y-1.5 transition-all duration-300 ease-in-out ${
-                            isMenuOpen ? 'open' : ''
-                        }`}
-                    >
-                        <span
-                            className={`block w-5 h-0.5 bg-white rounded transform transition-all duration-300 ease-in-out ${
-                                isMenuOpen ? 'rotate-45 translate-y-2' : ''
-                            }`}
-                        ></span>
-                        <span
-                            className={`block w-5 h-0.5 bg-white rounded transition-opacity duration-300 ease-in-out ${
-                                isMenuOpen ? 'opacity-0' : ''
-                            }`}
-                        ></span>
-                        <span
-                            className={`block w-5 h-0.5 bg-white rounded transform transition-all duration-300 ease-in-out ${
-                                isMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                            }`}
-                        ></span>
-                    </div>
-                </button>
-            </div>
+      {/* 모바일 헤더 */}
+      <div
+        className={`fixed top-0 w-full flex md:hidden items-center justify-between py-4 px-4 z-50 ${
+          isMenuOpen
+            ? "bg-[#121212]"
+            : isBlack
+            ? "bg-[#121212]"
+            : "bg-gradient-to-b from-[#121212] from-30% to-transparent"
+        }`}
+      >
+        <a href="/" className="items-start">
+          <img src={LogoTave} className="w-20 h-auto" alt="taveLogo" />
+        </a>
+        <button
+          onClick={handleMenuToggle}
+          className="w-8 h-8 flex flex-col justify-center items-center md:hidden focus:outline-none"
+        >
+          <div
+            className={`hamburger space-y-1.5 transition-all duration-300 ease-in-out ${
+              isMenuOpen ? "open" : ""
+            }`}
+          >
+            <span
+              className={`block w-5 h-0.5 bg-white rounded transform transition-all duration-300 ease-in-out ${
+                isMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-5 h-0.5 bg-white rounded transition-opacity duration-300 ease-in-out ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-5 h-0.5 bg-white rounded transform transition-all duration-300 ease-in-out ${
+                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            ></span>
+          </div>
+        </button>
+      </div>
 
       {/* 모바일 메뉴 */}
       <>
@@ -140,12 +142,13 @@ export default function Header({ isBlack }) {
           ))}
           <li className="py-3">
             <div className="flex items-center justify-center bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] rounded-lg hover:from-[#5989FF] hover:to-[#5989FF] text-center w-20 h-9">
-              <a
-                href="https://forms.gle/xBwZ9nnk4nnezVeX8"
+              <div
                 className="cursor-pointer text-base font-bold"
+                onClick={applyHandler}
               >
+                {" "}
                 지원하기
-              </a>
+              </div>
             </div>
           </li>
         </ul>
