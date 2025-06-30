@@ -21,12 +21,12 @@ export default function Activity() {
     const [selectedStep, setSelectedStep] = useState(0);
     const stepRefs = useRef([]);
 
-    // getSession API로 데이터 불러오기
+    // getSession API로 세션 데이터 불러오는 코드 추가
     useEffect(() => {
         const fetchSessions = async () => {
             try {
                 const sessionData = await getSession();
-                // console.log('세션 데이터:', sessionData); 
+                console.log('세션 데이터:', sessionData); 
                 
                 if (sessionData && Array.isArray(sessionData.result)) {
                     setSteps(sessionData.result);
