@@ -76,21 +76,34 @@ export default function StepComponent({
             )}
 
             <div
-              className={`flex w-full justify-between gap-3 w-88 lg:min-w-[550px] sm:py-12 py-3 rounded-2xl p-5 transition-transform duration-300 ease-in-out ${
+              className={`flex w-full justify-between items-center gap-3 w-88 lg:min-w-[550px] sm:py-12 py-3 rounded-2xl p-5 transition-transform duration-300 ease-in-out ${
                 selectedStep === index ? "scale-100" : "scale-90"
-              } transition-all duration-300 ease-in-out ${
-                selectedStep === index
-                  ? "bg-[rgb(39,76,200)] text-white"
-                  : "bg-[rgba(36,36,36,0.7)] text-gray-500"
-              } lg:w-[800px]`}
+              } transition-all duration-300 ease-in-out lg:w-[800px] relative overflow-hidden`}
+              style={{
+                backgroundImage: step.imgUrl
+                  ? `linear-gradient(rgba(36, 36, 36, ${selectedStep === index ? 0.3 : 0.7}), rgba(36, 36, 36, ${selectedStep === index ? 0.3 : 0.7})), url(${step.imgUrl})`
+                  : 'none',
+                backgroundColor: step.imgUrl
+                  ? undefined
+                  : selectedStep === index
+                    ? 'rgb(39,76,200)'
+                    : 'rgba(36,36,36,0.7)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                color: selectedStep === index ? 'white' : 'rgb(156, 163, 175)',
+              }}
+              
             >
               <div className="text-sm md:text-2xl font-bold break-keep text-left">
                 {step.title}
               </div>
+             
               <div className="text-xs font-medium md:text-xl text-start break-keep">
                 {step.description}
               </div>
-            </div>
+             
+              </div>
+           
           </div>
         ))}
       </div>

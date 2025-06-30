@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getSession } from '../api/activity';
 
 import Footer from '../components/footer';
 import StepComponent from '../components/stepComponent';
@@ -16,49 +17,36 @@ import Part from '../components/activity/Part';
 
 export default function Activity() {
     const navigate = useNavigate();
-    const steps = [
-        {
-            title: 'OT',
-            description: '새로운 기수를 시작하며, 다양한 활동 방법을 소개하는 세션',
-        },
-        {
-            title: 'MT',
-            description: '팀 빌딩이 이루어지기 전, 다른 TAVY들을 알아가는 세션',
-        },
-        {
-            title: '만남의 장',
-            description: 'TAVE만의 노하우가 들어간 팀 빌딩 세션',
-        },
-        {
-            title: '테버랜드',
-            description: 'OB와 YB가 다양한 콘텐츠 내에서 활동하며 네트워킹하는 세션',
-        },
-        {
-            title: '전반기 시상식',
-            description: '전반기 동안 스터디한 결과를 공유하고 시상하는 세션',
-        },
-        {
-            title: '테런데이',
-            description: '다양한 멘토들에게 직접 프로젝트 피드백을 받을 수 있는 세션',
-        },
-        {
-            title: 'OB 강연',
-            description: 'IT 업계 현직자 OB분들을 초청하여, 인사이트를 얻을 수 있는 세션',
-        },
-        {
-            title: 'TAVE의 밤',
-            description: '매 회 다른 컨셉을 두고, 전 기수가 모이는 네트워킹 센터',
-        },
-        {
-            title: 'TAVE 컨퍼런스',
-            description: '후반기 동안 개발한 후반기 프로젝트를 공유하고 시상하는 세션',
-        },
-    ];
-
+    const [steps, setSteps] = useState([]);
     const [selectedStep, setSelectedStep] = useState(0);
-    const stepRefs = useRef(steps.map(() => React.createRef()));
+    const stepRefs = useRef([]);
+
+    // getSession API로 데이터 불러오기
+    useEffect(() => {
+        const fetchSessions = async () => {
+            try {
+                const sessionData = await getSession();
+                // console.log('세션 데이터:', sessionData); 
+                
+                if (sessionData && Array.isArray(sessionData.result)) {
+                    setSteps(sessionData.result);
+                    stepRefs.current = sessionData.result.map(() => React.createRef());
+                } else {
+                    console.error('세션 데이터가 올바른 형태가 아닙니다:', sessionData);
+                    setSteps([]);
+                }
+            } catch (error) {
+                console.error('세션 데이터를 불러오는데 실패했습니다:', error);
+                setSteps([]);
+            }
+        };
+
+        fetchSessions();
+    }, []);
 
     const handleScroll = useCallback(() => {
+        if (!stepRefs.current || stepRefs.current.length === 0) return;
+        
         const scrollPosition = window.scrollY + window.innerHeight / 2;
 
         stepRefs.current.forEach((ref, index) => {
@@ -117,7 +105,9 @@ export default function Activity() {
                         <Part />
                     </div>
                     <div className="md:mb-15 mb-[45px] md:text-[40px] font-bold text-[26px] mt-96 ">정규 세션 소개</div>
-                    <StepComponent steps={steps} selectedStep={selectedStep} setSelectedStep={setSelectedStep} />
+                    {steps.length > 0 && (
+                        <StepComponent steps={steps} selectedStep={selectedStep} setSelectedStep={setSelectedStep} />
+                    )}
                 </div>
             </div>
 
