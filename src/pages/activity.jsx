@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getSession } from '../api/activity';
 
 import Footer from '../components/footer';
 import StepComponent from '../components/stepComponent';
@@ -16,6 +17,32 @@ import Part from '../components/activity/Part';
 
 export default function Activity() {
     const navigate = useNavigate();
+    // const [steps, setSteps] = useState([]);
+    const [selectedStep, setSelectedStep] = useState(0);
+    const stepRefs = useRef([]);
+
+    // getSession API로 세션 데이터 불러오는 코드 추가
+    // useEffect(() => {
+    //     const fetchSessions = async () => {
+    //         try {
+    //             const sessionData = await getSession();
+    //             console.log('세션 데이터:', sessionData); 
+                
+    //             if (sessionData && Array.isArray(sessionData.result)) {
+    //                 setSteps(sessionData.result);
+    //                 stepRefs.current = sessionData.result.map(() => React.createRef());
+    //             } else {
+    //                 console.error('세션 데이터가 올바른 형태가 아닙니다:', sessionData);
+    //                 setSteps([]);
+    //             }
+    //         } catch (error) {
+    //             console.error('세션 데이터를 불러오는데 실패했습니다:', error);
+    //             setSteps([]);
+    //         }
+    //     };
+
+    //     fetchSessions();
+    // }, []);
     const steps = [
         {
             title: 'OT',
@@ -55,10 +82,9 @@ export default function Activity() {
         },
     ];
 
-    const [selectedStep, setSelectedStep] = useState(0);
-    const stepRefs = useRef(steps.map(() => React.createRef()));
-
     const handleScroll = useCallback(() => {
+        if (!stepRefs.current || stepRefs.current.length === 0) return;
+        
         const scrollPosition = window.scrollY + window.innerHeight / 2;
 
         stepRefs.current.forEach((ref, index) => {
@@ -117,7 +143,9 @@ export default function Activity() {
                         <Part />
                     </div>
                     <div className="md:mb-15 mb-[45px] md:text-[40px] font-bold text-[26px] mt-96 ">정규 세션 소개</div>
-                    <StepComponent steps={steps} selectedStep={selectedStep} setSelectedStep={setSelectedStep} />
+                    {steps.length > 0 && (
+                        <StepComponent steps={steps} selectedStep={selectedStep} setSelectedStep={setSelectedStep} />
+                    )}
                 </div>
             </div>
 
