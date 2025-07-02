@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LogoTave from "../assets/images/LogoTave.svg";
 import HoverIcon from "../assets/images/HeaderHover.svg";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,19 @@ export default function Header({ isBlack }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigate = useNavigate();
+  
+  // 화면 크기 변경 시 모바일 메뉴 자동 닫기
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMenuOpen]);
+
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };

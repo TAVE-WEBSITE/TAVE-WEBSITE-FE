@@ -77,7 +77,7 @@ export default function StepComponent({
 
  {/* 세션 배경이미지 추가 (추후 이미지 선정 후 테스트 한 번 더 해야함) */}
             <div
-              className={`flex w-full justify-between items-center gap-3 w-88 lg:min-w-[550px] sm:py-12 py-3 rounded-2xl p-5 transition-transform duration-300 ease-in-out ${
+              className={`flex w-full justify-between items-center gap-3 w-88 lg:min-w-[550px] sm:py-12 h-44 rounded-2xl px-5 transition-transform duration-300 ease-in-out ${
                 selectedStep === index ? "scale-100" : "scale-90"
               } transition-all duration-300 ease-in-out lg:w-[800px] relative overflow-hidden`}
               style={{
