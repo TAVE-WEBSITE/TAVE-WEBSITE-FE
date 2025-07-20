@@ -75,35 +75,42 @@ export default function StepComponent({
               />
             )}
 
- {/* 세션 배경이미지 추가 (추후 이미지 선정 후 테스트 한 번 더 해야함) */}
-            <div
-              className={`flex w-full justify-between items-center gap-3 w-88 lg:min-w-[550px] sm:py-12 h-44 rounded-2xl px-5 transition-transform duration-300 ease-in-out ${
-                selectedStep === index ? "scale-100" : "scale-90"
-              } transition-all duration-300 ease-in-out lg:w-[800px] relative overflow-hidden`}
-              style={{
-                backgroundImage: step.imgUrl
-                  ? `linear-gradient(rgba(36, 36, 36, ${selectedStep === index ? 0.3 : 0.7}), rgba(36, 36, 36, ${selectedStep === index ? 0.3 : 0.7})), url(${step.imgUrl})`
-                  : 'none',
-                backgroundColor: step.imgUrl
-                  ? undefined
-                  : selectedStep === index
-                    ? 'rgb(39,76,200)'
-                    : 'rgba(36,36,36,0.7)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                color: selectedStep === index ? 'white' : 'rgb(156, 163, 175)',
-              }}
-              
-            >
-              <div className="text-sm md:text-2xl font-bold break-keep text-left">
-                {step.title}
-              </div>
-             
-              <div className="text-xs font-medium md:text-xl text-start break-keep">
-                {step.description}
-              </div>
-             
-              </div>
+ {/* 세션 배경이미지 추가*/}
+ <div
+  className={`relative flex w-full justify-between items-center gap-3 w-88 lg:min-w-[550px] sm:py-12 h-44 rounded-2xl px-5 transition-transform duration-300 ease-in-out ${
+    selectedStep === index ? "scale-100" : "scale-90"
+  } lg:w-[800px] overflow-hidden`}
+>
+  {/* 배경 이미지 */}
+  {step.imgUrl && (
+    <img
+      src={step.imgUrl}
+      alt="배경"
+      className="absolute inset-0 w-full h-full object-cover z-10"
+      style={{
+        opacity: selectedStep === index ? 1.0 : 0.3,
+      }}
+    />
+  )}
+
+  {/* 오버레이 */}
+  {/* <div className="absolute inset-0 z-10 bg-[rgba(36,36,36,0.5)]" /> */}
+
+  {/* 콘텐츠 */}
+  <div
+  className={`relative z-20 flex justify-between w-full items-center transition-opacity duration-300  ${
+    selectedStep === index ? "opacity-100" : "opacity-50"
+  }`}
+>
+    <div className="text-sm md:text-2xl font-bold break-keep text-left text-white">
+      {step.title}
+    </div>
+    <div className="text-xs font-medium md:text-xl text-start break-keep text-white">
+      {step.description}
+    </div>
+  </div>
+</div>
+
            
           </div>
         ))}
