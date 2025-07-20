@@ -24,18 +24,18 @@ function CoreCard({ title, description, SvgIcon, className, center }) {
   return (
     <div className="w-full flex justify-center items-center">
       <div
-        className={`w-5/6 sm:w-[270px] h-[161px] rounded-[15px] relative border border-[#f7f8fa] border-[0.5px] flex justify-center items-center overflow-hidden
+        className={`w-11/12 sm:w-[270px] h-[161px] rounded-[15px] relative border border-[#f7f8fa] border-[0.5px] flex justify-center items-center overflow-hidden
              duration-300 ease-in-out ${
                center ? "bg-[#195BFF]" : "bg-[#393a40]/50"
              }`}
       >
         {/* Description 부분 */}
         <div
-          className={`text-center text-sm font-medium leading-normal absolute z-20 transition-opacity duration-500 ease-in-out ${
+          className={`px-2 text-center text-sm font-medium leading-normal absolute z-20 transition-opacity duration-500 ease-in-out ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <span className="font-bold text-xl">{title}</span>
+          <span className="font-bold text-xl block mb-2">{title}</span>
           {description}
         </div>
 
@@ -62,7 +62,7 @@ export default function CoreValueCarousel() {
     arrows: false, // 화살표 비활성화
     centerMode: true, // 중앙 정렬
     adaptiveHeight: true, // 높이 자동 조정
-    centerPadding: "20px",
+    centerPadding: "38px",
     beforeChange: (current, next) => {
       setCurrentSlide(next); // 슬라이드 변경 시 currentSlide 업데이트
     },

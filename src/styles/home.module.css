@@ -1,58 +1,90 @@
 .gradientWrapper {
-  position: absolute;
-  width: 100vw;
-  height: 600vh;
-  background: linear-gradient(
-    to bottom,
-    #121212 0%,
-    #121212 10%,
-    #142a61 22%,
-    #103a8c 23%,
-    #1445bc 24%,
-    #1445bc 25.5%,
-    #142a61 28%,
-    #131826 35%,
-    #121212 100%
-  );
-  z-index: -1;
-}
+    position: absolute;
+    width: 100vw;
+    height: 600dvh;
+    background: 
+    url('../assets/images/home/wave1.svg') no-repeat 50% 0%,
+      url('../assets/images/home/wave2.svg') no-repeat 50% 13%,
+      url('../assets/images/home/wave3.svg') no-repeat 50% 60%,
+      url('../assets/images/home/wave4.svg') no-repeat 50% 90%,
+
+      /* 배경 물결 위치 */
+      linear-gradient(
+        to bottom,
+        #121212 0%,
+        #121212 10%,
+        #142a61 22%,
+        #103a8c 23%,
+        #1445bc 24%,
+        #1445bc 25.5%,
+        #142a61 28%,
+        #131826 35%,
+        #121212 100%
+      );
+    background-size: contain;
+    z-index: -1;
+  }
+  
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+    .gradientWrapper {
+      background: 
+        url('../assets/images/home/wave2.svg') no-repeat 50% 17%,
+        url('../assets/images/home/wave3.svg') no-repeat 50% 34%,
+        url('../assets/images/home/wave4.svg') no-repeat 50% 54%,
+        linear-gradient(
+          to bottom,
+          #121212 0%,
+          #121212 10%,
+          #142a61 22%,
+          #103a8c 23%,
+          #1445bc 24%,
+          #1445bc 25.5%,
+          #142a61 28%,
+          #131826 35%,
+          #121212 100%
+        );
+      background-size: contain;
+    }
+  }
 
 .customDots {
-  margin-top: 1rem;
-  width: 100%;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
 }
 
 .customDots ul {
-  width: 100%;
-  display: flex;
-  gap: 0.4rem;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: center;
 }
 .customDots li {
 }
 .customDots li button {
-  border: none;
-  color: transparent;
-  cursor: pointer;
-  display: block;
-  height: 0.4rem;
-  width: 0.4rem;
-  border-radius: 100%;
-  padding: 0;
-  background-color: #d9d9d9;
-  opacity: 20%;
+    border: none;
+    color: transparent;
+    cursor: pointer;
+    display: block;
+    height: 0.4rem;
+    width: 0.4rem;
+    border-radius: 100%;
+    padding: 0;
+    background-color: #d9d9d9;
+    opacity: 20%;
 }
 .customDots ul li.slick-active button {
-  background-color: #d9d9d9;
-  opacity: 50%;
-  width: 0.8rem;
-  border-radius: 2.5px;
+    background-color: #d9d9d9;
+    opacity: 50%;
+    width: 0.8rem;
+    border-radius: 2.5px;
 }
 .slick-dots li.slick-active button:before {
-  opacity: 1 !important;
-  color: #d9d9d9 !important;
+    opacity: 1 !important;
+    color: #d9d9d9 !important;
 }

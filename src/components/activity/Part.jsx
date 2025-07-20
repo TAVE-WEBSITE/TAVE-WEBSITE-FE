@@ -19,7 +19,7 @@ export default function Part() {
     const [currentSlide, setCurrentSlide] = useState(0); // 현재 슬라이드
     const onPartClick = (name) => {
         let partName = name;
-        console.log('Navigating to /study with partName:', partName);
+        //console.log('Navigating to /study with partName:', partName);
         navigate('/study', { state: { partName } });
     };
 
@@ -31,7 +31,7 @@ export default function Part() {
         centerPadding: '50px', // 양옆 카드의 여백
         slidesToScroll: 1,
         centerMode: true,
-        arrows: true,
+        arrows: false,
         adaptiveHeight: true,
         prevArrow: <ArrowLeft />,
         nextArrow: <ArrowRight />,
@@ -49,21 +49,21 @@ export default function Part() {
         {
             KorTitle: '웹 프론트엔드',
             EngTitle: 'WEB',
-            description: `우리는 아름답고 직관적인 웹 경험을 창조해 나가며, 다양한 의견을 수렴하여 성장하는 웹사이트를 만들어갑니다.`,
+            description: `사용자들이 쉽고 즐겁게 이용할 수 있는 웹 경험을 제공하며, 다양한 의견을 반영해 지속적으로 발전하는 웹사이트를 구축하는 것입니다.`,
             icon: WebIcon,
-            onClick: () => onPartClick('Frontend'),
+            onClick: () => onPartClick('Web/App'),
         },
         {
             KorTitle: '앱 프론트엔드',
             EngTitle: 'APP',
             description: `사용자와의 소통을 통해 다양한 경험을 모아, 손끝에서 펼쳐지는 매력적인 인터페이스를 설계하며, 언제 어디서나 편리한 경험을 제공하는 데 열정을 다합니다.`,
             icon: AppIcon,
-            onClick: () => onPartClick('Frontend'),
+            onClick: () => onPartClick('Web/App'),
         },
         {
             KorTitle: '백엔드',
             EngTitle: 'BACKEND',
-            description: `데이터를 안전하게 저장하고, 비즈니스 로직을 구현하여 사용자 요청에 신속하고 정확하게 응답하며, 다양한 기술을 접목해 안정적인 서비스를 위해 끊임없이 진화합니다.`,
+            description: `데이터를 안전하게 저장하고 비즈니스 로직을 구현하여 사용자 요청에 신속하게 응답하며, 다양한 기술을 접목해 안정적인 서비스를 지속적으로 발전시킵니다.`,
             icon: BEIcon,
             onClick: () => onPartClick('Backend'),
         },
@@ -84,17 +84,17 @@ export default function Part() {
         {
             KorTitle: '디자인',
             EngTitle: 'DESIGN',
-            description: `우리는 변화하는 디자인 트렌드를 이끌어가고,\n다양한 아이디어를 수렴하고,\n사용자 경험을 최우선으로 고려하여,\n아름답고 직관적인 물결을 일으킵니다.`,
+            description: `변화하는 디자인 트렌드를 이끌어가고,\n다양한 아이디어를 수렴하고,\n사용자 경험을 최우선으로 고려하여,\n아름답고 직관적인 물결을 일으킵니다.`,
             icon: DEIcon,
         },
     ];
 
     useEffect(() => {
-        console.log(currentSlide);
+        //console.log(currentSlide);
     }, [currentSlide]);
     return (
         <div className="flex-col justify-center items-center lg:max-w-6xl">
-            <div className="mb-[40px] md:mb-15  md:text-[40px] font-bold text-[26px] mt-[430px]">파트 소개</div>
+            <div className="mb-[40px] md:mb-15  md:text-[40px] font-bold text-[26px] mt-80">파트 소개</div>
 
             {/* sm 이상 화면에서 PartCard만 보이도록 설정 */}
             <div className="hidden md:grid justify-center md:grid-cols-3 gap-6 w-full px-6 max-lg:scale-90">

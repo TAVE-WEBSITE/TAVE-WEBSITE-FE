@@ -6,7 +6,7 @@ export default function CoreCard({ title, description, SvgIcon, className }) {
     <div
       className="w-[300px] h-[180px] bg-[#393a40]/50 rounded-[15px] relative border
              overflow-hidden border-[#f7f8fa] border-[0.5px] flex justify-center items-center hover:bg-[#195BFF]
-             transition-colors duration-300 ease-in-out"
+             transition-colors duration-500 ease-in-out"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
@@ -21,7 +21,7 @@ export default function CoreCard({ title, description, SvgIcon, className }) {
       )}
 
       {React.cloneElement(SvgIcon, {
-        className: `absolute transition-transform duration-300 ease-in-out ${
+        className: `absolute transition-transform duration-700 ease-in-out ${
           isHover ? "scale-125 z-10" : "scale-100 z-[-1]"
         } ${className}`,
         fill: isHover ? "#12121233" : "#393A40",
