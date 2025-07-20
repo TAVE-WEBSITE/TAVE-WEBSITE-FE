@@ -79,7 +79,11 @@ export default function StepComponent({
  <div
   className={`relative flex w-full justify-between items-center gap-3 w-88 lg:min-w-[550px] sm:py-12 h-44 rounded-2xl px-5 transition-transform duration-300 ease-in-out ${
     selectedStep === index ? "scale-100" : "scale-90"
-  } lg:w-[800px] overflow-hidden`}
+  } lg:w-[800px] overflow-hidden ${
+    !step.imgUrl && (selectedStep === index
+      ? 'bg-[rgb(39,76,200)] text-white'
+      : 'bg-[rgba(36,36,36,0.7)] text-gray-500')
+  }`}
 >
   {/* 배경 이미지 */}
   {step.imgUrl && (
@@ -102,10 +106,14 @@ export default function StepComponent({
     selectedStep === index ? "opacity-100" : "opacity-50"
   }`}
 >
-    <div className="text-sm md:text-2xl font-bold break-keep text-left text-white">
+    <div className={`text-sm md:text-2xl font-bold break-keep text-left ${
+      step.imgUrl ? 'text-white' : (selectedStep === index ? 'text-white' : 'text-gray-500')
+    }`}>
       {step.title}
     </div>
-    <div className="text-xs font-medium md:text-xl text-start break-keep text-white">
+    <div className={`text-xs font-medium md:text-xl text-start break-keep ${
+      step.imgUrl ? 'text-white' : (selectedStep === index ? 'text-white' : 'text-gray-500')
+    }`}>
       {step.description}
     </div>
   </div>
