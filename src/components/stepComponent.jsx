@@ -83,12 +83,12 @@ export default function StepComponent({
     // 
     // !step.imgUrl && (selectedStep === index
     selectedStep === index
-      ? 'bg-[rgb(39,76,200)] text-white'
+      ? ' text-white'
       : 'bg-[rgba(36,36,36,0.7)] text-gray-500'
   }`}
 >
   {/* 배경 이미지 */}
-  {/* {step.imgUrl && (
+  {step.imgUrl && (
     <img
       src={step.imgUrl}
       alt="배경"
@@ -97,10 +97,10 @@ export default function StepComponent({
         opacity: selectedStep === index ? 1.0 : 0.3,
       }}
     />
-  )} */}
+  )}
 
   {/* 오버레이 */}
-  {/* <div className="absolute inset-0 z-10 bg-[rgba(36,36,36,0.5)]" /> */}
+  <div className="absolute inset-0 z-10 bg-[rgba(36,36,36,0.5)]" />
 
   {/* 콘텐츠 */}
   <div
