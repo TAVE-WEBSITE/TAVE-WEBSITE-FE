@@ -104,7 +104,7 @@ export default function History() {
         <div className="flex gap-4 justify-start overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide scrollbar-hidden">
     */
     return (
-        <div className="flex flex-col items-center justify-center w-full xs:max-w-[90vw] sm:max-w-[90vw]">
+        <div className="flex flex-col items-center justify-center w-full xs:max-w-[90vw] sm:max-w-[90vw] min-h-[40vh]">
             {/* 그룹 칩 */}
             <div className="w-full  flex items-center justify-center">
                 <div className="flex gap-4 justify-start overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide scrollbar-hidden">
@@ -129,7 +129,7 @@ export default function History() {
 
             {/* 필터링된 그룹 데이터 */}
             <div
-                className={`mt-7 md:mt-8 w-full grid  gap-x-6 ${
+                className={`h-[50vh] lg:h-[36vh] mt-7 md:mt-8 w-full grid  gap-x-6 ${
                     filteredHistory.length == 1 ? 'grid-cols-1' : 'md:grid-cols-2 grid-cols-1'
                 }`}
             >
@@ -137,10 +137,10 @@ export default function History() {
                     filteredHistory.map((historyItem) => (
                         <div
                             key={historyItem.generation}
-                            className="rounded-[15px] border border-gray-700 overflow-hidden  bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px]  mb-4"
+                            className="rounded-[15px] border border-gray-700 overflow-hidden  bg-[rgba(255,255,255,0.07)] backdrop-blur-[7.5px] mb-4 lg:h-full max-h-fit md:max-h-full"
                         >
                             {/* 내용 */}
-                            <div className="p-3 sm:p-6 z-10 max-h-[54vh] overflow-y-auto container xl:scrollbar-hidden ">
+                            <div className="p-3 sm:p-6 z-10 overflow-y-auto container xl:scrollbar-hidden ">
                                 <div className="pb-4 md:pb-6 text-[15px] md:body-highlight-1">
                                     {historyItem.generation}
                                 </div>
