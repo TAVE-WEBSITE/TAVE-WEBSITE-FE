@@ -42,6 +42,16 @@ export default function Sponsored() {
         >
           <LetsCareerLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem]" />
         </a>
+
+        <a 
+          href="https://f-lab.kr/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-xl"
+        >
+          <FLabLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem] rounded-[20px]" />
+        </a>
+
       </div>
     </>
   );
