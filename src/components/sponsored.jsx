@@ -3,6 +3,8 @@ import { ReactComponent as CodeitLogo } from "../assets/images/CodeitLogo.svg";
 import { ReactComponent as AlpacoLogo } from "../assets/images/AlpacoLogo.svg";
 import { ReactComponent as BBCareerLogo } from "../assets/images/BBCareerLogo.svg";
 import { ReactComponent as LetsCareerLogo } from "../assets/images/home/LetsCareerLogo.svg";
+import { ReactComponent as FLabLogo } from "../assets/images/home/FLabLogo.svg";
+
 
 export default function Sponsored() {
   return (
