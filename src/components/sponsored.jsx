@@ -42,7 +42,6 @@ export default function Sponsored() {
         >
           <LetsCareerLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem]" />
         </a>
-
         <a 
           href="https://f-lab.kr/" 
           target="_blank" 
