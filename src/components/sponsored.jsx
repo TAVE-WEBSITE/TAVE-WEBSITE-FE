@@ -3,14 +3,13 @@ import { ReactComponent as CodeitLogo } from "../assets/images/CodeitLogo.svg";
 import { ReactComponent as AlpacoLogo } from "../assets/images/AlpacoLogo.svg";
 import { ReactComponent as BBCareerLogo } from "../assets/images/BBCareerLogo.svg";
 import { ReactComponent as LetsCareerLogo } from "../assets/images/home/LetsCareerLogo.svg";
-import { ReactComponent as FLabLogo } from "../assets/images/home/FLabLogo.svg";
 
 //고화질로 변경
 
 export default function Sponsored() {
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-5 justify-items-center gap-5 md:gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 justify-items-center gap-5 md:gap-6">
         <a 
           href="https://www.codeit.kr/" 
           target="_blank" 
@@ -43,6 +42,7 @@ export default function Sponsored() {
         >
           <LetsCareerLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem]" />
         </a>
+
         <a 
           href="https://f-lab.kr/" 
           target="_blank" 
@@ -51,6 +51,7 @@ export default function Sponsored() {
         >
           <FLabLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem] rounded-[20px]" />
         </a>
+
       </div>
     </>
   );
