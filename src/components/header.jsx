@@ -74,12 +74,12 @@ export default function Header({ isBlack }) {
                 />
               </li>
             ))}
-            <div
-              onClick={applyHandler}
+            <a
+              href="https://recruit.tave-wave.com"
               className="hover:from-[#5989FF] hover:to-[#5989FF] bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center z-50"
             >
               지원하기
-            </div>
+            </a>
           </ul>
         </nav>
       </div>
@@ -155,13 +155,13 @@ export default function Header({ isBlack }) {
           ))}
           <li className="py-3">
             <div className="flex items-center justify-center bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] rounded-lg hover:from-[#5989FF] hover:to-[#5989FF] text-center w-20 h-9">
-              <div
+              <a
                 className="cursor-pointer text-base font-bold"
-                onClick={applyHandler}
+                 href="https://recruit.tave-wave.com"
               >
                 {" "}
                 지원하기
-              </div>
+              </a>
             </div>
           </li>
         </ul>
