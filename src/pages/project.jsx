@@ -132,6 +132,7 @@ export default function Project() {
                       teamName={data.teamName || ""}
                       description={data.description || "설명 없음"}
                       blogUrl={data.blogUrl || "#"}
+                      imageUrl={data.imageUrl || ""}
                     />
                   ))
               ) : (
