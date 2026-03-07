@@ -1,8 +1,8 @@
 import Header from "../components/header";
 import BackWave from "../assets/images/BackWave.svg";
 import Footer from "../components/footer";
-import { postEmail } from "../api/emailApi";
-import { useState } from "react";
+import { postEmail, getIsStarted } from "../api/emailApi";
+import { useState, useEffect } from "react";
 import ApplyModal from "../components/ApplyModal";
 
 export default function Apply() {
@@ -10,6 +10,19 @@ export default function Apply() {
   const [inputValue, setInputValue] = useState("");
   const [modalText, setModaltext] = useState(["", ""]);
   // 백엔드 연결 필요
+
+  // const isStarted = async () => {
+  //   try {
+  //     const response = await getIsStarted();
+  //     console.log(response)
+  //   } catch (error) {
+     
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   isStarted();
+  // }, []);
 
   const emailhandler = async () => {
     try {
@@ -62,7 +75,8 @@ export default function Apply() {
           </p>
         </div>
 
-        <div className="relative flex justify-center items-center z-30 mb-64 w-full lg:w-[807px] mx-auto">
+        <div className="relative z-30 mb-0 w-full lg:w-[807px] mx-auto">
+          <div className="flex justify-center items-center ">
           <input
             type="email"
             placeholder="이메일을 입력해주세요."
@@ -76,7 +90,19 @@ export default function Apply() {
           >
             알림 신청하기
           </button>
+          </div>
+          
+          <a
+  href="https://recruit.tave-wave.com"
+  className="relative block w-fit mx-auto mt-12 mb-40 text-gray-400 cursor-pointer 
+  after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 
+  after:bg-gray-400 after:transition-all after:duration-300
+  hover:after:w-full"
+>
+  지원 페이지로 이동하기 >>
+</a>
         </div>
+       
       </div>
       <img
         className="absolute w-full h-full top-0 inset-0 z-10"

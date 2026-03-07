@@ -74,8 +74,14 @@ export default function Header({ isBlack }) {
                 />
               </li>
             ))}
-            <a
+            {/* <a
               href="https://recruit.tave-wave.com"
+              className="hover:from-[#5989FF] hover:to-[#5989FF] bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center z-50"
+            >
+              지원하기
+            </a> */}
+            <a
+              onClick={applyHandler}
               className="hover:from-[#5989FF] hover:to-[#5989FF] bg-gradient-to-r from-[#6D3CFF] to-[#1A5BFF] py-2 px-6 rounded-2xl text-center z-50"
             >
               지원하기
