@@ -11,7 +11,6 @@ export default function PartCard({
 }) {
   // 디자인 파트만 다른 효과를 주기 위해 체크
   const isDesign = EngTitle === "DESIGN";
-  //console.log("센터유무", KorTitle, center);
 
   return (
     <div
@@ -22,21 +21,13 @@ export default function PartCard({
     >
       <div className="flex-col  sm:w-11/12 md:w-full">
         <div
-          className={`relative bg-blue-600 text-white rounded-2xl w-full h-36 sm:40 md:h-44 overflow-hidden group transition-all duration-300 ${
-            !isDesign ? "cursor-pointer" : ""
-          }`}
+          className="relative bg-blue-600 text-white rounded-2xl w-full h-36 sm:40 md:h-44 overflow-hidden group transition-all duration-300 cursor-pointer"
         >
           <div className="relative">
-            {/* 디자인 파트가 아닌 파트들 효과 */}
-            {/* 아이콘에 호버 시 확대 효과 적용 */}
             <img
               src={icon}
               alt="icon"
-              className={`absolute top-0  transform transition-transform duration-300  h-36 sm:h-42 md:h-44 w-48 sm:w-60 md:w-56 ${
-                !isDesign
-                  ? "md:group-hover:scale-110 left-[-1.8rem]"
-                  : "left-[-2.5rem]"
-              }  `}
+              className="absolute top-0  transform transition-transform duration-300  h-36 sm:h-42 md:h-44 w-48 sm:w-60 md:w-56 md:group-hover:scale-110 left-[-1.8rem]"
             />
             {/* hover 전 화살표 아이콘 */}
             <img
@@ -50,9 +41,8 @@ export default function PartCard({
             <img
               src={HoverArrow}
               alt="hover arrow"
-              className={`absolute top-[5rem] sm:top-[5rem] md:top-[6rem] xl:top-[4.6rem] w-12 lg:w-[60px] xl:w-[75px] right-4 transition-opacity duration-300 opacity-100 md:opacity-0 ${
-                !isDesign ? "md:group-hover:opacity-100" : ""
-              } ${center ? "max-md:opacity-100" : "max-md:opacity-0"}`}
+              className={`absolute top-[5rem] sm:top-[5rem] md:top-[6rem] xl:top-[4.6rem] w-12 lg:w-[60px] xl:w-[75px] right-4 transition-opacity duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 
+                ${center ? "max-md:opacity-100" : "max-md:opacity-0"}`}
             />
           </div>
           <div
@@ -72,12 +62,6 @@ export default function PartCard({
             </div>
           </div>
 
-          {/* 디자인 파트에만 오버레이 효과 적용 */}
-          {isDesign && (
-            <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span className="text-white text-2xl font-bold">COMING SOON</span>
-            </div>
-          )}
         </div>
         <div className="font-Pretendard text-xs sm:text-sm md:text-base font-medium mt-2 w-full text-left mb-8  max-md:py-[15px] max-md:px-[24px] rounded-2xl max-md:bg-white max-md:bg-opacity-10">
           {description}

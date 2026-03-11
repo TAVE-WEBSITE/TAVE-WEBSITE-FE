@@ -66,7 +66,7 @@ export default function StepComponent({
                 className={`absolute left-3 ${
                   index === 0 ? "bottom-0 h-[80px]" : "top-50% h-[200px]"
                 } ${
-                  index === 8 ? "top-0 h-[80px]" : "top-50% h-[200px]"
+                  index === 9 ? "top-0 h-[80px]" : "top-50% h-[200px]"
                 } w-[3px] transition-all duration-500 ease-in-out ${
                   selectedStep === index
                     ? "bg-gradient-to-b from-[rgb(36,36,36)] via-[rgb(39,76,200)] to-[rgb(36,36,36)]"

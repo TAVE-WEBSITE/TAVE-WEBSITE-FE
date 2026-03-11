@@ -86,6 +86,7 @@ export default function Part() {
             EngTitle: 'DESIGN',
             description: `변화하는 디자인 트렌드를 이끌어가고,\n다양한 아이디어를 수렴하고,\n사용자 경험을 최우선으로 고려하여,\n아름답고 직관적인 물결을 일으킵니다.`,
             icon: DEIcon,
+            onClick: () => onPartClick('Design'),
         },
     ];
 

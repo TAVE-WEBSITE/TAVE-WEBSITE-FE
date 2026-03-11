@@ -9,14 +9,14 @@ import { ReactComponent as FLabLogo } from "../assets/images/FLabLogo.svg";
 export default function Sponsored() {
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-4 justify-items-center gap-5 md:gap-6">
+      <div className="grid grid-cols-3 justify-items-center gap-5 md:gap-6" style={{ justifyItems: 'center', alignItems: 'center' }}>
         <a 
           href="https://www.codeit.kr/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-xl"
         >
-          <CodeitLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem]" />
+          <CodeitLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem] rounded-[10px]" />
         </a>
         <a 
           href="https://corp.alpaco.co.kr/" 
@@ -24,15 +24,7 @@ export default function Sponsored() {
           rel="noopener noreferrer"
           className="cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-xl"
         >
-          <AlpacoLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem]" />
-        </a>
-        <a 
-          href="https://www.bbcareer.co.kr/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-xl"
-        >
-          <BBCareerLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem]" />
+          <AlpacoLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem] rounded-[10px]" />
         </a>
         <a 
           href="https://www.letscareer.co.kr/" 
@@ -40,15 +32,8 @@ export default function Sponsored() {
           rel="noopener noreferrer"
           className="cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-xl"
         >
-          <LetsCareerLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem]" />
-        </a>
-        <a 
-          href="https://f-lab.kr/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-xl"
-        >
-          <FLabLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem] rounded-[20px]" />
+          <LetsCareerLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem] rounded-[10px]" />
+
         </a>
 
       </div>

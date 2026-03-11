@@ -26,10 +26,9 @@ export default function Activity() {
         const fetchSessions = async () => {
             try {
                 const sessionData = await getSession();
-                // console.log('세션 데이터:', sessionData); 
-                
                 if (sessionData && Array.isArray(sessionData.result)) {
                     setSteps(sessionData.result);
+                    // console.log(sessionData.result);
                     stepRefs.current = sessionData.result.map(() => React.createRef());
                 } else {
                     console.error('세션 데이터가 올바른 형태가 아닙니다:', sessionData);
@@ -43,44 +42,6 @@ export default function Activity() {
 
         fetchSessions();
     }, []);
-    // const steps = [
-    //     {
-    //         title: 'OT',
-    //         description: '새로운 기수를 시작하며, 다양한 활동 방법을 소개하는 세션',
-    //     },
-    //     {
-    //         title: 'MT',
-    //         description: '팀 빌딩이 이루어지기 전, 다른 TAVY들을 알아가는 세션',
-    //     },
-    //     {
-    //         title: '만남의 장',
-    //         description: 'TAVE만의 노하우가 들어간 팀 빌딩 세션',
-    //     },
-    //     {
-    //         title: '테버랜드',
-    //         description: 'OB와 YB가 다양한 콘텐츠 내에서 활동하며 네트워킹하는 세션',
-    //     },
-    //     {
-    //         title: '전반기 시상식',
-    //         description: '전반기 동안 스터디한 결과를 공유하고 시상하는 세션',
-    //     },
-    //     {
-    //         title: '테런데이',
-    //         description: '다양한 멘토들에게 직접 프로젝트 피드백을 받을 수 있는 세션',
-    //     },
-    //     {
-    //         title: 'OB 강연',
-    //         description: 'IT 업계 현직자 OB분들을 초청하여, 인사이트를 얻을 수 있는 세션',
-    //     },
-    //     {
-    //         title: 'TAVE의 밤',
-    //         description: '매 회 다른 컨셉을 두고, 전 기수가 모이는 네트워킹 센터',
-    //     },
-    //     {
-    //         title: 'TAVE 컨퍼런스',
-    //         description: '후반기 동안 개발한 후반기 프로젝트를 공유하고 시상하는 세션',
-    //     },
-    // ];
 
     const handleScroll = useCallback(() => {
         if (!stepRefs.current || stepRefs.current.length === 0) return;
