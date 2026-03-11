@@ -9,7 +9,7 @@ import { ReactComponent as FLabLogo } from "../assets/images/FLabLogo.svg";
 export default function Sponsored() {
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 justify-items-center gap-5 md:gap-6" style={{ justifyItems: 'center', alignItems: 'center' }}>
+      <div className="grid grid-cols-3 justify-items-center gap-5 md:gap-6" style={{ justifyItems: 'center', alignItems: 'center' }}>
         <a 
           href="https://www.codeit.kr/" 
           target="_blank" 
@@ -27,28 +27,12 @@ export default function Sponsored() {
           <AlpacoLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem] rounded-[10px]" />
         </a>
         <a 
-          href="https://www.bbcareer.co.kr/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-xl"
-        >
-          <BBCareerLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem] rounded-[10px]" />
-        </a>
-        <a 
           href="https://www.letscareer.co.kr/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-xl"
         >
           <LetsCareerLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem] rounded-[10px]" />
-        </a>
-        <a 
-          href="https://f-lab.kr/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-xl col-span-2 md:col-span-1 md:col-start-2"
-        >
-          <FLabLogo className="w-[7rem] h-[7rem] lg:w-[10rem] lg:h-[10rem] rounded-[10px]" />
         </a>
 
       </div>
