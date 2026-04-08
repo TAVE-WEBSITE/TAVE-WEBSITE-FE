@@ -47,6 +47,7 @@ export default function Part() {
 
     const partCards = [
         {
+            partClass :'WEB',
             KorTitle: '웹 프론트엔드',
             EngTitle: 'WEB',
             description: `사용자들이 쉽고 즐겁게 이용할 수 있는 웹 경험을 제공하며, 다양한 의견을 반영해 지속적으로 발전하는 웹사이트를 구축하는 것입니다.`,
@@ -54,6 +55,7 @@ export default function Part() {
             onClick: () => onPartClick('Web/App'),
         },
         {
+            partClass :'APP',
             KorTitle: '앱 프론트엔드',
             EngTitle: 'APP',
             description: `사용자와의 소통을 통해 다양한 경험을 모아, 손끝에서 펼쳐지는 매력적인 인터페이스를 설계하며, 언제 어디서나 편리한 경험을 제공하는 데 열정을 다합니다.`,
@@ -61,6 +63,7 @@ export default function Part() {
             onClick: () => onPartClick('Web/App'),
         },
         {
+            partClass :'BE',
             KorTitle: '백엔드',
             EngTitle: 'BACKEND',
             description: `데이터를 안전하게 저장하고 비즈니스 로직을 구현하여 사용자 요청에 신속하게 응답하며, 다양한 기술을 접목해 안정적인 서비스를 지속적으로 발전시킵니다.`,
@@ -68,6 +71,7 @@ export default function Part() {
             onClick: () => onPartClick('Backend'),
         },
         {
+            partClass :'DA',
             KorTitle: '데이터 분석',
             EngTitle: 'DATA ANALYSIS',
             description: `방대한 데이터 속에서 패턴과 인사이트를 발견하며, 이를 통해 팀의 의사 결정을 지원하고, 다양한 관점을 통해 더 나은 미래를 설계하는 데 기여합니다.`,
@@ -75,6 +79,7 @@ export default function Part() {
             onClick: () => onPartClick('DataAnalysis'),
         },
         {
+            partClass :'DL',
             KorTitle: '딥러닝',
             EngTitle: 'DEEP LEARNING',
             description: `복잡한 문제를 해결하기 위해 심층 신경망을 설계하며, 인간의 인지 능력을 모방하여 세상의 다양한 문제에 도전하고, 새로운 변화를 일으키는 데 열정을 쏟습니다.`,
@@ -82,6 +87,7 @@ export default function Part() {
             onClick: () => onPartClick('DeepLearning'),
         },
         {
+            partClass :'DE',
             KorTitle: '디자인',
             EngTitle: 'DESIGN',
             description: `변화하는 디자인 트렌드를 이끌어가고,\n다양한 아이디어를 수렴하고,\n사용자 경험을 최우선으로 고려하여,\n아름답고 직관적인 물결을 일으킵니다.`,
@@ -108,6 +114,7 @@ export default function Part() {
                         icon={card.icon}
                         onClick={card.onClick}
                         center={true}
+                        partClass={card.partClass}
                     />
                 ))}
             </div>
