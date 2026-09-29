@@ -4,7 +4,7 @@ import { ReactComponent as AlpacoLogo } from "../assets/images/AlpacoLogo.svg";
 import { ReactComponent as BBCareerLogo } from "../assets/images/BBCareerLogo.svg";
 import { ReactComponent as LetsCareerLogo } from "../assets/images/home/LetsCareerLogo.svg";
 import { ReactComponent as FLabLogo } from "../assets/images/FLabLogo.svg";
-import { ReactComponent as ModoodocLogo } from "../assets/images/ModoodocLogo.svg";
+import { ReactComponent as ModoodocLogo } from "../assets/images/ModoodocLogo.png";
 
 
 export default function Sponsored() {
