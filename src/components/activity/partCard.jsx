@@ -8,20 +8,21 @@ export default function PartCard({
   icon,
   onClick,
   center,
+  partClass,
 }) {
   // 디자인 파트만 다른 효과를 주기 위해 체크
   const isDesign = EngTitle === "DESIGN";
 
   return (
     <div
-      className={`flex break-keep w-full flex max-md:justify-center max-md:items-center ${
+      className={` ${partClass} flex break-keep w-full flex max-md:justify-center max-md:items-center ${
         center ? "opacity-100" : "opacity-20"
       }`}
       onClick={onClick}
     >
       <div className="flex-col  sm:w-11/12 md:w-full">
         <div
-          className="relative bg-blue-600 text-white rounded-2xl w-full h-36 sm:40 md:h-44 overflow-hidden group transition-all duration-300 cursor-pointer"
+          className={`${partClass} relative bg-blue-600 text-white rounded-2xl w-full h-36 sm:40 md:h-44 overflow-hidden group transition-all duration-300 cursor-pointer`}
         >
           <div className="relative">
             <img
