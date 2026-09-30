@@ -9,7 +9,10 @@ import ModoodocLogo from "../assets/images/ModoodocLogo.png";
 export default function Sponsored() {
   return (
     <>
-      <div className="grid grid-cols-3 justify-items-center gap-5 md:gap-6" style={{ justifyItems: 'center', alignItems: 'center' }}>
+      <div 
+        className="grid grid-cols-2 md:grid-cols-4 justify-items-center gap-5 md:gap-6" 
+        style={{ justifyItems: 'center', alignItems: 'center' }}
+      >
         
         {/* Codeit */}
         <a 
